@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian Akhir Semester (UAS) | Bahasa Arab Kelas 7</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        :root {
+            --primary: #1e3c72;
+            --secondary: #2a5298;
+            --accent: #FFD700;
+            --text-dark: #333;
+            --text-light: #f8f9fa;
+            --bg-light: #ffffff;
+            --bg-section: #f8f9fa;
+            --success: #27ae60;
+            --danger: #e74c3c;
+            --warning: #f39c12;
+            --info: #3498db;
+            --purple: #9b59b6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .arabic-text {
+            font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade New', serif;
+            direction: rtl;
+            text-align: right;
+            line-height: 2.4;
+            font-size: 1.5rem;
+            color: var(--primary);
+            display: inline-block;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        .top-nav {
+            background: var(--primary);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .top-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
+
+        .quiz-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e8ba3 100%);
+            color: white;
+            padding: 70px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quiz-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,215,0,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .quiz-header::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .quiz-header .icon { font-size: 4rem; margin-bottom: 15px; position: relative; z-index: 1; }
+
+        .quiz-header h1 {
+            font-family: 'Amiri', serif;
+            font-size: 2.8rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .quiz-header h2 {
+            font-family: 'Amiri', serif;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quiz-header .arabic-title {
+            font-size: 3rem;
+            color: var(--accent);
+            margin: 15px 0;
+            font-family: 'Traditional Arabic', 'Amiri', serif;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quiz-header p {
+            font-size: 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+            opacity: 0.95;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .exam-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+            max-width: 1000px;
+            margin: 25px auto 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .summary-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,215,0,0.3);
+        }
+
+        .summary-card h4 {
+            color: var(--accent);
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+
+        .summary-card p {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+            border-right: 5px solid var(--accent);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .info-box h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.3rem; }
+        .info-box p { margin-bottom: 8px; color: #555; }
+
+        .form-section {
+            background: var(--bg-light);
+            padding: 40px;
+            margin: 30px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .form-section h3 {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-left: 10px;
+        }
+
+        .form-section h4 {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin: 20px 0 10px;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+            border-right: 5px solid var(--danger);
+            padding: 15px 20px;
+            margin: 15px 0 25px;
+            border-radius: 8px;
+            color: #c0392b;
+            font-weight: 600;
+        }
+
+        .stimulus-box {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f0 100%);
+            border-right: 5px solid var(--info);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            font-style: italic;
+            line-height: 2;
+        }
+
+        .stimulus-box .arabic-text {
+            font-style: normal;
+            font-size: 1.4rem;
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 8px;
+        }
+
+        .topic-badge {
+            display: inline-block;
+            background: var(--purple);
+            color: white;
+            padding: 3px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .form-group { display: flex; flex-direction: column; }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        .form-group input, .form-group select {
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(255,215,0,0.2);
+        }
+
+        .question-box {
+            background: var(--bg-section);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border-right: 4px solid var(--warning);
+            transition: all 0.3s;
+        }
+
+        .question-box:hover { box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
+
+        .question-box h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .question-type-badge {
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-weight: 700;
+        }
+
+        .badge-hots { background: var(--warning); color: white; }
+
+        .question-box p.question-text {
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .options { display: flex; flex-direction: column; gap: 10px; }
+
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .option:hover { border-color: var(--accent); background: #fffdf5; }
+
+        .option input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--primary);
+        }
+
+        .option label { cursor: pointer; flex: 1; margin: 0; }
+
+        .option.correct { background: #d4edda; border-color: var(--success); }
+        .option.wrong { background: #f8d7da; border-color: var(--danger); }
+
+        .essay-box {
+            background: var(--bg-section);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border-right: 4px solid var(--accent);
+        }
+
+        .essay-box h4 { color: var(--primary); margin-bottom: 15px; }
+
+        .essay-box textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            resize: vertical;
+            transition: all 0.3s;
+        }
+
+        .essay-box textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(255,215,0,0.2);
+        }
+
+        .results-section {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f0 100%);
+            padding: 40px;
+            margin: 30px 0;
+            border-radius: 20px;
+            text-align: center;
+            display: none;
+            border: 2px solid var(--secondary);
+        }
+
+        .results-section.show { display: block; animation: fadeIn 0.6s ease; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .results-section h3 {
+            font-family: 'Amiri', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .score-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .score-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .score-card h4 { color: var(--secondary); font-size: 0.9rem; margin-bottom: 8px; }
+
+        .score-card .score-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Amiri', serif;
+        }
+
+        .score-card .score-max { font-size: 0.9rem; color: #888; }
+
+        .grade {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary { background: var(--accent); color: var(--primary); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,215,0,0.3); }
+        .btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+        .btn-outline:hover { background: var(--accent); color: var(--primary); }
+        .btn-success { background: var(--success); color: white; }
+        .btn-success:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(39,174,96,0.3); }
+        .btn-danger { background: var(--danger); color: white; }
+        .btn-danger:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(231,76,60,0.3); }
+
+        .feedback {
+            margin-top: 10px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .feedback.show { display: block; }
+        .feedback.correct { background: #d4edda; color: #155724; border-right: 4px solid var(--success); }
+        .feedback.wrong { background: #f8d7da; color: #721c24; border-right: 4px solid var(--danger); }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f1f3d 100%);
+            color: white;
+            padding: 50px 0 30px;
+            margin-top: 50px;
+        }
+
+        footer h3 {
+            font-family: 'Amiri', serif;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        footer .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer h4 { color: var(--accent); margin-bottom: 15px; font-size: 1.2rem; }
+        footer ul { list-style: none; }
+        footer ul li { margin-bottom: 10px; }
+        footer a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: var(--accent); }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .quiz-header h1 { font-size: 1.8rem; }
+            .quiz-header .arabic-title { font-size: 2rem; }
+            .nav-links { width: 100%; justify-content: center; }
+            .form-section { padding: 25px 20px; }
+            .question-box { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="container">
+            <a href="index.html" style="font-family: 'Amiri', serif; font-size: 1.2rem; color: #FFD700;">
+                📖 Bahasa Arab Kelas 7
+            </a>
+            <div class="nav-links">
+                <a href="index.html">🏠 Beranda</a>
+                <a href="index.html#pertemuan">📑 Daftar Pertemuan</a>
+                <a href="15.html">📖 Materi Pertemuan 15</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="quiz-header">
+        <div class="container">
+            <div class="icon">🎓</div>
+            <h1>UJIAN AKHIR SEMESTER (UAS)</h1>
+            <h2>Bahasa Arab Kelas 7 - Semester 1</h2>
+            <div class="arabic-title">اِخْتِبَارُ نِهَائِيِّ الْفَصْلِ الدِّرَاسِيِّ الْأَوَّلِ</div>
+            <p>Ujian komprehensif berbasis HOTS (Higher Order Thinking Skills) mencakup seluruh materi Pertemuan 1-7 dan 9-15: At-Ta'aruf, Al-Unwan, Al-Usrah, Al-Bait, Al-Madrasah, Al-Fashl, Al-Arqaam, Al-Alwan, Al-Hayawanat, An-Nabat, Al-A'da', Al-Mawaqi', Al-A'mal, dan Al-Anasyid.</p>
+            
+            <div class="exam-summary">
+                <div class="summary-card">
+                    <h4>📋 Bagian A</h4>
+                    <p>PG HOTS (25 soal)</p>
+                </div>
+                <div class="summary-card">
+                    <h4>✍️ Bagian B</h4>
+                    <p>Essay (15 soal)</p>
+                </div>
+                <div class="summary-card">
+                    <h4>📊 Total Skor</h4>
+                    <p>550 poin</p>
+                </div>
+                <div class="summary-card">
+                    <h4>⏱️ Waktu</h4>
+                    <p>Tidak Terbatas</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <div class="info-box">
+            <h3>📋 Petunjuk Pengerjaan Ujian</h3>
+            <p>✅ <strong>Lengkapi data diri</strong> terlebih dahulu sebelum mengerjakan soal.</p>
+            <p>✅ <strong>Bagian A (PG HOTS):</strong> Bacalah narasi kasus/teori dengan seksama, lalu pilih 1 jawaban paling tepat. Skor: 10/soal.</p>
+            <p>✅ <strong>Bagian B (Essay):</strong> Jawablah dengan kalimat yang jelas, lengkap, dan berharakat (untuk tulisan Arab). Skor: 20/soal.</p>
+            <p>✅ <strong>Soal mencakup materi Pertemuan 1-7 dan 9-15.</strong></p>
+            <p>⏱️ <strong>Total Skor: 550 poin | Waktu: Tidak Terbatas</strong></p>
+        </div>
+
+        <form id="quizForm">
+
+            <!-- Data Siswa -->
+            <section class="form-section">
+                <h3>📋 Data Siswa <span class="section-badge">WAJIB DIISI</span></h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap *</label>
+                        <input type="text" id="nama" name="nama" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nis">NIS *</label>
+                        <input type="text" id="nis" name="nis" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal">📅 Tanggal Ujian</label>
+                        <input type="date" id="tanggal" name="tanggal">
+                    </div>
+                    <div class="form-group">
+                        <label for="kelas">Kelas</label>
+                        <select id="kelas" name="kelas">
+                            <option value="">Pilih Kelas</option>
+                            <option value="7A">Kelas 7A</option>
+                            <option value="7B">Kelas 7B</option>
+                            <option value="7C">Kelas 7C</option>
+                            <option value="7D">Kelas 7D</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================= -->
+            <!-- BAGIAN A: PILIHAN GANDA HOTS (25 SOAL) -->
+            <!-- ========================================= -->
+            <section class="form-section">
+                <h3>📋 Bagian A – Pilihan Ganda HOTS <span class="section-badge">25 Soal × 10 = 250</span></h3>
+                <div class="warning-box">
+                    ⚠️ Bacalah narasi kasus/teori dengan seksama sebelum menjawab! Setiap soal bernilai 10 poin.
+                </div>
+
+                <!-- Soal 1: At-Ta'aruf -->
+                <div class="question-box" data-correct="c">
+                    <h4>
+                        <span><span class="topic-badge">At-Ta'aruf</span>Soal 1</span>
+                        <span class="question-type-badge badge-hots">HOTS - Analisis</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Kasus:</strong><br>
+                        Dalam acara perkenalan siswa baru di MTs Diniyah Limo Jurai, seorang siswa perempuan bernama Khadijah memperkenalkan diri dengan kalimat berikut:<br>
+                        <span class="arabic-text">اِسْمِيْ خَدِيْجَةُ، أَنَا طَالِبَةٌ جَدِيْدَةٌ، أَسْكُنُ فِيْ لِيْمُوْ جُوْرَايْ</span>
+                        Seorang siswa laki-laki bernama Umar ingin merespons perkenalan tersebut dengan menanyakan alamat rumah Khadijah secara sopan.
+                    </div>
+                    <p class="question-text">Ungkapan yang <strong>PALING TEPAT</strong> secara gramatikal untuk Umar gunakan adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q1" id="q1a" value="a"><label for="q1a">a) <span class="arabic-text" style="font-size: 1.1rem;">أَيْنَ تَسْكُنُ يَا خَدِيْجَةُ؟</span></label></div>
+                        <div class="option"><input type="radio" name="q1" id="q1b" value="b"><label for="q1b">b) <span class="arabic-text" style="font-size: 1.1rem;">أَيْنَ تَسْكُنِيْنَ يَا خَدِيْجَةُ؟</span></label></div>
+                        <div class="option"><input type="radio" name="q1" id="q1c" value="c"><label for="q1c">c) <span class="arabic-text" style="font-size: 1.1rem;">أَيْنَ تَسْكُنِيْنَ يَا خَدِيْجَةُ؟ مَا عُنْوَانُ بَيْتِكِ؟</span></label></div>
+                        <div class="option"><input type="radio" name="q1" id="q1d" value="d"><label for="q1d">d) <span class="arabic-text" style="font-size: 1.1rem;">أَيْنَ تَسْكُنُوْنَ يَا خَدِيْجَةُ؟</span></label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 2: At-Ta'aruf -->
+                <div class="question-box" data-correct="b">
+                    <h4>
+                        <span><span class="topic-badge">At-Ta'aruf</span>Soal 2</span>
+                        <span class="question-type-badge badge-hots">HOTS - Evaluasi</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Kasus:</strong><br>
+                        Seorang siswa menulis perkenalan dalam bahasa Arab sebagai berikut:<br>
+                        <span class="arabic-text">اِسْمِيْ فَاطِمَةُ، أَنَا طَالِبٌ، عُمْرِيْ ثَلَاثَ عَشَرَ سَنَةً</span>
+                        Guru Bahasa Arab memberikan catatan bahwa ada kesalahan dalam kalimat tersebut.
+                    </div>
+                    <p class="question-text">Analisis kesalahan yang dilakukan siswa tersebut adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q2" id="q2a" value="a"><label for="q2a">a) Kesalahan pada harakat kata <span class="arabic-text" style="font-size: 1.1rem;">فَاطِمَةُ</span></label></div>
+                        <div class="option"><input type="radio" name="q2" id="q2b" value="b"><label for="q2b">b) Kata <span class="arabic-text" style="font-size: 1.1rem;">طَالِبٌ</span> seharusnya <span class="arabic-text" style="font-size: 1.1rem;">طَالِبَةٌ</span> karena subjeknya perempuan (Fatimah)</label></div>
+                        <div class="option"><input type="radio" name="q2" id="q2c" value="c"><label for="q2c">c) Kesalahan pada angka <span class="arabic-text" style="font-size: 1.1rem;">ثَلَاثَ عَشَرَ</span></label></div>
+                        <div class="option"><input type="radio" name="q2" id="q2d" value="d"><label for="q2d">d) Tidak ada kesalahan dalam kalimat tersebut</label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 3: Al-Unwan -->
+                <div class="question-box" data-correct="d">
+                    <h4>
+                        <span><span class="topic-badge">Al-Unwan</span>Soal 3</span>
+                        <span class="question-type-badge badge-hots">HOTS - Kreasi</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Kasus:</strong><br>
+                        Seorang turis Arab bertanya kepada Ahmad tentang lokasi madrasahnya. Ahmad ingin menjelaskan bahwa madrasahnya terletak <strong>di antara masjid dan pasar</strong>, serta <strong>di belakang kantor kecamatan</strong>.
+                    </div>
+                    <p class="question-text">Jawaban Ahmad yang <strong>PALING TEPAT</strong> dan berharakat benar adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q3" id="q3a" value="a"><label for="q3a">a) <span class="arabic-text" style="font-size: 1.1rem;">مَدْرَسَتِيْ أَمَامَ الْمَسْجِدِ وَفَوْقَ السُّوْقِ</span></label></div>
+                        <div class="option"><input type="radio" name="q3" id="q3b" value="b"><label for="q3b">b) <span class="arabic-text" style="font-size: 1.1rem;">مَدْرَسَتِيْ تَحْتَ الْمَسْجِدِ وَبِجَانِبِ السُّوْقِ</span></label></div>
+                        <div class="option"><input type="radio" name="q3" id="q3c" value="c"><label for="q3c">c) <span class="arabic-text" style="font-size: 1.1rem;">مَدْرَسَتِيْ عَلَى الْمَسْجِدِ وَحَوْلَ السُّوْقِ</span></label></div>
+                        <div class="option"><input type="radio" name="q3" id="q3d" value="d"><label for="q3d">d) <span class="arabic-text" style="font-size: 1.1rem;">مَدْرَسَتِيْ بَيْنَ الْمَسْجِدِ وَالسُّوْقِ، وَخَلْفَ الْمَكْتَبِ</span></label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 4: Al-Usrah -->
+                <div class="question-box" data-correct="a">
+                    <h4>
+                        <span><span class="topic-badge">Al-Usrah</span>Soal 4</span>
+                        <span class="question-type-badge badge-hots">HOTS - Analisis</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Kasus:</strong><br>
+                        Ali memperkenalkan keluarganya dengan kalimat:<br>
+                        <span class="arabic-text">هٰذَا عَمِّيْ، أَخُوْ أَبِيْ، وَتِلْكَ خَالَتِيْ، أُخْتُ أُمِّيْ</span>
+                    </div>
+                    <p class="question-text">Berdasarkan kalimat di atas, dapat disimpulkan bahwa...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q4" id="q4a" value="a"><label for="q4a">a) Ali memiliki paman dari pihak ayah (<span class="arabic-text" style="font-size: 1.1rem;">عَمٌّ</span>) dan bibi dari pihak ibu (<span class="arabic-text" style="font-size: 1.1rem;">خَالَةٌ</span>)</label></div>
+                        <div class="option"><input type="radio" name="q4" id="q4b" value="b"><label for="q4b">b) Ali memiliki paman dan bibi dari pihak ayah semua</label></div>
+                        <div class="option"><input type="radio" name="q4" id="q4c" value="c"><label for="q4c">c) Ali memiliki paman dari pihak ibu dan bibi dari pihak ayah</label></div>
+                        <div class="option"><input type="radio" name="q4" id="q4d" value="d"><label for="q4d">d) Kalimat tersebut mengandung kesalahan gramatikal</label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 5: Al-Bait -->
+                <div class="question-box" data-correct="b">
+                    <h4>
+                        <span><span class="topic-badge">Al-Bait</span>Soal 5</span>
+                        <span class="question-type-badge badge-hots">HOTS - Evaluasi</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Kasus:</strong><br>
+                        Seorang siswa menulis deskripsi rumah:<br>
+                        <span class="arabic-text">غُرْفَةُ النَّوْمِ كَبِيْرٌ وَنَظِيْفٌ، وَفِيْهَا سَرِيْرٌ كَبِيْرَةٌ</span>
+                    </div>
+                    <p class="question-text">Evaluasi yang <strong>PALING TEPAT</strong> terhadap kalimat di atas adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q5" id="q5a" value="a"><label for="q5a">a) Kalimat tersebut sudah benar secara gramatikal</label></div>
+                        <div class="option"><input type="radio" name="q5" id="q5b" value="b"><label for="q5b">b) Kata <span class="arabic-text" style="font-size: 1.1rem;">كَبِيْرٌ</span> dan <span class="arabic-text" style="font-size: 1.1rem;">نَظِيْفٌ</span> seharusnya muannats (<span class="arabic-text" style="font-size: 1.1rem;">كَبِيْرَةٌ وَنَظِيْفَةٌ</span>) karena <span class="arabic-text" style="font-size: 1.1rem;">غُرْفَةٌ</span> adalah isim muannats, dan <span class="arabic-text" style="font-size: 1.1rem;">سَرِيْرٌ</span> mudzakkar sehingga seharusnya <span class="arabic-text" style="font-size: 1.1rem;">كَبِيْرٌ</span></label></div>
+                        <div class="option"><input type="radio" name="q5" id="q5c" value="c"><label for="q5c">c) Kesalahan hanya pada harakat akhir kata</label></div>
+                        <div class="option"><input type="radio" name="q5" id="q5d" value="d"><label for="q5d">d) Kata <span class="arabic-text" style="font-size: 1.1rem;">غُرْفَةُ النَّوْمِ</span> seharusnya mudzakkar</label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 6: Al-Madrasah -->
+                <div class="question-box" data-correct="c">
+                    <h4>
+                        <span><span class="topic-badge">Al-Madrasah</span>Soal 6</span>
+                        <span class="question-type-badge badge-hots">HOTS - Analisis</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Kasus:</strong><br>
+                        Dalam pelajaran Bahasa Arab, guru memberikan tiga kalimat:<br>
+                        <span class="arabic-text">
+                            (1) الْمَدْرَسَةُ مَكَانٌ لِلتَّعَلُّمِ<br>
+                            (2) يَدْرُسُ الطُّلَّابُ فِي الْفَصْلِ<br>
+                            (3) الْمَكْتَبَةُ فِيْهَا كُتُبٌ كَثِيْرَةٌ
+                        </span>
+                    </div>
+                    <p class="question-text">Berdasarkan ketiga kalimat di atas, analisis yang <strong>PALING TEPAT</strong> adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q6" id="q6a" value="a"><label for="q6a">a) Ketiganya adalah Jumlah Fi'liyah</label></div>
+                        <div class="option"><input type="radio" name="q6" id="q6b" value="b"><label for="q6b">b) Ketiganya adalah Jumlah Ismiyah</label></div>
+                        <div class="option"><input type="radio" name="q6" id="q6c" value="c"><label for="q6c">c) Kalimat (1) dan (3) Jumlah Ismiyah, kalimat (2) Jumlah Fi'liyah</label></div>
+                        <div class="option"><input type="radio" name="q6" id="q6d" value="d"><label for="q6d">d) Kalimat (1) Jumlah Fi'liyah, kalimat (2) dan (3) Jumlah Ismiyah</label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 7: Al-Fashl -->
+                <div class="question-box" data-correct="a">
+                    <h4>
+                        <span><span class="topic-badge">Al-Fashl</span>Soal 7</span>
+                        <span class="question-type-badge badge-hots">HOTS - Kreasi</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Kasus:</strong><br>
+                        Guru ingin memberikan perintah kepada <strong>seluruh siswa di kelas</strong> (laki-laki dan perempuan) untuk membuka buku pada halaman 20.
+                    </div>
+                    <p class="question-text">Bentuk fi'il amr (kata kerja perintah) yang <strong>PALING TEPAT</strong> digunakan guru adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q7" id="q7a" value="a"><label for="q7a">a) <span class="arabic-text" style="font-size: 1.1rem;">اِفْتَحُوْا كُتُبَكُمْ عَلَى الصَّفْحَةِ الْعِشْرِيْنَ</span></label></div>
+                        <div class="option"><input type="radio" name="q7" id="q7b" value="b"><label for="q7b">b) <span class="arabic-text" style="font-size: 1.1rem;">اِفْتَحْ كِتَابَكَ عَلَى الصَّفْحَةِ الْعِشْرِيْنَ</span></label></div>
+                        <div class="option"><input type="radio" name="q7" id="q7c" value="c"><label for="q7c">c) <span class="arabic-text" style="font-size: 1.1rem;">اِفْتَحِيْ كِتَابَكِ عَلَى الصَّفْحَةِ الْعِشْرِيْنَ</span></label></div>
+                        <div class="option"><input type="radio" name="q7" id="q7d" value="d"><label for="q7d">d) <span class="arabic-text" style="font-size: 1.1rem;">يَفْتَحُوْنَ كُتُبَهُمْ عَلَى الصَّفْحَةِ الْعِشْرِيْنَ</span></label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 8: Al-Arqaam -->
+                <div class="question-box" data-correct="d">
+                    <h4>
+                        <span><span class="topic-badge">Al-Arqaam</span>Soal 8</span>
+                        <span class="question-type-badge badge-hots">HOTS - Analisis</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Teori:</strong><br>
+                        Dalam aturan angka bahasa Arab, angka 3-10 memiliki aturan khusus <strong>مُخَالَفَةُ الْعَدَدِ لِلْمَعْدُوْدِ</strong> (angka berlawanan gender dengan yang dihitung). Selain itu, ma'dud untuk angka 3-10 selalu berbentuk <strong>jamak majrur</strong>.
+                    </div>
+                    <p class="question-text">Berdasarkan teori di atas, manakah penulisan yang <strong>PALING BENAR</strong> untuk menyatakan "5 siswa" (<span class="arabic-text" style="font-size: 1.1rem;">طَالِبٌ</span> = mudzakkar)?</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q8" id="q8a" value="a"><label for="q8a">a) <span class="arabic-text" style="font-size: 1.1rem;">خَمْسَةُ طُلَّابٌ</span></label></div>
+                        <div class="option"><input type="radio" name="q8" id="q8b" value="b"><label for="q8b">b) <span class="arabic-text" style="font-size: 1.1rem;">خَمْسُ طُلَّابٍ</span></label></div>
+                        <div class="option"><input type="radio" name="q8" id="q8c" value="c"><label for="q8c">c) <span class="arabic-text" style="font-size: 1.1rem;">خَمْسَةٌ طُلَّابٍ</span></label></div>
+                        <div class="option"><input type="radio" name="q8" id="q8d" value="d"><label for="q8d">d) <span class="arabic-text" style="font-size: 1.1rem;">خَمْسَةُ طُلَّابٍ</span></label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 9: Al-Arqaam -->
+                <div class="question-box" data-correct="b">
+                    <h4>
+                        <span><span class="topic-badge">Al-Arqaam</span>Soal 9</span>
+                        <span class="question-type-badge badge-hots">HOTS - Kreasi</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Kasus:</strong><br>
+                        Dalam tugas matematika bilingual, siswa diminta menyelesaikan operasi hitung:<br>
+                        <span class="arabic-text">٢٥ + ١٧ = ؟</span>
+                    </div>
+                    <p class="question-text">Penulisan hasil operasi tersebut dalam bahasa Arab berharakat yang <strong>PALING BENAR</strong> adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q9" id="q9a" value="a"><label for="q9a">a) <span class="arabic-text" style="font-size: 1.1rem;">ثَمَانِيَةٌ وَثَلَاثُوْنَ</span> (38)</label></div>
+                        <div class="option"><input type="radio" name="q9" id="q9b" value="b"><label for="q9b">b) <span class="arabic-text" style="font-size: 1.1rem;">اثْنَانِ وَأَرْبَعُوْنَ</span> (42)</label></div>
+                        <div class="option"><input type="radio" name="q9" id="q9c" value="c"><label for="q9c">c) <span class="arabic-text" style="font-size: 1.1rem;">ثَلَاثَةٌ وَأَرْبَعُوْنَ</span> (43)</label></div>
+                        <div class="option"><input type="radio" name="q9" id="q9d" value="d"><label for="q9d">d) <span class="arabic-text" style="font-size: 1.1rem;">اِثْنَانِ وَأَرْبَعُوْنَ</span> (42)</label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 10: Al-Alwan -->
+                <div class="question-box" data-correct="c">
+                    <h4>
+                        <span><span class="topic-badge">Al-Alwan</span>Soal 10</span>
+                        <span class="question-type-badge badge-hots">HOTS - Evaluasi</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Kasus:</strong><br>
+                        Seorang siswa menulis frasa-frasa berikut:<br>
+                        <span class="arabic-text">
+                            (1) قَلَمٌ أَحْمَرُ<br>
+                            (2) سَيَّارَةٌ حَمْرَاءُ<br>
+                            (3) الْكِتَابُ الْأَزْرَقُ<br>
+                            (4) مَوْزٌ نَاضِجَةٌ
+                        </span>
+                    </div>
+                    <p class="question-text">Frasa yang mengandung <strong>KESALAHAN</strong> dalam penerapan Na'at-Man'ut adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q10" id="q10a" value="a"><label for="q10a">a) Frasa (1)</label></div>
+                        <div class="option"><input type="radio" name="q10" id="q10b" value="b"><label for="q10b">b) Frasa (2)</label></div>
+                        <div class="option"><input type="radio" name="q10" id="q10c" value="c"><label for="q10c">c) Frasa (4), seharusnya <span class="arabic-text" style="font-size: 1.1rem;">مَوْزٌ نَاضِجٌ</span> karena <span class="arabic-text" style="font-size: 1.1rem;">مَوْزٌ</span> mudzakkar</label></div>
+                        <div class="option"><input type="radio" name="q10" id="q10d" value="d"><label for="q10d">d) Semua frasa benar</label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 11: Al-Hayawanat -->
+                <div class="question-box" data-correct="a">
+                    <h4>
+                        <span><span class="topic-badge">Al-Hayawanat</span>Soal 11</span>
+                        <span class="question-type-badge badge-hots">HOTS - Analisis</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Kasus:</strong><br>
+                        Dalam kunjungan ke kebun binatang, siswa melihat beberapa hewan. Guru meminta siswa mendeskripsikan hewan-hewan tersebut dengan kalimat yang benar. Perhatikan kalimat berikut:<br>
+                        <span class="arabic-text">الْفِيْلُ حَيَوَانٌ كَبِيْرٌ وَرَمَادِيُّ اللَّوْنِ</span>
+                    </div>
+                    <p class="question-text">Analisis gramatikal yang <strong>PALING TEPAT</strong> untuk kalimat di atas adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q11" id="q11a" value="a"><label for="q11a">a) Kalimat benar secara gramatikal; <span class="arabic-text" style="font-size: 1.1rem;">كَبِيْرٌ</span> dan <span class="arabic-text" style="font-size: 1.1rem;">رَمَادِيُّ</span> sesuai dengan <span class="arabic-text" style="font-size: 1.1rem;">حَيَوَانٌ</span> (mudzakkar)</label></div>
+                        <div class="option"><input type="radio" name="q11" id="q11b" value="b"><label for="q11b">b) Kesalahan pada kata <span class="arabic-text" style="font-size: 1.1rem;">رَمَادِيُّ</span>, seharusnya <span class="arabic-text" style="font-size: 1.1rem;">رَمَادِيَّةٌ</span></label></div>
+                        <div class="option"><input type="radio" name="q11" id="q11c" value="c"><label for="q11c">c) Kesalahan pada kata <span class="arabic-text" style="font-size: 1.1rem;">الْفِيْلُ</span>, seharusnya <span class="arabic-text" style="font-size: 1.1rem;">الْفِيْلَةُ</span></label></div>
+                        <div class="option"><input type="radio" name="q11" id="q11d" value="d"><label for="q11d">d) Kalimat salah karena menggunakan bentuk ma'rifat dan nakirah bersamaan</label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 12: Al-Hayawanat -->
+                <div class="question-box" data-correct="d">
+                    <h4>
+                        <span><span class="topic-badge">Al-Hayawanat</span>Soal 12</span>
+                        <span class="question-type-badge badge-hots">HOTS - Kreasi</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Kasus:</strong><br>
+                        Ali memiliki kucing peliharaan bernama "Misyka". Ia ingin mendeskripsikan bahwa Misyka adalah kucing yang <strong>kecil, putih, dan jinak</strong>.
+                    </div>
+                    <p class="question-text">Kalimat deskripsi yang <strong>PALING TEPAT</strong> dan berharakat benar adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q12" id="q12a" value="a"><label for="q12a">a) <span class="arabic-text" style="font-size: 1.1rem;">قِطِّيْ مِشْكَاةُ، هُوَ قِطٌّ صَغِيْرٌ وَأَبْيَضٌ وَأَلِيْفٌ</span></label></div>
+                        <div class="option"><input type="radio" name="q12" id="q12b" value="b"><label for="q12b">b) <span class="arabic-text" style="font-size: 1.1rem;">قِطَّتِيْ مِشْكَاةُ، هِيَ قِطٌّ صَغِيْرَةٌ وَبَيْضَاءُ وَأَلِيْفَةٌ</span></label></div>
+                        <div class="option"><input type="radio" name="q12" id="q12c" value="c"><label for="q12c">c) <span class="arabic-text" style="font-size: 1.1rem;">قِطِّيْ مِشْكَاةُ، هِيَ قِطَّةٌ صَغِيْرٌ وَأَبْيَضٌ وَأَلِيْفٌ</span></label></div>
+                        <div class="option"><input type="radio" name="q12" id="q12d" value="d"><label for="q12d">d) <span class="arabic-text" style="font-size: 1.1rem;">قِطَّتِيْ مِشْكَاةُ، هِيَ قِطَّةٌ صَغِيْرَةٌ وَبَيْضَاءُ وَأَلِيْفَةٌ</span></label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 13: An-Nabat -->
+                <div class="question-box" data-correct="b">
+                    <h4>
+                        <span><span class="topic-badge">An-Nabat</span>Soal 13</span>
+                        <span class="question-type-badge badge-hots">HOTS - Analisis</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Kasus:</strong><br>
+                        Dalam program "Green School" di MTs Diniyah Limo Jurai, siswa menanam berbagai tanaman. Fatimah menanam tomat dan ingin mendeskripsikannya sebagai tomat yang <strong>merah, bulat, dan matang</strong>.
+                    </div>
+                    <p class="question-text">Kalimat deskripsi yang <strong>PALING TEPAT</strong> untuk tomat (<span class="arabic-text" style="font-size: 1.1rem;">طَمَاطِمٌ</span>) adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q13" id="q13a" value="a"><label for="q13a">a) <span class="arabic-text" style="font-size: 1.1rem;">طَمَاطِمَتِيْ حَمْرَاءُ وَدَائِرِيٌّ وَنَاضِجٌ</span></label></div>
+                        <div class="option"><input type="radio" name="q13" id="q13b" value="b"><label for="q13b">b) <span class="arabic-text" style="font-size: 1.1rem;">طَمَاطِمَتِيْ حَمْرَاءُ وَدَائِرِيَّةٌ وَنَاضِجَةٌ</span></label></div>
+                        <div class="option"><input type="radio" name="q13" id="q13c" value="c"><label for="q13c">c) <span class="arabic-text" style="font-size: 1.1rem;">طَمَاطِمَتِيْ أَحْمَرُ وَدَائِرِيٌّ وَنَاضِجٌ</span></label></div>
+                        <div class="option"><input type="radio" name="q13" id="q13d" value="d"><label for="q13d">d) <span class="arabic-text" style="font-size: 1.1rem;">طَمَاطِمَتِيْ أَحْمَرُ وَدَائِرِيَّةٌ وَنَاضِجَةٌ</span></label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 14: An-Nabat -->
+                <div class="question-box" data-correct="c">
+                    <h4>
+                        <span><span class="topic-badge">An-Nabat</span>Soal 14</span>
+                        <span class="question-type-badge badge-hots">HOTS - Evaluasi</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Teori:</strong><br>
+                        Dalam QS. 'Abasa: 24-32, Allah SWT menyebutkan berbagai tumbuhan sebagai nikmat bagi manusia dan hewan ternak, termasuk biji-bijian, anggur, sayur-sayuran, zaitun, dan kurma.
+                    </div>
+                    <p class="question-text">Berdasarkan ayat tersebut, fungsi tumbuhan dalam Islam adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q14" id="q14a" value="a"><label for="q14a">a) Hanya sebagai hiasan taman</label></div>
+                        <div class="option"><input type="radio" name="q14" id="q14b" value="b"><label for="q14b">b) Hanya sebagai bahan bangunan</label></div>
+                        <div class="option"><input type="radio" name="q14" id="q14c" value="c"><label for="q14c">c) Sebagai nikmat Allah untuk dikonsumsi manusia dan hewan ternak</label></div>
+                        <div class="option"><input type="radio" name="q14" id="q14d" value="d"><label for="q14d">d) Sebagai simbol kekayaan</label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 15: Al-A'da' -->
+                <div class="question-box" data-correct="a">
+                    <h4>
+                        <span><span class="topic-badge">Al-A'da'</span>Soal 15</span>
+                        <span class="question-type-badge badge-hots">HOTS - Analisis</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Kasus:</strong><br>
+                        Fatimah merasa tidak enak badan di sekolah. Ia pergi ke ruang UKS dan ingin menjelaskan bahwa ia memiliki <strong>nyeri di kepala dan telinga kanannya</strong>.
+                    </div>
+                    <p class="question-text">Ungkapan keluhan yang <strong>PALING TEPAT</strong> dan berharakat benar adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q15" id="q15a" value="a"><label for="q15a">a) <span class="arabic-text" style="font-size: 1.1rem;">عِنْدِيْ أَلَمٌ فِيْ رَأْسِيْ وَأُذُنِيْ الْيُمْنَى</span></label></div>
+                        <div class="option"><input type="radio" name="q15" id="q15b" value="b"><label for="q15b">b) <span class="arabic-text" style="font-size: 1.1rem;">عِنْدِيْ أَلَمٌ فِيْ بَطْنِيْ وَقَدَمِيْ الْيُسْرَى</span></label></div>
+                        <div class="option"><input type="radio" name="q15" id="q15c" value="c"><label for="q15c">c) <span class="arabic-text" style="font-size: 1.1rem;">عِنْدِيْ صُدَاعٌ فِيْ يَدِيْ وَرِجْلِيْ</span></label></div>
+                        <div class="option"><input type="radio" name="q15" id="q15d" value="d"><label for="q15d">d) <span class="arabic-text" style="font-size: 1.1rem;">عِنْدِيْ سُعَالٌ وَحُمَّى</span></label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 16: Al-A'da' -->
+                <div class="question-box" data-correct="d">
+                    <h4>
+                        <span><span class="topic-badge">Al-A'da'</span>Soal 16</span>
+                        <span class="question-type-badge badge-hots">HOTS - Kreasi</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Teori:</strong><br>
+                        Dalam bahasa Arab, anggota tubuh yang berpasangan (seperti mata, tangan, kaki) sering digunakan dalam bentuk <strong>Mutsanna</strong> (dual/dua) dengan akhiran <span class="arabic-text" style="font-size: 1.1rem;">ـَانِ</span> (rafa') atau <span class="arabic-text" style="font-size: 1.1rem;">ـَيْنِ</span> (nashab/jar).
+                    </div>
+                    <p class="question-text">Bentuk mutsanna dari kata <span class="arabic-text" style="font-size: 1.1rem;">عَيْنٌ</span> (mata) yang benar adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q16" id="q16a" value="a"><label for="q16a">a) <span class="arabic-text" style="font-size: 1.1rem;">أَعْيُنٌ</span></label></div>
+                        <div class="option"><input type="radio" name="q16" id="q16b" value="b"><label for="q16b">b) <span class="arabic-text" style="font-size: 1.1rem;">عَيْنُوْنَ</span></label></div>
+                        <div class="option"><input type="radio" name="q16" id="q16c" value="c"><label for="q16c">c) <span class="arabic-text" style="font-size: 1.1rem;">عَيْنَاتَانِ</span></label></div>
+                        <div class="option"><input type="radio" name="q16" id="q16d" value="d"><label for="q16d">d) <span class="arabic-text" style="font-size: 1.1rem;">عَيْنَانِ</span></label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 17: Al-Mawaqi' -->
+                <div class="question-box" data-correct="b">
+                    <h4>
+                        <span><span class="topic-badge">Al-Mawaqi'</span>Soal 17</span>
+                        <span class="question-type-badge badge-hots">HOTS - Analisis</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Kasus:</strong><br>
+                        Seorang tamu tersesat di desa Limo Jurai dan bertanya arah kepada Ali. Ali ingin memberikan petunjuk yang jelas dan sopan.
+                    </div>
+                    <p class="question-text">Ungkapan kesopanan yang <strong>PALING TEPAT</strong> untuk Ali gunakan sebelum memberi petunjuk adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q17" id="q17a" value="a"><label for="q17a">a) <span class="arabic-text" style="font-size: 1.1rem;">مَعًا السَّلَامَة</span></label></div>
+                        <div class="option"><input type="radio" name="q17" id="q17b" value="b"><label for="q17b">b) <span class="arabic-text" style="font-size: 1.1rem;">لَوْ سَمَحْتَ، اِذْهَبْ عَلَى طُوْلِ هٰذَا الشَّارِعِ</span></label></div>
+                        <div class="option"><input type="radio" name="q17" id="q17c" value="c"><label for="q17c">c) <span class="arabic-text" style="font-size: 1.1rem;">شُكْرًا جَزِيْلًا</span></label></div>
+                        <div class="option"><input type="radio" name="q17" id="q17d" value="d"><label for="q17d">d) <span class="arabic-text" style="font-size: 1.1rem;">عَفْوًا، لَا أَعْرِفُ</span></label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 18: Al-A'mal -->
+                <div class="question-box" data-correct="c">
+                    <h4>
+                        <span><span class="topic-badge">Al-A'mal</span>Soal 18</span>
+                        <span class="question-type-badge badge-hots">HOTS - Evaluasi</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Kasus:</strong><br>
+                        Ahmad ingin menceritakan profesi ayahnya dan cita-citanya sendiri:<br>
+                        <span class="arabic-text">أَبِيْ فَلاَّحٌ، يَزْرَعُ الْأَرُزَّ فِي الْحَقْلِ. أَنَا أُرِيْدُ أَنْ أَكُوْنَ طَبِيْبًا</span>
+                    </div>
+                    <p class="question-text">Evaluasi yang <strong>PALING TEPAT</strong> terhadap kalimat di atas adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q18" id="q18a" value="a"><label for="q18a">a) Kesalahan pada kata <span class="arabic-text" style="font-size: 1.1rem;">فَلاَّحٌ</span>, seharusnya <span class="arabic-text" style="font-size: 1.1rem;">فَلَّاحٌ</span></label></div>
+                        <div class="option"><input type="radio" name="q18" id="q18b" value="b"><label for="q18b">b) Kesalahan pada kata <span class="arabic-text" style="font-size: 1.1rem;">يَزْرَعُ</span>, seharusnya <span class="arabic-text" style="font-size: 1.1rem;">زَرَعَ</span></label></div>
+                        <div class="option"><input type="radio" name="q18" id="q18c" value="c"><label for="q18c">c) Kalimat benar secara gramatikal; menggunakan fi'il mudhari' untuk aktivitas rutin dan <span class="arabic-text" style="font-size: 1.1rem;">أُرِيْدُ أَنْ أَكُوْنَ</span> untuk cita-cita</label></div>
+                        <div class="option"><input type="radio" name="q18" id="q18d" value="d"><label for="q18d">d) Kesalahan pada kata <span class="arabic-text" style="font-size: 1.1rem;">طَبِيْبًا</span>, seharusnya <span class="arabic-text" style="font-size: 1.1rem;">طَبِيْبٌ</span></label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 19: Al-A'mal -->
+                <div class="question-box" data-correct="a">
+                    <h4>
+                        <span><span class="topic-badge">Al-A'mal</span>Soal 19</span>
+                        <span class="question-type-badge badge-hots">HOTS - Kreasi</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Teori:</strong><br>
+                        Fi'il mudhari' (kata kerja sekarang) berubah sesuai dengan dhamir (kata ganti). Untuk dhamir <span class="arabic-text" style="font-size: 1.1rem;">نَحْنُ</span> (kami), fi'il mudhari' mendapat awalan <span class="arabic-text" style="font-size: 1.1rem;">نَـ</span>.
+                    </div>
+                    <p class="question-text">Bentuk fi'il mudhari' dari kata kerja <span class="arabic-text" style="font-size: 1.1rem;">يَدْرُسُ</span> untuk dhamir <span class="arabic-text" style="font-size: 1.1rem;">نَحْنُ</span> adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q19" id="q19a" value="a"><label for="q19a">a) <span class="arabic-text" style="font-size: 1.1rem;">نَدْرُسُ</span></label></div>
+                        <div class="option"><input type="radio" name="q19" id="q19b" value="b"><label for="q19b">b) <span class="arabic-text" style="font-size: 1.1rem;">تَدْرُسُوْنَ</span></label></div>
+                        <div class="option"><input type="radio" name="q19" id="q19c" value="c"><label for="q19c">c) <span class="arabic-text" style="font-size: 1.1rem;">يَدْرُسُوْنَ</span></label></div>
+                        <div class="option"><input type="radio" name="q19" id="q19d" value="d"><label for="q19d">d) <span class="arabic-text" style="font-size: 1.1rem;">أَدْرُسُ</span></label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 20: Al-Anasyid -->
+                <div class="question-box" data-correct="d">
+                    <h4>
+                        <span><span class="topic-badge">Al-Anasyid</span>Soal 20</span>
+                        <span class="question-type-badge badge-hots">HOTS - Analisis</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Kasus:</strong><br>
+                        Dalam pembelajaran Bahasa Arab melalui nasyid, siswa menyanyikan syair berikut:<br>
+                        <span class="arabic-text">
+                            وَطَنِيْ وَطَنِيْ حَبِيْبِيْ<br>
+                            فِيْكَ نَعِيْشُ بِأَمَانْ<br>
+                            نَدْرُسُ وَنَعْمَلُ بِجِدٍّ<br>
+                            لِنَبْنِيَ الْوَطَنَ الْغَالِيْ
+                        </span>
+                    </div>
+                    <p class="question-text">Makna yang <strong>PALING TEPAT</strong> dari bait nasyid di atas adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q20" id="q20a" value="a"><label for="q20a">a) Nasyid tentang cinta kepada Rasulullah SAW</label></div>
+                        <div class="option"><input type="radio" name="q20" id="q20b" value="b"><label for="q20b">b) Nasyid tentang semangat menuntut ilmu agama</label></div>
+                        <div class="option"><input type="radio" name="q20" id="q20c" value="c"><label for="q20c">c) Nasyid tentang keindahan alam</label></div>
+                        <div class="option"><input type="radio" name="q20" id="q20d" value="d"><label for="q20d">d) Nasyid tentang cinta tanah air, semangat belajar, dan bekerja untuk membangun bangsa</label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 21: Integrasi (At-Ta'aruf + Al-Usrah) -->
+                <div class="question-box" data-correct="b">
+                    <h4>
+                        <span><span class="topic-badge">Integrasi</span>Soal 21</span>
+                        <span class="question-type-badge badge-hots">HOTS - Kreasi</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Kasus:</strong><br>
+                        Seorang siswa ingin memperkenalkan diri dan keluarganya secara lengkap dalam satu paragraf bahasa Arab. Ia ingin menyebutkan: nama, usia, anggota keluarga, dan profesi orang tua.
+                    </div>
+                    <p class="question-text">Paragraf yang <strong>PALING LENGKAP</strong> dan berharakat benar adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q21" id="q21a" value="a"><label for="q21a">a) <span class="arabic-text" style="font-size: 1.1rem;">اِسْمِيْ أَحْمَدُ، عُمْرِيْ ثَلَاثَ عَشْرَةَ سَنَةً</span></label></div>
+                        <div class="option"><input type="radio" name="q21" id="q21b" value="b"><label for="q21b">b) <span class="arabic-text" style="font-size: 1.1rem;">اِسْمِيْ أَحْمَدُ، عُمْرِيْ ثَلَاثَ عَشْرَةَ سَنَةً، أُسْرَتِيْ خَمْسَةُ أَفْرَادٍ، أَبِيْ مُعَلِّمٌ وَأُمِّيْ رَبَّةُ بَيْتٍ</span></label></div>
+                        <div class="option"><input type="radio" name="q21" id="q21c" value="c"><label for="q21c">c) <span class="arabic-text" style="font-size: 1.1rem;">أَنَا مِنْ لِيْمُوْ جُوْرَايْ، أَسْكُنُ مَعَ أُسْرَتِيْ</span></label></div>
+                        <div class="option"><input type="radio" name="q21" id="q21d" value="d"><label for="q21d">d) <span class="arabic-text" style="font-size: 1.1rem;">أُحِبُّ أُسْرَتِيْ كَثِيْرًا، هِيَ أُسْرَةٌ سَعِيْدَةٌ</span></label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 22: Integrasi (Al-Bait + Al-Alwan) -->
+                <div class="question-box" data-correct="c">
+                    <h4>
+                        <span><span class="topic-badge">Integrasi</span>Soal 22</span>
+                        <span class="question-type-badge badge-hots">HOTS - Evaluasi</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Kasus:</strong><br>
+                        Seorang siswa menulis deskripsi rumah dengan warna:<br>
+                        <span class="arabic-text">بَيْتِيْ كَبِيْرٌ وَجَمِيْلٌ، الْجُدْرَانُ بَيْضَاءُ، وَالسَّقْفُ أَحْمَرُ</span>
+                    </div>
+                    <p class="question-text">Evaluasi yang <strong>PALING TEPAT</strong> terhadap kalimat di atas adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q22" id="q22a" value="a"><label for="q22a">a) Kesalahan pada kata <span class="arabic-text" style="font-size: 1.1rem;">بَيْتِيْ</span></label></div>
+                        <div class="option"><input type="radio" name="q22" id="q22b" value="b"><label for="q22b">b) Kesalahan pada kata <span class="arabic-text" style="font-size: 1.1rem;">السَّقْفُ</span></label></div>
+                        <div class="option"><input type="radio" name="q22" id="q22c" value="c"><label for="q22c">c) Kalimat benar secara gramatikal; <span class="arabic-text" style="font-size: 1.1rem;">الْجُدْرَانُ</span> (dinding-dinding) muannats jamak sehingga <span class="arabic-text" style="font-size: 1.1rem;">بَيْضَاءُ</span> sesuai, dan <span class="arabic-text" style="font-size: 1.1rem;">السَّقْفُ</span> mudzakkar sehingga <span class="arabic-text" style="font-size: 1.1rem;">أَحْمَرُ</span> sesuai</label></div>
+                        <div class="option"><input type="radio" name="q22" id="q22d" value="d"><label for="q22d">d) Kesalahan pada penggunaan warna</label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 23: Integrasi (Al-Madrasah + Al-A'mal) -->
+                <div class="question-box" data-correct="a">
+                    <h4>
+                        <span><span class="topic-badge">Integrasi</span>Soal 23</span>
+                        <span class="question-type-badge badge-hots">HOTS - Analisis</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Kasus:</strong><br>
+                        Dalam tugas mendeskripsikan madrasah, siswa menulis:<br>
+                        <span class="arabic-text">الْمُعَلِّمُوْنَ يُعَلِّمُوْنَ الطُّلَّابَ فِي الْفَصْلِ، وَالْمُدِيْرُ يَعْمَلُ فِي الْمَكْتَبِ</span>
+                    </div>
+                    <p class="question-text">Analisis gramatikal yang <strong>PALING TEPAT</strong> untuk kalimat di atas adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q23" id="q23a" value="a"><label for="q23a">a) Kalimat benar; menggunakan fi'il mudhari' jamak untuk guru-guru dan fi'il mudhari' mufrad untuk kepala sekolah</label></div>
+                        <div class="option"><input type="radio" name="q23" id="q23b" value="b"><label for="q23b">b) Kesalahan pada kata <span class="arabic-text" style="font-size: 1.1rem;">يُعَلِّمُوْنَ</span>, seharusnya <span class="arabic-text" style="font-size: 1.1rem;">يُعَلِّمُوْنَ</span></label></div>
+                        <div class="option"><input type="radio" name="q23" id="q23c" value="c"><label for="q23c">c) Kesalahan pada kata <span class="arabic-text" style="font-size: 1.1rem;">الطُّلَّابَ</span>, seharusnya <span class="arabic-text" style="font-size: 1.1rem;">الطُّلَّابُ</span></label></div>
+                        <div class="option"><input type="radio" name="q23" id="q23d" value="d"><label for="q23d">d) Kesalahan pada kata <span class="arabic-text" style="font-size: 1.1rem;">الْمَكْتَبِ</span>, seharusnya <span class="arabic-text" style="font-size: 1.1rem;">الْمَكْتَبُ</span></label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 24: Integrasi (An-Nabat + Al-Hayawanat) -->
+                <div class="question-box" data-correct="d">
+                    <h4>
+                        <span><span class="topic-badge">Integrasi</span>Soal 24</span>
+                        <span class="question-type-badge badge-hots">HOTS - Kreasi</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Kasus:</strong><br>
+                        Dalam program "Green School", siswa tidak hanya menanam tanaman tetapi juga mengamati hewan-hewan di sekitar kebun sekolah. Seorang siswa ingin mendeskripsikan bahwa <strong>burung-burung makan biji-bijian di pohon</strong>.
+                    </div>
+                    <p class="question-text">Kalimat yang <strong>PALING TEPAT</strong> dan berharakat benar adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q24" id="q24a" value="a"><label for="q24a">a) <span class="arabic-text" style="font-size: 1.1rem;">الطُّيُوْرُ يَأْكُلُ الْبُذُوْرَ فِي الشَّجَرَةِ</span></label></div>
+                        <div class="option"><input type="radio" name="q24" id="q24b" value="b"><label for="q24b">b) <span class="arabic-text" style="font-size: 1.1rem;">الطَّائِرُ يَأْكُلُ الْبِذْرَةَ عَلَى الشَّجَرَةِ</span></label></div>
+                        <div class="option"><input type="radio" name="q24" id="q24c" value="c"><label for="q24c">c) <span class="arabic-text" style="font-size: 1.1rem;">الطُّيُوْرُ تَأْكُلُ الْبِذْرَةَ فِي الشَّجَرَةِ</span></label></div>
+                        <div class="option"><input type="radio" name="q24" id="q24d" value="d"><label for="q24d">d) <span class="arabic-text" style="font-size: 1.1rem;">الطُّيُوْرُ تَأْكُلُ الْبُذُوْرَ فِي الشَّجَرَةِ</span></label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+
+                <!-- Soal 25: Integrasi (Semua Materi) -->
+                <div class="question-box" data-correct="b">
+                    <h4>
+                        <span><span class="topic-badge">Integrasi</span>Soal 25</span>
+                        <span class="question-type-badge badge-hots">HOTS - Evaluasi</span>
+                    </h4>
+                    <div class="stimulus-box">
+                        <strong>📖 Narasi Kasus:</strong><br>
+                        Dalam konteks Pendidikan Islam, pembelajaran Bahasa Arab memiliki kekhasan yang membedakannya dari pembelajaran bahasa asing lainnya.
+                    </div>
+                    <p class="question-text">Pernyataan yang <strong>PALING TEPAT</strong> tentang relevansi pembelajaran Bahasa Arab dalam Pendidikan Islam adalah...</p>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q25" id="q25a" value="a"><label for="q25a">a) Bahasa Arab hanya penting untuk membaca Al-Qur'an</label></div>
+                        <div class="option"><input type="radio" name="q25" id="q25b" value="b"><label for="q25b">b) Bahasa Arab adalah bahasa Al-Qur'an dan Hadis, sehingga penguasaannya membantu memahami sumber hukum Islam secara langsung dan mendalam</label></div>
+                        <div class="option"><input type="radio" name="q25" id="q25c" value="c"><label for="q25c">c) Bahasa Arab hanya penting untuk berkomunikasi dengan orang Arab</label></div>
+                        <div class="option"><input type="radio" name="q25" id="q25d" value="d"><label for="q25d">d) Bahasa Arab tidak relevan dengan kehidupan modern</label></div>
+                    </div>
+                    <div class="feedback"></div>
+                </div>
+            </section>
+
+            <!-- ========================================= -->
+            <!-- BAGIAN B: ESSAY (15 SOAL) -->
+            <!-- ========================================= -->
+            <section class="form-section">
+                <h3>✍️ Bagian B – Essay <span class="section-badge">15 Soal × 20 = 300</span></h3>
+                <div class="warning-box">
+                    ⚠️ Jawablah dengan kalimat yang jelas, lengkap, dan berharakat (untuk tulisan Arab). Setiap soal bernilai 20 poin.
+                </div>
+
+                <div class="essay-box">
+                    <h4><span class="topic-badge">At-Ta'aruf</span>Soal Essay 1</h4>
+                    <p class="question-text">Buatlah sebuah dialog perkenalan antara dua orang siswa baru (Ahmad dan Fatimah) di MTs Diniyah Limo Jurai minimal 12 kalimat, lengkap dengan tulisan Arab berharakat dan terjemahannya! Dialog harus mencakup: salam, nama, usia, asal, hobi, dan harapan belajar.</p>
+                    <textarea name="essay1" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="essay-box">
+                    <h4><span class="topic-badge">Al-Unwan</span>Soal Essay 2</h4>
+                    <p class="question-text">Tuliskan alamat lengkap rumah Anda dalam bahasa Arab berharakat dengan format: nomor rumah, jalan, desa, kecamatan, kabupaten! Kemudian buatlah 4 kalimat yang menjelaskan posisi rumah Anda menggunakan preposisi tempat (<span class="arabic-text" style="font-size: 1.1rem;">أَمَامَ، خَلْفَ، بِجَانِبِ، بَيْنَ</span>)!</p>
+                    <textarea name="essay2" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="essay-box">
+                    <h4><span class="topic-badge">Al-Usrah</span>Soal Essay 3</h4>
+                    <p class="question-text">Jelaskan perbedaan antara <span class="arabic-text" style="font-size: 1.1rem;">الْعَمُّ</span> dan <span class="arabic-text" style="font-size: 1.1rem;">الْخَالُ</span>, serta antara <span class="arabic-text" style="font-size: 1.1rem;">الْعَمَّةُ</span> dan <span class="arabic-text" style="font-size: 1.1rem;">الْخَالَةُ</span>! Buatlah silsilah keluarga sederhana Anda dalam bahasa Arab berharakat minimal 8 anggota keluarga!</p>
+                    <textarea name="essay3" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="essay-box">
+                    <h4><span class="topic-badge">Al-Bait</span>Soal Essay 4</h4>
+                    <p class="question-text">Deskripsikan rumah Anda dalam bahasa Arab berharakat minimal 10 kalimat! Sertakan: ukuran rumah, jumlah ruangan, nama-nama ruangan, perabot di setiap ruangan, dan warna dinding. Perhatikan kesesuaian gender antara isim dan shifat (Na'at-Man'ut)!</p>
+                    <textarea name="essay4" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="essay-box">
+                    <h4><span class="topic-badge">Al-Madrasah</span>Soal Essay 5</h4>
+                    <p class="question-text">Sebutkan minimal 12 fasilitas di MTs Diniyah Limo Jurai dalam bahasa Arab berharakat! Kemudian buatlah 6 kalimat menggunakan fi'il mudhari' yang menggambarkan aktivitas siswa di madrasah!</p>
+                    <textarea name="essay5" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="essay-box">
+                    <h4><span class="topic-badge">Al-Fashl</span>Soal Essay 6</h4>
+                    <p class="question-text">Tuliskan 10 peraturan kelas dalam bahasa Arab berharakat menggunakan struktur <span class="arabic-text" style="font-size: 1.1rem;">يَجِبُ...</span> (harus) dan <span class="arabic-text" style="font-size: 1.1rem;">مَمْنُوْعُ...</span> (dilarang)! Jelaskan juga adab yang harus diperhatikan siswa saat berinteraksi dengan guru di kelas!</p>
+                    <textarea name="essay6" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="essay-box">
+                    <h4><span class="topic-badge">Al-Arqaam</span>Soal Essay 7</h4>
+                    <p class="question-text">Jelaskan aturan <strong>مُخَالَفَةُ الْعَدَدِ لِلْمَعْدُوْدِ</strong> dalam bahasa Arab! Berikan 6 contoh kalimat yang menunjukkan aturan tersebut (3 untuk ma'dud mudzakkar dan 3 untuk ma'dud muannats)! Kemudian tuliskan angka 1-20 berharakat lengkap!</p>
+                    <textarea name="essay7" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="essay-box">
+                    <h4><span class="topic-badge">Al-Alwan</span>Soal Essay 8</h4>
+                    <p class="question-text">Tuliskan 10 kosakata warna dalam bahasa Arab berharakat lengkap, beserta bentuk mudzakkar dan muannats-nya! Kemudian buatlah 5 kalimat deskripsi benda berdasarkan warna yang menunjukkan penerapan Na'at-Man'ut dengan benar!</p>
+                    <textarea name="essay8" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="essay-box">
+                    <h4><span class="topic-badge">Al-Hayawanat</span>Soal Essay 9</h4>
+                    <p class="question-text">Buatlah sebuah dialog singkat (minimal 10 kalimat) antara dua orang siswa yang sedang berkunjung ke kebun binatang (<span class="arabic-text" style="font-size: 1.1rem;">حَدِيْقَةُ الْحَيَوَانَاتِ</span>), lengkap dengan tulisan Arab berharakat dan terjemahannya! Dialog harus mendeskripsikan minimal 5 hewan dengan ciri-cirinya!</p>
+                    <textarea name="essay9" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="essay-box">
+                    <h4><span class="topic-badge">An-Nabat</span>Soal Essay 10</h4>
+                    <p class="question-text">Sebutkan dan jelaskan 8 bagian tumbuhan dalam bahasa Arab berharakat beserta fungsinya masing-masing! Kemudian buatlah 4 kalimat deskripsi tentang tumbuhan favorit Anda dengan menerapkan aturan Na'at-Man'ut!</p>
+                    <textarea name="essay10" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="essay-box">
+                    <h4><span class="topic-badge">Al-A'da'</span>Soal Essay 11</h4>
+                    <p class="question-text">Jelaskan aturan pembentukan kata bentuk <strong>Mutsanna</strong> (dual) dalam bahasa Arab! Berikan 6 contoh perubahan dari bentuk Mufrad ke Mutsanna pada anggota tubuh beserta contoh kalimat singkatnya! Kemudian tuliskan doa yang dianjurkan dibaca saat merasakan sakit pada anggota tubuh!</p>
+                    <textarea name="essay11" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="essay-box">
+                    <h4><span class="topic-badge">Al-Mawaqi'</span>Soal Essay 12</h4>
+                    <p class="question-text">Buatlah sebuah dialog singkat (minimal 10 kalimat) antara seorang tamu yang bertanya arah dan penduduk lokal yang memberi petunjuk ke sebuah tempat, lengkap dengan tulisan Arab berharakat dan terjemahannya! Dialog harus mencakup: salam, pertanyaan arah, jawaban dengan preposisi tempat, ungkapan terima kasih, dan ungkapan kesopanan!</p>
+                    <textarea name="essay12" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="essay-box">
+                    <h4><span class="topic-badge">Al-A'mal</span>Soal Essay 13</h4>
+                    <p class="question-text">Tuliskan 15 nama profesi dalam bahasa Arab berharakat lengkap, beserta bentuk mudzakkar dan muannats-nya (jika berbeda)! Kemudian buatlah 5 kalimat deskripsi pekerjaan orang tua atau anggota keluarga dengan menerapkan fi'il mudhari'!</p>
+                    <textarea name="essay13" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="essay-box">
+                    <h4><span class="topic-badge">Al-Anasyid</span>Soal Essay 14</h4>
+                    <p class="question-text">Jelaskan 4 manfaat utama belajar bahasa Arab melalui metode anasyid (nasyid)! Sebutkan 8 kosakata berharakat yang sering muncul dalam nasyid bertema "Semangat Belajar" beserta artinya! Kemudian terjemahkan syair berikut ke dalam bahasa Indonesia:<br>
+                    <span class="arabic-text" style="display: block; margin: 15px 0; background: #fff; padding: 15px; border-radius: 8px; color: #1b5e20;">
+                        وَطَنِيْ وَطَنِيْ حَبِيْبِيْ<br>
+                        فِيْكَ نَعِيْشُ بِأَمَانْ<br>
+                        نَدْرُسُ وَنَعْمَلُ بِجِدٍّ<br>
+                        لِنَبْنِيَ الْوَطَنَ الْغَالِيْ
+                    </span></p>
+                    <textarea name="essay14" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+
+                <div class="essay-box">
+                    <h4><span class="topic-badge">Integrasi</span>Soal Essay 15</h4>
+                    <p class="question-text">Buatlah sebuah teks deskriptif dalam bahasa Arab berharakat minimal 20 kalimat yang mengintegrasikan materi <strong>At-Ta'aruf, Al-Unwan, Al-Usrah, Al-Bait, Al-Madrasah, dan Al-A'mal</strong>! Teks harus bercerita tentang: diri Anda, alamat rumah Anda, anggota keluarga Anda, rumah Anda, madrasah Anda, dan cita-cita Anda di masa depan. Hubungkan juga dengan minimal 2 nilai keislaman yang relevan!</p>
+                    <textarea name="essay15" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection">
+                <h3>📊 Hasil Ujian Akhir Semester</h3>
+                <p>Terima kasih telah menyelesaikan UAS Bahasa Arab Kelas 7!</p>
+                
+                <div class="score-grid">
+                    <div class="score-card">
+                        <h4>Bagian A (PG HOTS)</h4>
+                        <div class="score-value" id="scoreA">0</div>
+                        <div class="score-max">/ 250</div>
+                    </div>
+                    <div class="score-card">
+                        <h4>Bagian B (Essay)</h4>
+                        <div class="score-value" id="scoreB">0</div>
+                        <div class="score-max">/ 300</div>
+                    </div>
+                    <div class="score-card">
+                        <h4>Skor Total</h4>
+                        <div class="score-value" id="scoreTotal">0</div>
+                        <div class="score-max">/ 550</div>
+                    </div>
+                    <div class="score-card">
+                        <h4>Nilai Akhir</h4>
+                        <div class="score-value" id="nilaiAkhir">0</div>
+                        <div class="score-max">/ 100</div>
+                    </div>
+                </div>
+
+                <div class="grade" id="grade">-</div>
+                <p id="gradeText" style="font-size: 1.2rem; color: var(--primary); font-weight: 600;"></p>
+
+                <div class="action-buttons">
+                    <button type="button" class="btn btn-primary" onclick="unduhPDF()">📥 UNDUH PDF LENGKAP</button>
+                    <button type="button" class="btn btn-outline" onclick="unduhSkor()">📊 UNDUH SKOR SAJA</button>
+                    <button type="button" class="btn btn-primary" onclick="kirimEmailGuru()">✉️ Kirim Email Guru</button>
+                    <button type="button" class="btn btn-danger" onclick="mulaiUlang()">🔄 MULAI ULANG</button>
+                </div>
+            </section>
+
+            <div class="action-buttons" id="submitButtons">
+                <button type="button" class="btn btn-success" onclick="kirimJawaban()" style="padding: 15px 40px; font-size: 1.1rem;">
+                    ✉️ KIRIM JAWABAN & LIHAT HASIL
+                </button>
+            </div>
+
+        </form>
+
+        <div class="action-buttons" style="margin: 40px 0;">
+            <a href="index.html" class="btn btn-outline">🏠 Kembali ke Beranda</a>
+            <a href="15.html" class="btn btn-outline">📖 Kembali ke Materi Pertemuan 15</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>كِتَابُ اللُّغَةِ الْعَرَبِيَّةِ</h3>
+                    <p style="color: #ccc; line-height: 1.8;">
+                        Buku daras untuk siswa MTs. Menguasai bahasa Arab dengan metode modern, interaktif, dan berlandaskan nilai-nilai keislaman.
+                    </p>
+                </div>
+                <div>
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="index.html#pertemuan">Daftar Pertemuan</a></li>
+                        <li><a href="index.html#penulis">Tentang Penulis</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontak Penulis</h4>
+                    <ul>
+                        <li>👤 Fauzi Ilmi Al-Khairi, S.H.</li>
+                        <li>🏫 MTs Swasta Diniyah Limo Jurai Sungai Pua</li>
+                        <li>✉️ <a href="mailto:fauziilmialkhairi@gmail.com">fauziilmialkhairi@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Fauzi Ilmi Al-Khairi, S.H. Hak cipta dilindungi undang-undang.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">Dikembangkan untuk kebutuhan pembelajaran Bahasa Arab di MTs Swasta Diniyah Limo Jurai Sungai Pua.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Kunci Jawaban PG HOTS (25 soal)
+        const kunciPG = {
+            q1: 'c', q2: 'b', q3: 'd', q4: 'a', q5: 'b',
+            q6: 'c', q7: 'a', q8: 'd', q9: 'b', q10: 'c',
+            q11: 'a', q12: 'd', q13: 'b', q14: 'c', q15: 'a',
+            q16: 'd', q17: 'b', q18: 'c', q19: 'a', q20: 'd',
+            q21: 'b', q22: 'c', q23: 'a', q24: 'd', q25: 'b'
+        };
+
+        let hasilUjian = {};
+        let dataSiswa = {};
+
+        function kirimJawaban() {
+            const nama = document.getElementById('nama').value.trim();
+            const nis = document.getElementById('nis').value.trim();
+            
+            if (!nama || !nis) {
+                alert('⚠️ Mohon lengkapi Nama Lengkap dan NIS terlebih dahulu!');
+                return;
+            }
+
+            // ===== HITUNG BAGIAN A: PG HOTS =====
+            let skorA = 0;
+            for (let i = 1; i <= 25; i++) {
+                const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+                const questionBox = document.querySelector(`.question-box[data-correct="${kunciPG[`q${i}`]}"]`);
+                const feedback = questionBox.querySelector('.feedback');
+                
+                if (!jawaban) {
+                    feedback.className = 'feedback wrong show';
+                    feedback.innerHTML = `⚠️ <strong>Belum dijawab!</strong> Jawaban yang benar: <strong>${kunciPG[`q${i}`].toUpperCase()}</strong>`;
+                    continue;
+                }
+
+                if (jawaban.value === kunciPG[`q${i}`]) {
+                    skorA += 10;
+                    const selectedOption = jawaban.closest('.option');
+                    selectedOption.classList.add('correct');
+                    feedback.className = 'feedback correct show';
+                    feedback.innerHTML = '✅ <strong>Benar!</strong> Jawaban Anda tepat.';
+                } else {
+                    const selectedOption = jawaban.closest('.option');
+                    selectedOption.classList.add('wrong');
+                    feedback.className = 'feedback wrong show';
+                    feedback.innerHTML = `❌ <strong>Salah.</strong> Jawaban yang benar: <strong>${kunciPG[`q${i}`].toUpperCase()}</strong>`;
+                }
+            }
+
+            // ===== HITUNG BAGIAN B: ESSAY =====
+            let skorB = 0;
+            for (let i = 1; i <= 15; i++) {
+                const essay = document.querySelector(`textarea[name="essay${i}"]`).value.trim();
+                const panjang = essay.length;
+                let nilai = 0;
+                if (panjang > 300) nilai = 20;
+                else if (panjang > 200) nilai = 15;
+                else if (panjang > 100) nilai = 10;
+                else if (panjang > 50) nilai = 5;
+                skorB += nilai;
+            }
+
+            const skorTotal = skorA + skorB;
+            const nilaiAkhir = Math.round((skorTotal / 550) * 100);
+
+            dataSiswa = {
+                nama: nama,
+                nis: nis,
+                tanggal: document.getElementById('tanggal').value || new Date().toLocaleDateString('id-ID'),
+                kelas: document.getElementById('kelas').value || '-',
+                skorA, skorB, skorTotal, nilaiAkhir
+            };
+
+            document.getElementById('scoreA').textContent = skorA;
+            document.getElementById('scoreB').textContent = skorB;
+            document.getElementById('scoreTotal').textContent = skorTotal;
+            document.getElementById('nilaiAkhir').textContent = nilaiAkhir;
+
+            let predikat = '', gradeText = '';
+            if (nilaiAkhir >= 90) { predikat = 'A'; gradeText = '🏆 Sangat Baik (Mumtaz)!'; }
+            else if (nilaiAkhir >= 80) { predikat = 'B'; gradeText = '🌟 Baik (Jayyid Jiddan)!'; }
+            else if (nilaiAkhir >= 70) { predikat = 'C'; gradeText = '👍 Cukup (Jayyid)!'; }
+            else if (nilaiAkhir >= 60) { predikat = 'D'; gradeText = '📚 Kurang (Maqbul)!'; }
+            else { predikat = 'E'; gradeText = '⚠️ Perlu Perbaikan (Raasib)!'; }
+
+            document.getElementById('grade').textContent = predikat;
+            document.getElementById('gradeText').textContent = gradeText;
+
+            document.getElementById('resultsSection').classList.add('show');
+            document.getElementById('submitButtons').style.display = 'none';
+            document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function unduhPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const d = dataSiswa;
+
+            doc.setFontSize(16);
+            doc.text('HASIL UJIAN AKHIR SEMESTER (UAS)', 105, 20, { align: 'center' });
+            doc.setFontSize(12);
+            doc.text('Bahasa Arab Kelas 7 - Semester 1', 105, 30, { align: 'center' });
+            doc.text('MTs Swasta Diniyah Limo Jurai Sungai Pua', 105, 38, { align: 'center' });
+
+            let y = 55;
+            doc.setFontSize(11);
+            doc.text(`Nama Lengkap : ${d.nama}`, 20, y); y += 8;
+            doc.text(`NIS            : ${d.nis}`, 20, y); y += 8;
+            doc.text(`Kelas           : ${d.kelas}`, 20, y); y += 8;
+            doc.text(`Tanggal        : ${d.tanggal}`, 20, y); y += 15;
+
+            doc.setFontSize(12);
+            doc.setFont(undefined, 'bold');
+            doc.text('RINCIAN SKOR:', 20, y); y += 10;
+            doc.setFont(undefined, 'normal');
+            doc.setFontSize(11);
+            doc.text(`Bagian A (PG HOTS)    : ${d.skorA} / 250`, 20, y); y += 8;
+            doc.text(`Bagian B (Essay)         : ${d.skorB} / 300`, 20, y); y += 8;
+            doc.text(`SKOR TOTAL                : ${d.skorTotal} / 550`, 20, y); y += 8;
+            doc.text(`NILAI AKHIR                : ${d.nilaiAkhir} / 100`, 20, y); y += 8;
+            doc.text(`PREDIKAT                    : ${document.getElementById('grade').textContent} (${document.getElementById('gradeText').textContent})`, 20, y); y += 15;
+
+            doc.setFontSize(9);
+            doc.text('Guru: Fauzi Ilmi Al-Khairi, S.H.', 105, y, { align: 'center' });
+
+            doc.save(`UAS-B-Arab-${d.nama.replace(/\s+/g, '-')}.pdf`);
+        }
+
+        function unduhSkor() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const d = dataSiswa;
+
+            doc.setFontSize(16);
+            doc.text('LEMBAR SKOR UAS', 105, 20, { align: 'center' });
+            doc.setFontSize(12);
+            doc.text('Bahasa Arab Kelas 7', 105, 30, { align: 'center' });
+
+            let y = 55;
+            doc.setFontSize(11);
+            doc.text(`Nama : ${d.nama}`, 20, y); y += 8;
+            doc.text(`NIS    : ${d.nis}`, 20, y); y += 15;
+
+            doc.setFontSize(14);
+            doc.setFont(undefined, 'bold');
+            doc.text(`Skor Total : ${d.skorTotal} / 550`, 20, y); y += 10;
+            doc.text(`Nilai Akhir : ${d.nilaiAkhir} / 100`, 20, y); y += 10;
+            doc.text(`Predikat : ${document.getElementById('grade').textContent}`, 20, y);
+
+            doc.save(`Skor-UAS-${d.nama.replace(/\s+/g, '-')}.pdf`);
+        }
+
+        function kirimEmailGuru() {
+            const d = dataSiswa;
+            const subject = encodeURIComponent(`Hasil UAS Bahasa Arab - ${d.nama}`);
+            const body = encodeURIComponent(
+                `Assalamu'alaikum Wr. Wb.\n\n` +
+                `Berikut hasil UAS Bahasa Arab Kelas 7:\n\n` +
+                `Nama : ${d.nama}\nNIS : ${d.nis}\nKelas : ${d.kelas}\nTanggal : ${d.tanggal}\n\n` +
+                `RINCIAN SKOR:\n` +
+                `- Bagian A (PG HOTS) : ${d.skorA}/250\n` +
+                `- Bagian B (Essay) : ${d.skorB}/300\n` +
+                `- TOTAL : ${d.skorTotal}/550\n` +
+                `- NILAI AKHIR : ${d.nilaiAkhir}/100\n` +
+                `- PREDIKAT : ${document.getElementById('grade').textContent}\n\n` +
+                `Wassalamu'alaikum Wr. Wb.`
+            );
+            window.location.href = `mailto:fauziilmialkhairi@gmail.com?subject=${subject}&body=${body}`;
+        }
+
+        function mulaiUlang() {
+            if (confirm('Apakah Anda yakin ingin mengulang ujian? Semua jawaban akan dihapus.')) {
+                location.reload();
+            }
+        }
+
+        document.getElementById('tanggal').valueAsDate = new Date();
+    </script>
+
+</body>
+</html>

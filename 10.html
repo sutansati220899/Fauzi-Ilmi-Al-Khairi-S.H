@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 10 - Al-Hayawanat (الْحَيَوَانَاتُ) | Bahasa Arab Kelas 7</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3c72;
+            --secondary: #2a5298;
+            --accent: #FFD700;
+            --text-dark: #333;
+            --text-light: #f8f9fa;
+            --bg-light: #ffffff;
+            --bg-section: #f8f9fa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .arabic-text {
+            font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade New', serif;
+            direction: rtl;
+            text-align: right;
+            line-height: 2.4;
+            font-size: 1.4rem;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        .top-nav {
+            background: var(--primary);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .top-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 20px; }
+
+        .chapter-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chapter-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,215,0,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .chapter-header h1 {
+            font-family: 'Amiri', serif;
+            font-size: 1.2rem;
+            color: var(--accent);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .chapter-header h2 {
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .chapter-header .arabic-title {
+            font-size: 3rem;
+            color: var(--accent);
+            margin: 15px 0;
+            font-family: 'Traditional Arabic', 'Amiri', serif;
+        }
+
+        .chapter-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary { background: var(--accent); color: var(--primary); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,215,0,0.3); }
+        .btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+        .btn-outline:hover { background: var(--accent); color: var(--primary); }
+
+        .content-section {
+            background: var(--bg-light);
+            padding: 50px 0;
+            margin: 30px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .content-section h3 {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+        }
+
+        .content-section h4 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin: 25px 0 15px;
+        }
+
+        .content-section p { margin-bottom: 15px; text-align: justify; }
+        .content-section ul, .content-section ol { margin: 15px 0 15px 30px; }
+        .content-section li { margin-bottom: 10px; }
+
+        .vocab-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+            border-right: 5px solid var(--accent);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+
+        .vocab-box .arabic-text {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table thead {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .comparison-table th {
+            padding: 18px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table td {
+            padding: 15px 18px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: right;
+        }
+
+        .comparison-table tbody tr:hover { background: #f8f9fa; }
+        .comparison-table tbody tr:nth-child(even) { background: #fafafa; }
+
+        .case-study {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f0 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid var(--secondary);
+        }
+
+        .case-study h4 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .case-study h4::before { content: '📚'; }
+
+        .exam-points {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+            border-left: 5px solid #e74c3c;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+
+        .exam-points h4 { color: #c0392b; margin-bottom: 15px; }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f1f3d 100%);
+            color: white;
+            padding: 50px 0 30px;
+            margin-top: 50px;
+        }
+
+        footer h3 {
+            font-family: 'Amiri', serif;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        footer .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer h4 { color: var(--accent); margin-bottom: 15px; font-size: 1.2rem; }
+        footer ul { list-style: none; }
+        footer ul li { margin-bottom: 10px; }
+        footer a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: var(--accent); }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .chapter-header h2 { font-size: 1.8rem; }
+            .chapter-header .arabic-title { font-size: 2.2rem; }
+            .nav-links { width: 100%; justify-content: center; }
+            .comparison-table { font-size: 0.9rem; }
+            .comparison-table th, .comparison-table td { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="container">
+            <a href="index.html" style="font-family: 'Amiri', serif; font-size: 1.2rem; color: #FFD700;">
+                📖 Bahasa Arab Kelas 7
+            </a>
+            <div class="nav-links">
+                <a href="index.html">🏠 Beranda</a>
+                <a href="index.html#pertemuan">📑 Daftar Pertemuan</a>
+                <a href="index.html#penulis">✍️ Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="chapter-header">
+        <div class="container">
+            <h1>PERTEMUAN 10</h1>
+            <h2>Dunia Hewan dan Ciri-cirinya</h2>
+            <div class="arabic-title">الْحَيَوَانَاتُ</div>
+            <p>Konsep dasar nama-nama hewan dalam bahasa Arab, deskripsi ciri-ciri fisik dan perilaku hewan, penerapan struktur Na'at-Man'ut, dan nilai-nilai keislaman tentang kasih sayang terhadap makhluk Allah.</p>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-outline">🏠 Beranda</a>
+                <a href="uji-formatif-10.html" class="btn btn-primary">📝 Uji Formatif Pertemuan 10</a>
+                <a href="11.html" class="btn btn-outline">Pertemuan Selanjutnya →</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="content-section" style="padding: 40px; margin-top: -30px; position: relative; z-index: 10;">
+            <h3>A. Pengertian dan Hakikat Al-Hayawanat (الْحَيَوَانَاتُ)</h3>
+            <p>
+                Al-Hayawanat secara etimologis adalah bentuk jamak dari kata <span class="arabic-text" style="font-size: 1.2rem; display: inline;">حَيَوَانٌ</span> yang berarti "hewan" atau "makhluk hidup yang bergerak". Dalam pembelajaran bahasa Arab, topik ini sangat menarik karena memungkinkan siswa untuk mendeskripsikan makhluk ciptaan Allah SWT dengan kosakata yang kaya dan struktur kalimat yang tepat.
+            </p>
+            <p>Dalam perspektif yang lebih komprehensif, materi Al-Hayawanat mencakup:</p>
+            <ul>
+                <li><strong>Tujuan:</strong> Membekali siswa dengan kemampuan menyebutkan, mengklasifikasikan, dan mendeskripsikan hewan dalam bahasa Arab.</li>
+                <li><strong>Isi:</strong> Kosakata nama hewan, ciri-ciri fisik (ukuran, warna, sifat), dan habitat.</li>
+                <li><strong>Strategi:</strong> Penerapan mendalam aturan <strong>Na'at-Man'ut</strong> (Sifat-Maushuf) untuk mendeskripsikan hewan secara akurat.</li>
+                <li><strong>Etika:</strong> Menanamkan nilai kasih sayang (رَحْمَةٌ) terhadap hewan sesuai tuntunan Islam.</li>
+            </ul>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>B. Kosakata Hewan Penting (الْمُفْرَدَاتُ)</h3>
+            <p>Berikut adalah kosakata hewan dasar yang wajib dikuasai oleh siswa, lengkap dengan bentuk mudzakkar dan muannats-nya:</p>
+            
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">🐾 Hewan Peliharaan & Ternak (الْحَيَوَانَاتُ الْأَهْلِيَّةُ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">قِطٌّ / قِطَّةٌ</span> (qitthun / qitthatun) = Kucing</li>
+                    <li><span class="arabic-text">كَلْبٌ / كَلْبَةٌ</span> (kalbun / kalbatun) = Anjing</li>
+                    <li><span class="arabic-text">دَجَاجَةٌ</span> (dajaajatun) = Ayam</li>
+                    <li><span class="arabic-text">بَقَرَةٌ</span> (baqaratun) = Sapi</li>
+                    <li><span class="arabic-text">مَاعِزٌ</span> (maa'izun) = Kambing</li>
+                    <li><span class="arabic-text">خَرُوفٌ</span> (kharuufun) = Domba</li>
+                    <li><span class="arabic-text">حِصَانٌ</span> (hishaanun) = Kuda</li>
+                    <li><span class="arabic-text">حِمَارٌ</span> (himaarun) = Keledai</li>
+                </ul>
+            </div>
+
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">🦁 Hewan Liar & Lainnya (الْحَيَوَانَاتُ الْبَرِّيَّةُ وَأُخْرَى):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">أَسَدٌ</span> (asadun) = Singa</li>
+                    <li><span class="arabic-text">فِيْلٌ</span> (fiilun) = Gajah</li>
+                    <li><span class="arabic-text">زَرَافَةٌ</span> (zaraafatun) = Jerapah</li>
+                    <li><span class="arabic-text">قِرْدٌ</span> (qirdun) = Monyet</li>
+                    <li><span class="arabic-text">طَائِرٌ</span> (thaa'irun) = Burung</li>
+                    <li><span class="arabic-text">سَمَكَةٌ</span> (samakatun) = Ikan</li>
+                    <li><span class="arabic-text">جَمَلٌ</span> (jamalun) = Unta</li>
+                    <li><span class="arabic-text">نَمْلَةٌ</span> (namlatun) = Semut</li>
+                </ul>
+            </div>
+
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">📏 Kata Sifat untuk Hewan (صِفَاتُ الْحَيَوَانِ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">كَبِيْرٌ / كَبِيْرَةٌ</span> = Besar</li>
+                    <li><span class="arabic-text">صَغِيْرٌ / صَغِيْرَةٌ</span> = Kecil</li>
+                    <li><span class="arabic-text">سَرِيْعٌ / سَرِيْعَةٌ</span> = Cepat</li>
+                    <li><span class="arabic-text">بَطِيْءٌ / بَطِيْئَةٌ</span> = Lambat</li>
+                    <li><span class="arabic-text">جَمِيْلٌ / جَمِيْلَةٌ</span> = Indah</li>
+                    <li><span class="arabic-text">شَرِيْسٌ / شَرِيْسَةٌ</span> = Buas</li>
+                    <li><span class="arabic-text">أَلِيْفٌ / أَلِيْفَةٌ</span> = Jinak</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>C. Struktur Kalimat Deskripsi Hewan (التَّرَاكِيْبُ)</h3>
+            <p>
+                Untuk mendeskripsikan hewan, kita menggunakan struktur <strong>Jumlah Ismiyah</strong> dengan menerapkan aturan <strong>Na'at-Man'ut</strong> secara ketat. Na'at (sifat) harus mengikuti Man'ut (hewan yang disifati) dalam hal jenis (gender), bilangan, kasus, dan kejelasan.
+            </p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Man'ut (Hewan)</th>
+                        <th>Na'at (Sifat)</th>
+                        <th>Arti</th>
+                        <th>Analisis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="arabic-text">حِصَانٌ</span> (Kuda)</td>
+                        <td><span class="arabic-text">سَرِيْعٌ</span></td>
+                        <td>Kuda yang cepat</td>
+                        <td>Mudzakkar, Mufrad, Nakirah</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">قِطَّةٌ</span> (Kucing pr)</td>
+                        <td><span class="arabic-text">صَغِيْرَةٌ</span></td>
+                        <td>Kucing yang kecil</td>
+                        <td>Muannats, Mufrad, Nakirah</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">الْفِيْلُ</span> (Gajah itu)</td>
+                        <td><span class="arabic-text">الْكَبِيْرُ</span></td>
+                        <td>Gajah yang besar itu</td>
+                        <td>Mudzakkar, Mufrad, Ma'rifat</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">الطُّيُوْرُ</span> (Burung-burung)</td>
+                        <td><span class="arabic-text">الْجَمِيْلَةُ</span></td>
+                        <td>Burung-burung yang indah itu</td>
+                        <td>Jamak Muannats, Ma'rifat</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>D. Contoh Dialog di Kebun Binatang (الْحِوَارُ)</h3>
+            <div class="vocab-box">
+                <h4 style="margin-top: 0; color: var(--primary);">Dialog antara Ahmad dan Fatimah di حَدِيْقَةُ الْحَيَوَانَاتِ (Kebun Binatang):</h4>
+                <div class="arabic-text">
+                    أَحْمَدُ: اُنْظُرِيْ يَا فَاطِمَةُ، هٰذَا فِيلٌ كَبِيْرٌ جِدًّا<br>
+                    فَاطِمَةُ: نَعَمْ، وَهُوَ رَمَادِيُّ اللَّوْنِ. هَلْ هٰذَا أَسَدٌ؟<br>
+                    أَحْمَدُ: لَا، هٰذَا نَمِرٌ، وَهُوَ حَيَوَانٌ شَرِيْسٌ وَسَرِيْعٌ<br>
+                    فَاطِمَةُ: وَأَيْنَ الزَّرَافَةُ؟<br>
+                    أَحْمَدُ: هِيَ هُنَاكَ، الزَّرَافَةُ حَيَوَانٌ طَوِيْلٌ وَجَمِيْلٌ<br>
+                    فَاطِمَةُ: أَنَا أُحِبُّ الْقِطَطَ الْأَلِيْفَةَ، هِيَ حَيَوَانَاتٌ صَغِيْرَةٌ وَنَظِيْفَةٌ<br>
+                    أَحْمَدُ: أَنَا أَيْضًا، لَكِنِّيْ أُحِبُّ الْخَيْلَ (الْأَحْصِنَةَ) أَكْثَرَ
+                </div>
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed #ccc; color: #555; font-style: italic;">
+                    <strong>Terjemahan:</strong><br>
+                    Ahmad: Lihatlah wahai Fatimah, ini adalah gajah yang sangat besar<br>
+                    Fatimah: Ya, dan ia berwarna abu-abu. Apakah ini singa?<br>
+                    Ahmad: Tidak, ini adalah macan, dan ia adalah hewan yang buas dan cepat<br>
+                    Fatimah: Dan di mana jerapah?<br>
+                    Ahmad: Ia di sana, jerapah adalah hewan yang tinggi dan indah<br>
+                    Fatimah: Saya menyukai kucing-kucing yang jinak, mereka adalah hewan-hewan yang kecil dan bersih<br>
+                    Ahmad: Saya juga, tetapi saya lebih menyukai kuda-kuda
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>E. Analisis Perbandingan Bahasa</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Bahasa Indonesia</th>
+                        <th>Bahasa Arab</th>
+                        <th>Catatan Penting</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Penyebutan Hewan</td>
+                        <td>"Kucing" (netral)</td>
+                        <td>قِطٌّ (lk) / قِطَّةٌ (pr)</td>
+                        <td>Arab membedakan gender hewan secara gramatikal</td>
+                    </tr>
+                    <tr>
+                        <td>Plural (Jamak)</td>
+                        <td>Menambah "-s" atau "para" (kucing-kucing)</td>
+                        <td>جَمْعُ التَّكْسِيْرِ (Jamak Taksir) seperti قِطَطٌ</td>
+                        <td>Jamak taksir adalah ciri khas bahasa Arab</td>
+                    </tr>
+                    <tr>
+                        <td>Deskripsi</td>
+                        <td>Kucing hitam yang kecil</td>
+                        <td>قِطَّةٌ صَغِيْرَةٌ سَوْدَاءُ</td>
+                        <td>Sifat mengikuti gender benda yang disifati</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>F. Studi Kasus: Merawat Hewan Peliharaan</h3>
+            <div class="case-study">
+                <h4>Situasi Nyata</h4>
+                <p>
+                    Ali memiliki seekor kucing peliharaan bernama "Misyka". Ia ingin menceritakan tentang Misyka kepada teman-temannya di MTs Diniyah Limo Jurai menggunakan bahasa Arab. Ia harus mendeskripsikan warna, ukuran, dan sifat Misyka dengan benar.
+                </p>
+                <h4>Tantangan yang Dihadapi:</h4>
+                <ul>
+                    <li>Ali bingung menentukan apakah kata sifat untuk "kucing" harus mudzakkar atau muannats.</li>
+                    <li>Ia ingin menyebutkan bahwa Misyka adalah kucing yang "kecil, putih, dan jinak".</li>
+                </ul>
+                <h4>Solusi dan Langkah Strategis:</h4>
+                <ol>
+                    <li><strong>Tentukan Gender:</strong> Karena Misyka adalah kucing betina, gunakan <span class="arabic-text" style="font-size: 1.2rem;">قِطَّةٌ</span> (muannats).</li>
+                    <li><strong>Pilih Sifat yang Sesuai:</strong> Kecil = <span class="arabic-text" style="font-size: 1.2rem;">صَغِيْرَةٌ</span>, Putih = <span class="arabic-text" style="font-size: 1.2rem;">بَيْضَاءُ</span>, Jinak = <span class="arabic-text" style="font-size: 1.2rem;">أَلِيْفَةٌ</span>.</li>
+                    <li><strong>Susun Kalimat:</strong> 
+                        <span class="arabic-text" style="font-size: 1.2rem; display: block; margin: 10px 0;">قِطَّتِيْ اسْمُهَا مِشْكَاةُ. هِيَ قِطَّةٌ صَغِيْرَةٌ وَبَيْضَاءُ وَأَلِيْفَةٌ</span>
+                        (Kucingku bernama Misyka. Ia adalah kucing yang kecil, putih, dan jinak).
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>G. Poin Penting untuk Ujian</h3>
+            <div class="exam-points">
+                <h4>📌 Hafalkan dan Pahami Hal-Hal Berikut:</h4>
+                <ul>
+                    <li>Hafalkan 15+ kosakata hewan dasar beserta bentuk mudzakkar dan muannats-nya.</li>
+                    <li>Kuasai penerapan aturan <strong>Na'at-Man'ut</strong> khusus untuk deskripsi hewan.</li>
+                    <li>Pahami perbedaan <strong>Jamak Mufrad</strong> (hewan tunggal) dan <strong>Jamak Taksir</strong> (hewan jamak, misal: قِطَطٌ).</li>
+                    <li>Hafalkan dialog kunjungan ke kebun binatang minimal 6-8 kalimat berharakat.</li>
+                    <li>Pahami kosakata sifat fisik dan perilaku hewan (سَرِيْعٌ، بَطِيْءٌ، شَرِيْسٌ، أَلِيْفٌ).</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>H. Relevansi untuk Pendidikan Islam</h3>
+            <p>
+                Dalam konteks Pendidikan Agama Islam, hewan bukan sekadar objek materi, melainkan makhluk Allah yang memiliki hak dan pelajaran:
+            </p>
+            <ul>
+                <li><strong>Kasih Sayang (Rahmah):</strong> Rasulullah SAW bersabda, "Seorang wanita masuk neraka karena seekor kucing yang ia kurung..." (HR. Bukhari). Ini mengajarkan tanggung jawab terhadap hewan peliharaan.</li>
+                <li><strong>Hewan dalam Al-Qur'an:</strong> Banyak surah dinamai dengan nama hewan sebagai tanda kebesaran Allah, seperti <span class="arabic-text" style="font-size: 1.2rem;">سُوْرَةُ الْبَقَرَةِ</span> (Sapi), <span class="arabic-text" style="font-size: 1.2rem;">سُوْرَةُ الْأَنْعَامِ</span> (Hewan Ternak), <span class="arabic-text" style="font-size: 1.2rem;">سُوْرَةُ النَّمْلِ</span> (Semut), dan <span class="arabic-text" style="font-size: 1.2rem;">سُوْرَةُ الْفِيْلِ</span> (Gajah).</li>
+                <li><strong>Tadabbur Alam:</strong> Mengamati perilaku hewan (seperti kerja sama semut atau kesetiaan anjing Ashabul Kahfi) adalah bagian dari tafakkur.</li>
+                <li><strong>Adab Berburu dan Menyembelih:</strong> Islam mengatur cara memperlakukan hewan dengan ihsan, bahkan saat menyembelih untuk makanan (tidak menajamkan pisau di depan hewan, tidak menyembelih di depan hewan lain).</li>
+            </ul>
+        </section>
+
+        <div class="action-buttons" style="margin: 40px 0;">
+            <a href="index.html" class="btn btn-outline">🏠 Kembali ke Beranda</a>
+            <a href="uji-formatif-10.html" class="btn btn-primary">✍️ Uji Formatif Pertemuan 10</a>
+            <a href="11.html" class="btn btn-outline">Pertemuan Selanjutnya →</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>كِتَابُ اللُّغَةِ الْعَرَبِيَّةِ</h3>
+                    <p style="color: #ccc; line-height: 1.8;">
+                        Buku daras untuk siswa MTs. Menguasai bahasa Arab dengan metode modern, interaktif, dan berlandaskan nilai-nilai keislaman.
+                    </p>
+                </div>
+                <div>
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="index.html#pertemuan">Daftar Pertemuan</a></li>
+                        <li><a href="index.html#penulis">Tentang Penulis</a></li>
+                        <li><a href="uji-formatif-10.html">Uji Formatif</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontak Penulis</h4>
+                    <ul>
+                        <li>👤 Fauzi Ilmi Al-Khairi, S.H.</li>
+                        <li>🏫 MTs Swasta Diniyah Limo Jurai Sungai Pua</li>
+                        <li>✉️ <a href="mailto:fauziilmialkhairi@gmail.com">fauziilmialkhairi@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Fauzi Ilmi Al-Khairi, S.H. Hak cipta dilindungi undang-undang.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">Dikembangkan untuk kebutuhan pembelajaran Bahasa Arab di MTs Swasta Diniyah Limo Jurai Sungai Pua.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

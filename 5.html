@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 5 - Al-Madrasah (الْمَدْرَسَةُ) | Bahasa Arab Kelas 7</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3c72;
+            --secondary: #2a5298;
+            --accent: #FFD700;
+            --text-dark: #333;
+            --text-light: #f8f9fa;
+            --bg-light: #ffffff;
+            --bg-section: #f8f9fa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .arabic-text {
+            font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade New', serif;
+            direction: rtl;
+            text-align: right;
+            line-height: 2.4;
+            font-size: 1.4rem;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* Top Navigation */
+        .top-nav {
+            background: var(--primary);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .top-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 20px; }
+
+        /* Header Section */
+        .chapter-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chapter-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,215,0,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .chapter-header h1 {
+            font-family: 'Amiri', serif;
+            font-size: 1.2rem;
+            color: var(--accent);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .chapter-header h2 {
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .chapter-header .arabic-title {
+            font-size: 3rem;
+            color: var(--accent);
+            margin: 15px 0;
+            font-family: 'Traditional Arabic', 'Amiri', serif;
+        }
+
+        .chapter-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary { background: var(--accent); color: var(--primary); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,215,0,0.3); }
+        .btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+        .btn-outline:hover { background: var(--accent); color: var(--primary); }
+
+        /* Content Sections */
+        .content-section {
+            background: var(--bg-light);
+            padding: 50px 0;
+            margin: 30px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .content-section h3 {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+        }
+
+        .content-section h4 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin: 25px 0 15px;
+        }
+
+        .content-section p { margin-bottom: 15px; text-align: justify; }
+        .content-section ul, .content-section ol { margin: 15px 0 15px 30px; }
+        .content-section li { margin-bottom: 10px; }
+
+        /* Vocabulary Box */
+        .vocab-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+            border-right: 5px solid var(--accent);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+
+        .vocab-box .arabic-text {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+
+        /* Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table thead {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .comparison-table th {
+            padding: 18px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table td {
+            padding: 15px 18px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: right;
+        }
+
+        .comparison-table tbody tr:hover { background: #f8f9fa; }
+        .comparison-table tbody tr:nth-child(even) { background: #fafafa; }
+
+        /* Case Study */
+        .case-study {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f0 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid var(--secondary);
+        }
+
+        .case-study h4 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .case-study h4::before { content: '📚'; }
+
+        /* Exam Points */
+        .exam-points {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+            border-left: 5px solid #e74c3c;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+
+        .exam-points h4 { color: #c0392b; margin-bottom: 15px; }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f1f3d 100%);
+            color: white;
+            padding: 50px 0 30px;
+            margin-top: 50px;
+        }
+
+        footer h3 {
+            font-family: 'Amiri', serif;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        footer .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer h4 { color: var(--accent); margin-bottom: 15px; font-size: 1.2rem; }
+        footer ul { list-style: none; }
+        footer ul li { margin-bottom: 10px; }
+        footer a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: var(--accent); }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .chapter-header h2 { font-size: 1.8rem; }
+            .chapter-header .arabic-title { font-size: 2.2rem; }
+            .nav-links { width: 100%; justify-content: center; }
+            .comparison-table { font-size: 0.9rem; }
+            .comparison-table th, .comparison-table td { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="container">
+            <a href="index.html" style="font-family: 'Amiri', serif; font-size: 1.2rem; color: #FFD700;">
+                📖 Bahasa Arab Kelas 7
+            </a>
+            <div class="nav-links">
+                <a href="index.html">🏠 Beranda</a>
+                <a href="index.html#pertemuan">📑 Daftar Pertemuan</a>
+                <a href="index.html#penulis">✍️ Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Chapter Header -->
+    <header class="chapter-header">
+        <div class="container">
+            <h1>PERTEMUAN 5</h1>
+            <h2>Lingkungan Madrasah dan Aktivitas Belajar</h2>
+            <div class="arabic-title">الْمَدْرَسَةُ</div>
+            <p>Konsep dasar madrasah dalam Islam (المدرسة بيتي الثاني), kosakata ruangan sekolah, alat tulis, mata pelajaran, aktivitas belajar, dan dialog siswa berharakat.</p>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-outline">🏠 Beranda</a>
+                <a href="uji-formatif-5.html" class="btn btn-primary">📝 Uji Formatif Pertemuan 5</a>
+                <a href="6.html" class="btn btn-outline">Pertemuan Selanjutnya →</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Section A -->
+        <section class="content-section" style="padding: 40px; margin-top: -30px; position: relative; z-index: 10;">
+            <h3>A. Pengertian dan Hakikat Al-Madrasah (الْمَدْرَسَةُ)</h3>
+            <p>
+                Al-Madrasah secara etimologis berasal dari kata <span class="arabic-text" style="font-size: 1.2rem; display: inline;">دَرَسَ - يَدْرُسُ</span> yang berarti "belajar" atau "mempelajari". Dalam konteks pendidikan Islam, Al-Madrasah bermakna tempat atau lembaga yang digunakan untuk menuntut ilmu pengetahuan. Madrasah memiliki kedudukan yang sangat mulia dalam Islam sebagaimana sabda Rasulullah SAW: <span class="arabic-text" style="font-size: 1.3rem; display: inline;">طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ</span> (Menuntut ilmu adalah kewajiban bagi setiap Muslim).
+            </p>
+            <p>Dalam perspektif yang lebih komprehensif, Al-Madrasah mencakup beberapa aspek penting:</p>
+            <ul>
+                <li><strong>Tujuan:</strong> Membentuk generasi Muslim yang berilmu, berakhlak, dan beramal saleh.</li>
+                <li><strong>Isi:</strong> Kosakata ruangan sekolah, alat tulis, mata pelajaran, dan aktivitas belajar.</li>
+                <li><strong>Strategi:</strong> Penggunaan kalimat nominal (Jumlah Ismiyah) dan verbal (Jumlah Fi'liyah) untuk mendeskripsikan lingkungan sekolah.</li>
+                <li><strong>Etika:</strong> Menanamkan adab menuntut ilmu, menghormati guru, dan mencintai sekolah.</li>
+            </ul>
+            
+            <h4>Definisi Al-Madrasah Menurut Para Ahli:</h4>
+            <ul>
+                <li><strong>Kamus Al-Munawwir:</strong> Al-Madrasah adalah tempat belajar, sekolah, atau lembaga pendidikan.</li>
+                <li><strong>Prof. Dr. A. Fuad Effendy:</strong> Al-Madrasah adalah keterampilan berbicara (maharah kalam) yang berkaitan dengan kemampuan mendeskripsikan lingkungan sekolah dan aktivitas belajar.</li>
+            </ul>
+        </section>
+
+        <!-- Section B -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>B. Kosakata Penting (الْمُفْرَدَاتُ)</h3>
+            <p>Berikut adalah kosakata dasar yang wajib dikuasai oleh siswa untuk membicarakan lingkungan madrasah:</p>
+            
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">🏫 Ruangan dan Fasilitas Sekolah (مَرَافِقُ الْمَدْرَسَةِ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">الْمَدْرَسَةُ</span> (al-madrasatu) = Sekolah / Madrasah</li>
+                    <li><span class="arabic-text">الْفَصْلُ</span> (al-fashlu) = Kelas / Ruang kelas</li>
+                    <li><span class="arabic-text">الْمَكْتَبَةُ</span> (al-maktabatu) = Perpustakaan</li>
+                    <li><span class="arabic-text">الْمَلْعَبُ</span> (al-mal'abu) = Lapangan (olahraga)</li>
+                    <li><span class="arabic-text">الْمَسْجِدُ</span> (al-masjidu) = Masjid</li>
+                    <li><span class="arabic-text">الْمَقْصَفُ</span> (al-maqshafu) = Kantin</li>
+                    <li><span class="arabic-text">الْمُخْتَبَرُ</span> (al-mukhtabaru) = Laboratorium</li>
+                    <li><span class="arabic-text">الْمَكْتَبُ</span> (al-maktabu) = Kantor / Meja</li>
+                    <li><span class="arabic-text">الْحَدِيْقَةُ</span> (al-hadiiqatu) = Taman / Kebun</li>
+                    <li><span class="arabic-text">الْحَمَّامُ</span> (al-hammaamu) = Kamar mandi / Toilet</li>
+                    <li><span class="arabic-text">الْبَوَّابَةُ</span> (al-bawwaabatu) = Gerbang</li>
+                    <li><span class="arabic-text">السَّاحَةُ</span> (as-saahatu) = Halaman</li>
+                </ul>
+            </div>
+
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">✏️ Alat Tulis dan Perlengkapan (أَدَوَاتُ الْكِتَابَةِ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">الْقَلَمُ</span> (al-qalamu) = Pensil / Pena</li>
+                    <li><span class="arabic-text">الْكِتَابُ</span> (al-kitaabu) = Buku</li>
+                    <li><span class="arabic-text">الدَّفْتَرُ</span> (ad-daftaru) = Buku tulis</li>
+                    <li><span class="arabic-text">الْحَقِيْبَةُ</span> (al-haqiibatu) = Tas</li>
+                    <li><span class="arabic-text">السَّبُّوْرَةُ</span> (as-sabbuuratu) = Papan tulis</li>
+                    <li><span class="arabic-text">الطَّبْشُوْرَةُ</span> (ath-thabsyuuratu) = Kapur tulis</li>
+                    <li><span class="arabic-text">الْمِمْحَاةُ</span> (al-mimhaatu) = Penghapus</li>
+                    <li><span class="arabic-text">الْمِسْطَرَةُ</span> (al-mistharatu) = Penggaris</li>
+                    <li><span class="arabic-text">الْأَدَاةُ</span> (al-adaatu) = Alat</li>
+                    <li><span class="arabic-text">الْكُرْسِيُّ</span> (al-kursiyyu) = Kursi</li>
+                    <li><span class="arabic-text">الْمَكْتَبُ</span> (al-maktabu) = Meja</li>
+                </ul>
+            </div>
+
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">👨‍🏫 Orang di Sekolah (أَشْخَاصٌ فِي الْمَدْرَسَةِ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">الْمُدِيْرُ</span> (al-mudiiru) = Kepala sekolah (lk)</li>
+                    <li><span class="arabic-text">الْمُدِيْرَةُ</span> (al-mudiiratu) = Kepala sekolah (pr)</li>
+                    <li><span class="arabic-text">الْمُعَلِّمُ</span> (al-mu'allimu) = Guru (lk)</li>
+                    <li><span class="arabic-text">الْمُعَلِّمَةُ</span> (al-mu'allimatu) = Guru (pr)</li>
+                    <li><span class="arabic-text">التِّلْمِيْذُ</span> (at-tilmiidzu) = Siswa (lk)</li>
+                    <li><span class="arabic-text">التِّلْمِيْذَةُ</span> (at-tilmiidzatu) = Siswi (pr)</li>
+                    <li><span class="arabic-text">الطَّالِبُ</span> (ath-thaalibu) = Siswa (lk)</li>
+                    <li><span class="arabic-text">الطَّالِبَةُ</span> (ath-thaalibatu) = Siswi (pr)</li>
+                    <li><span class="arabic-text">الصَّدِيْقُ</span> (ash-shadiiqu) = Teman (lk)</li>
+                    <li><span class="arabic-text">الصَّدِيْقَةُ</span> (ash-shadiiqatu) = Teman (pr)</li>
+                </ul>
+            </div>
+
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">📚 Mata Pelajaran (الْمَوَادُّ الدِّرَاسِيَّةُ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">اللُّغَةُ الْعَرَبِيَّةُ</span> = Bahasa Arab</li>
+                    <li><span class="arabic-text">الرِّيَاضِيَّاتُ</span> = Matematika</li>
+                    <li><span class="arabic-text">العُلُوْمُ</span> = IPA / Sains</li>
+                    <li><span class="arabic-text">التَّارِيْخُ</span> = Sejarah</li>
+                    <li><span class="arabic-text">الجُغْرَافِيَا</span> = Geografi</li>
+                    <li><span class="arabic-text">اللُّغَةُ الْإِنْدُوْنِيْسِيَّةُ</span> = Bahasa Indonesia</li>
+                    <li><span class="arabic-text">التَّرْبِيَةُ الْإِسْلَامِيَّةُ</span> = Pendidikan Agama Islam</li>
+                    <li><span class="arabic-text">الرِّيَاضَةُ</span> = Olahraga</li>
+                </ul>
+            </div>
+
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">📖 Kata Kerja Aktivitas (أَفْعَالُ النَّشَاطِ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">يَدْرُسُ</span> (yadrusu) = Belajar</li>
+                    <li><span class="arabic-text">يَكْتُبُ</span> (yaktubu) = Menulis</li>
+                    <li><span class="arabic-text">يَقْرَأُ</span> (yaqra'u) = Membaca</li>
+                    <li><span class="arabic-text">يَسْتَمِعُ</span> (yastami'u) = Mendengarkan</li>
+                    <li><span class="arabic-text">يَتَكَلَّمُ</span> (yatakallamu) = Berbicara</li>
+                    <li><span class="arabic-text">يَلْعَبُ</span> (yal'abu) = Bermain</li>
+                    <li><span class="arabic-text">يَذْهَبُ</span> (yadzhabu) = Pergi</li>
+                    <li><span class="arabic-text">يَرْجِعُ</span> (yarji'u) = Kembali</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section C -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>C. Struktur Kalimat tentang Madrasah (التَّرَاكِيْبُ)</h3>
+            <p>
+                Dalam bahasa Arab, untuk mendeskripsikan madrasah digunakan struktur <strong>Jumlah Ismiyah</strong> dan <strong>Jumlah Fi'liyah</strong>. Berikut pola-pola yang sering digunakan:
+            </p>
+            
+            <h4>Pola Dasar:</h4>
+            <ol>
+                <li>
+                    <strong>Mubtada' + Shifat (Kata Sifat)</strong><br>
+                    <span class="arabic-text" style="color: var(--secondary);">مِثَالٌ: الْمَدْرَسَةُ كَبِيْرَةٌ وَجَمِيْلَةٌ</span><br>
+                    <em>(Contoh: Madrasah itu besar dan indah)</em>
+                </li>
+                <li>
+                    <strong>Fi'il + Fa'il + Maf'ul Bih (Kalimat Verbal)</strong><br>
+                    <span class="arabic-text" style="color: var(--secondary);">مِثَالٌ: يَقْرَأُ التِّلْمِيْذُ الْكِتَابَ</span><br>
+                    <em>(Contoh: Siswa itu membaca buku)</em>
+                </li>
+                <li>
+                    <strong>فِيْ + Isim (Menyatakan keberadaan di suatu tempat)</strong><br>
+                    <span class="arabic-text" style="color: var(--secondary);">مِثَالٌ: فِيْ الْفَصْلِ ثَلَاثُوْنَ تِلْمِيْذًا</span><br>
+                    <em>(Contoh: Di dalam kelas ada 30 siswa)</em>
+                </li>
+            </ol>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Contoh Kalimat</th>
+                        <th>Arti</th>
+                        <th>Struktur</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="arabic-text">مَدْرَسَتِيْ كَبِيْرَةٌ</span></td>
+                        <td>Madrasahku besar</td>
+                        <td>Mubtada' + Shifat (muannats)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">يَدْرُسُ التَّلَامِيْذُ فِي الْفَصْلِ</span></td>
+                        <td>Para siswa belajar di kelas</td>
+                        <td>Jumlah Fi'liyah</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">فِي الْمَكْتَبَةِ كُتُبٌ كَثِيْرَةٌ</span></td>
+                        <td>Di perpustakaan ada banyak buku</td>
+                        <td>Fi'liyah dengan ظرف</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">الْمُعَلِّمُ يُشْرَحُ الدَّرْسَ</span></td>
+                        <td>Guru menjelaskan pelajaran</td>
+                        <td>Jumlah Fi'liyah</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section D -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>D. Contoh Dialog Aktivitas di Madrasah (الْحِوَارُ)</h3>
+            <div class="vocab-box">
+                <h4 style="margin-top: 0; color: var(--primary);">Dialog antara Ahmad dan Ali di Madrasah:</h4>
+                <div class="arabic-text">
+                    أَحْمَدُ: صَبَاحُ الْخَيْرِ يَا عَلِيّ<br>
+                    عَلِيٌّ: صَبَاحُ النُّوْرِ يَا أَحْمَدُ<br>
+                    أَحْمَدُ: فِيْ أَيِّ فَصْلٍ تَدْرُسُ؟<br>
+                    عَلِيٌّ: أَدْرُسُ فِي الْفَصْلِ السَّابِعِ أ<br>
+                    أَحْمَدُ: كَمْ تِلْمِيْذًا فِيْ فَصْلِكَ؟<br>
+                    عَلِيٌّ: فِيْ فَصْلِيْ ثَلَاثُوْنَ تِلْمِيْذًا<br>
+                    أَحْمَدُ: مَنْ مُدِيْرُ الْمَدْرَسَةِ؟<br>
+                    عَلِيٌّ: مُدِيْرُ الْمَدْرَسَةِ الْأُسْتَاذُ مُحَمَّدٌ<br>
+                    أَحْمَدُ: مَاذَا تَفْعَلُ فِيْ وَقْتِ الِاسْتِرَاحَةِ؟<br>
+                    عَلِيٌّ: أَكُلُ فِيْ الْمَقْصَفِ، ثُمَّ أَلْعَبُ مَعَ أَصْدِقَائِيْ فِيْ الْمَلْعَبِ<br>
+                    أَحْمَدُ: مَتَى تَرْجِعُ إِلَى الْبَيْتِ؟<br>
+                    عَلِيٌّ: أَرْجِعُ إِلَى الْبَيْتِ فِي السَّاعَةِ الثَّالِثَةِ بَعْدَ الظُّهْرِ
+                </div>
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed #ccc; color: #555; font-style: italic;">
+                    <strong>Terjemahan:</strong><br>
+                    Ahmad: Selamat pagi wahai Ali<br>
+                    Ali: Selamat pagi (cahaya) wahai Ahmad<br>
+                    Ahmad: Di kelas berapa kamu belajar?<br>
+                    Ali: Saya belajar di kelas 7A<br>
+                    Ahmad: Berapa siswa di kelasmu?<br>
+                    Ali: Di kelasku ada 30 siswa<br>
+                    Ahmad: Siapa kepala sekolahnya?<br>
+                    Ali: Kepala sekolahnya adalah Ustadz Muhammad<br>
+                    Ahmad: Apa yang kamu lakukan saat istirahat?<br>
+                    Ali: Saya makan di kantin, kemudian bermain dengan teman-temanku di lapangan<br>
+                    Ahmad: Kapan kamu pulang ke rumah?<br>
+                    Ali: Saya pulang ke rumah pada jam 3 sore
+                </div>
+            </div>
+        </section>
+
+        <!-- Section E -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>E. Analisis Perbandingan Bahasa</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Bahasa Indonesia</th>
+                        <th>Bahasa Arab</th>
+                        <th>Catatan Penting</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Istilah Sekolah</td>
+                        <td>Satu kata: "sekolah"</td>
+                        <td>مَدْرَسَةٌ (umum) / مَعْهَدٌ (pesantren) / جَامِعَةٌ (universitas)</td>
+                        <td>Arab membedakan jenjang pendidikan</td>
+                    </tr>
+                    <tr>
+                        <td>Kata "Guru"</td>
+                        <td>Satu kata: "guru"</td>
+                        <td>مُعَلِّمٌ (pengajar) / أُسْتَاذٌ (ustadz/guru besar)</td>
+                        <td>Arab memiliki beberapa sinonim dengan nuansa berbeda</td>
+                    </tr>
+                    <tr>
+                        <td>Kata "Siswa"</td>
+                        <td>Satu kata: "siswa"</td>
+                        <td>طَالِبٌ (penuntut ilmu) / تِلْمِيْذٌ (murid)</td>
+                        <td>طَالِب lebih bermakna spiritual, تِلْمِيْذ lebih umum</td>
+                    </tr>
+                    <tr>
+                        <td>Kata "Kelas"</td>
+                        <td>"Kelas" untuk ruang & tingkatan</td>
+                        <td>فَصْلٌ (ruang) / صَفٌّ (tingkatan)</td>
+                        <td>Arab membedakan ruang fisik dan tingkatan</td>
+                    </tr>
+                    <tr>
+                        <td>Kata Kerja Aktivitas</td>
+                        <td>Tidak berubah bentuk</td>
+                        <td>Berubah sesuai dhamir (يَدْرُسُ / تَدْرُسِيْنَ)</td>
+                        <td>Fi'il mudhari' berubah sesuai subjek</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section F -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>F. Studi Kasus: Aktivitas di MTs Diniyah Limo Jurai</h3>
+            <div class="case-study">
+                <h4>Situasi Nyata</h4>
+                <p>
+                    Fatimah adalah siswa baru kelas 7 di MTs Swasta Diniyah Limo Jurai. Pada hari pertama, ia diminta memperkenalkan madrasahnya di depan kelas dalam bahasa Arab. Ia ingin menyebutkan nama madrasah, fasilitas, jumlah siswa, dan aktivitas harian dengan struktur kalimat yang benar.
+                </p>
+                <h4>Tantangan yang Dihadapi:</h4>
+                <ul>
+                    <li>Fatimah bingung membedakan <span class="arabic-text" style="font-size: 1.2rem;">الْمُعَلِّمُ</span> dan <span class="arabic-text" style="font-size: 1.2rem;">الْأُسْتَاذُ</span>.</li>
+                    <li>Ia kesulitan menggunakan fi'il mudhari' (kata kerja sekarang) sesuai dengan subjek.</li>
+                    <li>Perlu menyebutkan fasilitas madrasah dengan urutan yang sistematis.</li>
+                </ul>
+                <h4>Solusi dan Langkah Strategis:</h4>
+                <ol>
+                    <li><strong>Membuat Peta Pikiran:</strong> Mengelompokkan kosakata menjadi 5 kategori: ruangan, alat tulis, orang, mata pelajaran, dan aktivitas.</li>
+                    <li><strong>Latihan Fi'il Mudhari':</strong> Berlatih mengubah kata kerja sesuai dhamir:
+                        <ul>
+                            <li><span class="arabic-text" style="font-size: 1.2rem;">أَنَا أَكْتُبُ</span> (Saya menulis)</li>
+                            <li><span class="arabic-text" style="font-size: 1.2rem;">أَنْتَ تَقْرَأُ</span> (Kamu membaca - lk)</li>
+                            <li><span class="arabic-text" style="font-size: 1.2rem;">أَنْتِ تَقْرَئِيْنَ</span> (Kamu membaca - pr)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Menyusun Naskah Terstruktur:</strong>
+                        <ul>
+                            <li>Pembukaan: <span class="arabic-text" style="font-size: 1.2rem;">مَدْرَسَتِيْ مَدْرَسَةُ دِيْنِيَّةِ لِيْمُوْ جُوْرَايْ</span></li>
+                            <li>Isi: menyebutkan fasilitas, guru, dan aktivitas</li>
+                            <li>Penutup: <span class="arabic-text" style="font-size: 1.2rem;">أُحِبُّ مَدْرَسَتِيْ كَثِيْرًا</span> (Aku sangat mencintai madrasahku)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Menanamkan Nilai Islam:</strong> Mengaitkan dengan doa masuk sekolah (<span class="arabic-text" style="font-size: 1.2rem;">رَبِّ زِدْنِيْ عِلْمًا</span> - Ya Tambahilah aku ilmu) dan adab menuntut ilmu.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Section G -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>G. Poin Penting untuk Ujian</h3>
+            <div class="exam-points">
+                <h4>📌 Hafalkan dan Pahami Hal-Hal Berikut:</h4>
+                <ul>
+                    <li>Pahami perbedaan antara <strong>الْمَدْرَسَةُ</strong> (sekolah umum), <strong>الْمَعْهَدُ</strong> (pesantren/institut), dan <strong>الْجَامِعَةُ</strong> (universitas).</li>
+                    <li>Kuasai 30+ kosakata inti Al-Madrasah (ruangan, alat tulis, orang, mata pelajaran, aktivitas) beserta harakat dan artinya.</li>
+                    <li>Pahami perbedaan antara <strong>الْمُعَلِّمُ</strong> (guru) dan <strong>الْأُسْتَاذُ</strong> (ustadz/guru besar).</li>
+                    <li>Pahami perbedaan antara <strong>الطَّالِبُ</strong> (penuntut ilmu) dan <strong>التِّلْمِيْذُ</strong> (murid).</li>
+                    <li>Hafalkan dialog aktivitas di madrasah minimal 10 kalimat berharakat.</li>
+                    <li>Pahami penggunaan fi'il mudhari' (kata kerja sekarang) sesuai dengan dhamir.</li>
+                    <li>Pahami penggunaan kata tanya: <span class="arabic-text" style="font-size: 1.2rem;">كَيْفَ</span> (bagaimana), <span class="arabic-text" style="font-size: 1.2rem;">مَتَى</span> (kapan), <span class="arabic-text" style="font-size: 1.2rem;">مَاذَا</span> (apa).</li>
+                    <li>Mampu mendeskripsikan madrasahnya sendiri dengan struktur kalimat yang benar.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section H -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>H. Relevansi untuk Pendidikan Islam</h3>
+            <p>
+                Dalam konteks Pendidikan Agama Islam, materi Al-Madrasah bukan hanya keterampilan linguistik, tetapi juga memiliki nilai-nilai keislaman yang mendalam:
+            </p>
+            <ul>
+                <li><strong>Keutamaan Menuntut Ilmu:</strong> Menanamkan hadis <span class="arabic-text" style="font-size: 1.2rem;">طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ</span> (Menuntut ilmu adalah kewajiban setiap Muslim).</li>
+                <li><strong>Doa Masuk Sekolah:</strong> <span class="arabic-text" style="font-size: 1.2rem;">رَبِّ زِدْنِيْ عِلْمًا وَارْزُقْنِيْ فَهْمًا</span> (Ya Tuhanku, tambahilah aku ilmu dan berilah aku pemahaman).</li>
+                <li><strong>Adab terhadap Guru:</strong> Menghormati guru sebagai pewaris para nabi (<span class="arabic-text" style="font-size: 1.2rem;">الْعُلَمَاءُ وَرَثَةُ الْأَنْبِيَاءِ</span>).</li>
+                <li><strong>Adab terhadap Teman:</strong> Menjaga ukhuwah Islamiyah dengan sesama siswa.</li>
+                <li><strong>Kebersihan Madrasah:</strong> Menjaga kebersihan sekolah sebagai bagian dari iman (<span class="arabic-text" style="font-size: 1.2rem;">النَّظَافَةُ مِنَ الْإِيْمَانِ</span>).</li>
+                <li><strong>Disiplin dan Tanggung Jawab:</strong> Menanamkan nilai disiplin waktu dan tanggung jawab sebagai siswa Muslim.</li>
+                <li><strong>Madrasah sebagai Rumah Kedua:</strong> Menghayati konsep <span class="arabic-text" style="font-size: 1.2rem;">الْمَدْرَسَةُ بَيْتِي الثَّانِي</span> (Madrasah adalah rumah keduaku).</li>
+            </ul>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="action-buttons" style="margin: 40px 0;">
+            <a href="index.html" class="btn btn-outline">🏠 Kembali ke Beranda</a>
+            <a href="uji-formatif-5.html" class="btn btn-primary">✍️ Uji Formatif Pertemuan 5</a>
+            <a href="6.html" class="btn btn-outline">Pertemuan Selanjutnya →</a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>كِتَابُ اللُّغَةِ الْعَرَبِيَّةِ</h3>
+                    <p style="color: #ccc; line-height: 1.8;">
+                        Buku daras untuk siswa MTs. Menguasai bahasa Arab dengan metode modern, interaktif, dan berlandaskan nilai-nilai keislaman.
+                    </p>
+                </div>
+                <div>
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="index.html#pertemuan">Daftar Pertemuan</a></li>
+                        <li><a href="index.html#penulis">Tentang Penulis</a></li>
+                        <li><a href="uji-formatif-5.html">Uji Formatif</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontak Penulis</h4>
+                    <ul>
+                        <li>👤 Fauzi Ilmi Al-Khairi, S.H.</li>
+                        <li>🏫 MTs Swasta Diniyah Limo Jurai Sungai Pua</li>
+                        <li>✉️ <a href="mailto:fauziilmialkhairi@gmail.com">fauziilmialkhairi@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Fauzi Ilmi Al-Khairi, S.H. Hak cipta dilindungi undang-undang.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">Dikembangkan untuk kebutuhan pembelajaran Bahasa Arab di MTs Swasta Diniyah Limo Jurai Sungai Pua.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

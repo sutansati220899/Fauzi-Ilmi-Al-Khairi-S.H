@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 15 - Al-Anasyid (الأَنَاشِيْدُ) | Bahasa Arab Kelas 7</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3c72;
+            --secondary: #2a5298;
+            --accent: #FFD700;
+            --text-dark: #333;
+            --text-light: #f8f9fa;
+            --bg-light: #ffffff;
+            --bg-section: #f8f9fa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .arabic-text {
+            font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade New', serif;
+            direction: rtl;
+            text-align: right;
+            line-height: 2.4;
+            font-size: 1.4rem;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        .top-nav {
+            background: var(--primary);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .top-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 20px; }
+
+        .chapter-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chapter-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,215,0,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .chapter-header h1 {
+            font-family: 'Amiri', serif;
+            font-size: 1.2rem;
+            color: var(--accent);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .chapter-header h2 {
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .chapter-header .arabic-title {
+            font-size: 3rem;
+            color: var(--accent);
+            margin: 15px 0;
+            font-family: 'Traditional Arabic', 'Amiri', serif;
+        }
+
+        .chapter-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary { background: var(--accent); color: var(--primary); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,215,0,0.3); }
+        .btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+        .btn-outline:hover { background: var(--accent); color: var(--primary); }
+
+        .content-section {
+            background: var(--bg-light);
+            padding: 50px 0;
+            margin: 30px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .content-section h3 {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+        }
+
+        .content-section h4 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin: 25px 0 15px;
+        }
+
+        .content-section p { margin-bottom: 15px; text-align: justify; }
+        .content-section ul, .content-section ol { margin: 15px 0 15px 30px; }
+        .content-section li { margin-bottom: 10px; }
+
+        .vocab-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+            border-right: 5px solid var(--accent);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+
+        .vocab-box .arabic-text {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+
+        .lyric-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-right: 5px solid #2e7d32;
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .lyric-box .arabic-text {
+            font-size: 1.8rem;
+            color: #1b5e20;
+            line-height: 2.6;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table thead {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .comparison-table th {
+            padding: 18px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table td {
+            padding: 15px 18px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: right;
+        }
+
+        .comparison-table tbody tr:hover { background: #f8f9fa; }
+        .comparison-table tbody tr:nth-child(even) { background: #fafafa; }
+
+        .case-study {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f0 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid var(--secondary);
+        }
+
+        .case-study h4 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .case-study h4::before { content: '📚'; }
+
+        .exam-points {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+            border-left: 5px solid #e74c3c;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+
+        .exam-points h4 { color: #c0392b; margin-bottom: 15px; }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f1f3d 100%);
+            color: white;
+            padding: 50px 0 30px;
+            margin-top: 50px;
+        }
+
+        footer h3 {
+            font-family: 'Amiri', serif;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        footer .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer h4 { color: var(--accent); margin-bottom: 15px; font-size: 1.2rem; }
+        footer ul { list-style: none; }
+        footer ul li { margin-bottom: 10px; }
+        footer a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: var(--accent); }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .chapter-header h2 { font-size: 1.8rem; }
+            .chapter-header .arabic-title { font-size: 2.2rem; }
+            .nav-links { width: 100%; justify-content: center; }
+            .comparison-table { font-size: 0.9rem; }
+            .comparison-table th, .comparison-table td { padding: 10px; }
+        }
+    </style>
+    <!-- Script untuk Audio Player Sederhana -->
+    <script>
+        function playAudio(id) {
+            var audio = document.getElementById(id);
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="container">
+            <a href="index.html" style="font-family: 'Amiri', serif; font-size: 1.2rem; color: #FFD700;">
+                📖 Bahasa Arab Kelas 7
+            </a>
+            <div class="nav-links">
+                <a href="index.html">🏠 Beranda</a>
+                <a href="index.html#pertemuan">📑 Daftar Pertemuan</a>
+                <a href="index.html#penulis">✍️ Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="chapter-header">
+        <div class="container">
+            <h1>PERTEMUAN 15</h1>
+            <h2>Belajar Melalui Nasyid dan Syair Arab</h2>
+            <div class="arabic-title">الأَنَاشِيْدُ</div>
+            <p>Konsep dasar anasyid (nasyid) dalam pembelajaran bahasa Arab, kosakata tematik dalam syair, pelatihan makhrajul huruf, dan nilai-nilai pendidikan Islam yang terkandung di dalamnya.</p>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-outline">🏠 Beranda</a>
+                <a href="uji-formatif-15.html" class="btn btn-primary">📝 Uji Formatif Pertemuan 15</a>
+                <a href="16.html" class="btn btn-outline">Ujian Akhir Semester →</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="content-section" style="padding: 40px; margin-top: -30px; position: relative; z-index: 10;">
+            <h3>A. Pengertian dan Hakikat Al-Anasyid (الأَنَاشِيْدُ)</h3>
+            <p>
+                Al-Anasyid adalah bentuk jamak dari kata <span class="arabic-text" style="font-size: 1.2rem; display: inline;">أُنْشُوْدَةٌ</span> (Unsyudah) yang berarti "nyanyian", "syair", atau "nasyid". Dalam konteks pembelajaran bahasa Arab, anasyid bukan sekadar hiburan, melainkan media pembelajaran yang sangat efektif (wasilah ta'limiyyah) untuk mempermudah hafalan kosakata, melatih pelafalan (makhrajul huruf), dan menanamkan nilai-nilai akhlak.
+            </p>
+            <p>Dalam perspektif yang lebih komprehensif, materi Al-Anasyid mencakup:</p>
+            <ul>
+                <li><strong>Tujuan:</strong> Meningkatkan motivasi belajar, memperkaya kosakata, dan memperbaiki tajwid serta makhraj melalui irama yang menyenangkan.</li>
+                <li><strong>Isi:</strong> Kosakata tematik (cinta tanah air, semangat belajar, cinta Rasul), struktur syair sederhana, dan teknik melafalkan dengan benar.</li>
+                <li><strong>Strategi:</strong> Metode <em>Learning by Doing</em> dan <em>Audio-Lingual Method</em> melalui mendengarkan dan menirukan.</li>
+                <li><strong>Etika:</strong> Memilih nasyid yang sesuai dengan syariat Islam (tanpa instrumen musik yang dilarang, berisi pesan positif).</li>
+            </ul>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>B. Kosakata Tematik dalam Anasyid (الْمُفْرَدَاتُ)</h3>
+            <p>Berikut adalah kosakata yang sangat sering muncul dalam nasyid-nasyid pendidikan dan semangat:</p>
+            
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">🌟 Semangat dan Cita-cita (الْهِمَّةُ وَالْأُمْنِيَّةُ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">هِمَّةٌ</span> (himmah) = Semangat / Tekad</li>
+                    <li><span class="arabic-text">عَزِيْمَةٌ</span> ('aziimah) = Niat yang kuat</li>
+                    <li><span class="arabic-text">مُسْتَقْبَلٌ</span> (mustaqbal) = Masa depan</li>
+                    <li><span class="arabic-text">نَجَاحٌ</span> (najaah) = Keberhasilan</li>
+                    <li><span class="arabic-text">جِدٌّ</span> (jiddun) = Kesungguhan</li>
+                </ul>
+            </div>
+
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">🕌 Nilai-Nilai Keislaman (الْقِيَمُ الْإِسْلَامِيَّةُ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">رَسُوْلٌ</span> (rasuul) = Rasul / Nabi</li>
+                    <li><span class="arabic-text">نُوْرٌ</span> (nuur) = Cahaya</li>
+                    <li><span class="arabic-text">سَلَامٌ</span> (salaam) = Kedamaian</li>
+                    <li><span class="arabic-text">إِيْمَانٌ</span> (iimaan) = Keimanan</li>
+                    <li><span class="arabic-text">أَخْلَاقٌ</span> (akhlaaq) = Akhlak / Budi pekerti</li>
+                </ul>
+            </div>
+
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">🏫 Cinta Tanah Air dan Sekolah (حُبُّ الْوَطَنِ وَالْمَدْرَسَةِ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">وَطَنٌ</span> (wathan) = Tanah air</li>
+                    <li><span class="arabic-text">حَبِيْبٌ</span> (habiib) = Yang tercinta</li>
+                    <li><span class="arabic-text">أَمَانٌ</span> (amaan) = Keamanan / Ketentraman</li>
+                    <li><span class="arabic-text">بِنَاءٌ</span> (binaa') = Pembangunan</li>
+                    <li><span class="arabic-text">عِلْمٌ</span> ('ilm) = Ilmu pengetahuan</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>C. Contoh Anasyid Pendidikan Sederhana (نَشِيْدٌ تَعْلِيْمِيٌّ)</h3>
+            <p>Berikut adalah cuplikan nasyid sederhana tentang semangat belajar dan cinta tanah air. Perhatikan harakat dan irama membacanya:</p>
+            
+            <div class="lyric-box">
+                <div class="arabic-text">
+                    وَطَنِيْ وَطَنِيْ حَبِيْبِيْ<br>
+                    فِيْكَ نَعِيْشُ بِأَمَانْ<br>
+                    نَدْرُسُ وَنَعْمَلُ بِجِدٍّ<br>
+                    لِنَبْنِيَ الْوَطَنَ الْغَالِيْ
+                </div>
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed #2e7d32; color: #1b5e20; font-style: italic; font-size: 1.1rem;">
+                    <strong>Terjemahan:</strong><br>
+                    Tanah airku, tanah airku, engkau yang tercinta<br>
+                    Di dalam dirimu kami hidup dengan aman<br>
+                    Kami belajar dan bekerja dengan sungguh-sungguh<br>
+                    Untuk membangun tanah air yang mulia
+                </div>
+            </div>
+
+            <h4>Poin Makhraj dan Tajwid dalam Syair di atas:</h4>
+            <ul>
+                <li><strong>Idgham Bighunnah:</strong> Pada kata <span class="arabic-text" style="font-size: 1.2rem;">نَعِيْشُ بِأَمَانْ</span> (nun sukun bertemu ba, dibaca jelas/izhar halqi, namun perhatikan ghunnah pada mim di kata lain).</li>
+                <li><strong>Mad Thabi'i:</strong> Pada kata <span class="arabic-text" style="font-size: 1.2rem;">حَبِيْبِيْ</span> dan <span class="arabic-text" style="font-size: 1.2rem;">نَدْرُسُ</span>.</li>
+                <li><strong>Tasydid:</strong> Pada kata <span class="arabic-text" style="font-size: 1.2rem;">بِجِدٍّ</span> (dengan sungguh-sungguh), huruf dal ditekan/double.</li>
+            </ul>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>D. Manfaat Belajar melalui Anasyid (فَوَائِدُ التَّعَلُّمِ بِالْأَنَاشِيْدِ)</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Manfaat dalam Pembelajaran Bahasa Arab</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Memori (الذَّاكِرَةُ)</strong></td>
+                        <td>Irama dan sajak (qafiyah) membantu otak menyimpan kosakata lebih lama (mnemonik).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pelafalan (الْمَخْرَجُ)</strong></td>
+                        <td>Melatih lidah untuk terbiasa mengucapkan huruf-huruf Arab yang sulit (seperti ﺥ, ﺡ, ﺹ, ﻍ) dengan ritme yang tepat.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Motivasi (الدَّافِعِيَّةُ)</strong></td>
+                        <td>Mengubah suasana belajar yang monoton menjadi menyenangkan dan penuh semangat.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Akhlak (الْأَخْلَاقُ)</strong></td>
+                        <td>Menanamkan nilai-nilai luhur seperti cinta Rasul, cinta tanah air, dan semangat menuntut ilmu secara tidak langsung.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>E. Studi Kasus: Hafalan Kosakata melalui Nasyid</h3>
+            <div class="case-study">
+                <h4>Situasi Nyata</h4>
+                <p>
+                    Ahmad, siswa kelas 7 di MTs Swasta Diniyah Limo Jurai, kesulitan menghafal 20 kosakata baru tentang "Cita-cita dan Semangat". Ia sering tertukar antara arti <span class="arabic-text" style="font-size: 1.1rem;">هِمَّةٌ</span> dan <span class="arabic-text" style="font-size: 1.1rem;">عَزِيْمَةٌ</span>.
+                </p>
+                <h4>Tantangan yang Dihadapi:</h4>
+                <ul>
+                    <li>Metode menghafal konvensional (mengulang-ulang tulisan) membosankan baginya.</li>
+                    <li>Ia kurang percaya diri melafalkan huruf <span class="arabic-text" style="font-size: 1.1rem;">ع</span> dan <span class="arabic-text" style="font-size: 1.1rem;">ح</span> dengan benar.</li>
+                </ul>
+                <h4>Solusi dan Langkah Strategis:</h4>
+                <ol>
+                    <li><strong>Mencari Nasyid Tematik:</strong> Guru memberikan link nasyid sederhana yang mengandung kata-kata tersebut.</li>
+                    <li><strong>Metode Menyanyi Bersama:</strong> Ahmad menghafal lirik nasyid tersebut bersama teman-temannya saat istirahat.</li>
+                    <li><strong>Hasil:</strong> Dalam 2 hari, Ahmad tidak hanya hafal arti <span class="arabic-text" style="font-size: 1.1rem;">هِمَّةٌ</span> (semangat) dan <span class="arabic-text" style="font-size: 1.1rem;">عَزِيْمَةٌ</span> (tekad), tetapi juga pelafalannya menjadi jauh lebih lancar dan fasih.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>F. Poin Penting untuk Ujian</h3>
+            <div class="exam-points">
+                <h4>📌 Hafalkan dan Pahami Hal-Hal Berikut:</h4>
+                <ul>
+                    <li>Pahami arti kata <span class="arabic-text" style="font-size: 1.1rem;">الأَنَاشِيْدُ</span> dan fungsinya dalam pembelajaran.</li>
+                    <li>Hafalkan 10+ kosakata tematik yang sering muncul dalam nasyid pendidikan berharakat.</li>
+                    <li>Mampu menerjemahkan 4 baris syair/nasyid sederhana dari bahasa Arab ke Indonesia.</li>
+                    <li>Pahami 4 manfaat utama belajar bahasa Arab melalui anasyid (memori, makhraj, motivasi, akhlak).</li>
+                    <li>Pahami hukum dan etika mendengarkan nasyid dalam Islam (mengandung pesan baik, sesuai syariat).</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>G. Relevansi untuk Pendidikan Islam</h3>
+            <p>
+                Dalam konteks Pendidikan Agama Islam, anasyid memiliki kedudukan yang mulia sebagai media dakwah dan pendidikan (tarbiyah):
+            </p>
+            <ul>
+                <li><strong>Media Dakwah Bil-Haal:</strong> Nasyid menyampaikan pesan agama dengan cara yang lembut dan menyentuh hati, sesuai dengan kaidah <span class="arabic-text" style="font-size: 1.1rem;">إِنَّ الْحِكْمَةَ مَوْعِظَةٌ حَسَنَةٌ</span> (Sesungguhnya hikmah itu adalah nasihat yang baik).</li>
+                <li><strong>Menanamkan Cinta kepada Rasulullah SAW:</strong> Banyak nasyid yang berisi shalawat dan pujian kepada Nabi, yang merupakan bagian dari iman.</li>
+                <li><strong>Pengganti Hiburan yang Tidak Bermanfaat:</strong> Islam menganjurkan umatnya untuk mengisi waktu luang dengan hal yang bermanfaat. Nasyid yang baik adalah hiburan yang halal dan mendidik.</li>
+                <li><strong>Pelestarian Bahasa Arab:</strong> Sebagai bahasa Al-Qur'an, melestarikan keindahan bahasa Arab melalui syair dan nasyid adalah bentuk kecintaan terhadap agama.</li>
+            </ul>
+        </section>
+
+        <div class="action-buttons" style="margin: 40px 0;">
+            <a href="index.html" class="btn btn-outline">🏠 Kembali ke Beranda</a>
+            <a href="uji-formatif-15.html" class="btn btn-primary">✍️ Uji Formatif Pertemuan 15</a>
+            <a href="16.html" class="btn btn-outline">Ujian Akhir Semester →</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>كِتَابُ اللُّغَةِ الْعَرَبِيَّةِ</h3>
+                    <p style="color: #ccc; line-height: 1.8;">
+                        Buku daras untuk siswa MTs. Menguasai bahasa Arab dengan metode modern, interaktif, dan berlandaskan nilai-nilai keislaman.
+                    </p>
+                </div>
+                <div>
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="index.html#pertemuan">Daftar Pertemuan</a></li>
+                        <li><a href="index.html#penulis">Tentang Penulis</a></li>
+                        <li><a href="uji-formatif-15.html">Uji Formatif</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontak Penulis</h4>
+                    <ul>
+                        <li>👤 Fauzi Ilmi Al-Khairi, S.H.</li>
+                        <li>🏫 MTs Swasta Diniyah Limo Jurai Sungai Pua</li>
+                        <li>✉️ <a href="mailto:fauziilmialkhairi@gmail.com">fauziilmialkhairi@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Fauzi Ilmi Al-Khairi, S.H. Hak cipta dilindungi undang-undang.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">Dikembangkan untuk kebutuhan pembelajaran Bahasa Arab di MTs Swasta Diniyah Limo Jurai Sungai Pua.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

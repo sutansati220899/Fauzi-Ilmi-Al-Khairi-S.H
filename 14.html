@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 14 - Al-A'mal (الأَعْمَالُ) | Bahasa Arab Kelas 7</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3c72;
+            --secondary: #2a5298;
+            --accent: #FFD700;
+            --text-dark: #333;
+            --text-light: #f8f9fa;
+            --bg-light: #ffffff;
+            --bg-section: #f8f9fa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .arabic-text {
+            font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade New', serif;
+            direction: rtl;
+            text-align: right;
+            line-height: 2.4;
+            font-size: 1.4rem;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        .top-nav {
+            background: var(--primary);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .top-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 20px; }
+
+        .chapter-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chapter-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,215,0,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .chapter-header h1 {
+            font-family: 'Amiri', serif;
+            font-size: 1.2rem;
+            color: var(--accent);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .chapter-header h2 {
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .chapter-header .arabic-title {
+            font-size: 3rem;
+            color: var(--accent);
+            margin: 15px 0;
+            font-family: 'Traditional Arabic', 'Amiri', serif;
+        }
+
+        .chapter-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary { background: var(--accent); color: var(--primary); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,215,0,0.3); }
+        .btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+        .btn-outline:hover { background: var(--accent); color: var(--primary); }
+
+        .content-section {
+            background: var(--bg-light);
+            padding: 50px 0;
+            margin: 30px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .content-section h3 {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+        }
+
+        .content-section h4 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin: 25px 0 15px;
+        }
+
+        .content-section p { margin-bottom: 15px; text-align: justify; }
+        .content-section ul, .content-section ol { margin: 15px 0 15px 30px; }
+        .content-section li { margin-bottom: 10px; }
+
+        .vocab-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+            border-right: 5px solid var(--accent);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+
+        .vocab-box .arabic-text {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table thead {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .comparison-table th {
+            padding: 18px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table td {
+            padding: 15px 18px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: right;
+        }
+
+        .comparison-table tbody tr:hover { background: #f8f9fa; }
+        .comparison-table tbody tr:nth-child(even) { background: #fafafa; }
+
+        .case-study {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f0 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid var(--secondary);
+        }
+
+        .case-study h4 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .case-study h4::before { content: '📚'; }
+
+        .exam-points {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+            border-left: 5px solid #e74c3c;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+
+        .exam-points h4 { color: #c0392b; margin-bottom: 15px; }
+
+        .verb-card {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-right: 5px solid var(--secondary);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+        }
+
+        .verb-card h5 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f1f3d 100%);
+            color: white;
+            padding: 50px 0 30px;
+            margin-top: 50px;
+        }
+
+        footer h3 {
+            font-family: 'Amiri', serif;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        footer .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer h4 { color: var(--accent); margin-bottom: 15px; font-size: 1.2rem; }
+        footer ul { list-style: none; }
+        footer ul li { margin-bottom: 10px; }
+        footer a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: var(--accent); }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .chapter-header h2 { font-size: 1.8rem; }
+            .chapter-header .arabic-title { font-size: 2.2rem; }
+            .nav-links { width: 100%; justify-content: center; }
+            .comparison-table { font-size: 0.9rem; }
+            .comparison-table th, .comparison-table td { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="container">
+            <a href="index.html" style="font-family: 'Amiri', serif; font-size: 1.2rem; color: #FFD700;">
+                📖 Bahasa Arab Kelas 7
+            </a>
+            <div class="nav-links">
+                <a href="index.html">🏠 Beranda</a>
+                <a href="index.html#pertemuan">📑 Daftar Pertemuan</a>
+                <a href="index.html#penulis">✍️ Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="chapter-header">
+        <div class="container">
+            <h1>PERTEMUAN 14</h1>
+            <h2>Pekerjaan, Profesi, dan Aktivitas Sehari-hari</h2>
+            <div class="arabic-title">الأَعْمَالُ</div>
+            <p>Konsep dasar pekerjaan dalam bahasa Arab, kosakata profesi, fi'il mudhari' (kata kerja sekarang), tempat kerja, dan nilai-nilai keislaman tentang kerja sebagai ibadah.</p>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-outline">🏠 Beranda</a>
+                <a href="uji-formatif-14.html" class="btn btn-primary">📝 Uji Formatif Pertemuan 14</a>
+                <a href="15.html" class="btn btn-outline">Pertemuan Selanjutnya →</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="content-section" style="padding: 40px; margin-top: -30px; position: relative; z-index: 10;">
+            <h3>A. Pengertian dan Hakikat Al-A'mal (الأَعْمَالُ)</h3>
+            <p>
+                Al-A'mal secara etimologis adalah bentuk jamak dari kata <span class="arabic-text" style="font-size: 1.2rem; display: inline;">عَمَلٌ</span> yang berarti "pekerjaan", "aktivitas", atau "amal". Dalam pembelajaran bahasa Arab, materi ini sangat penting karena memungkinkan siswa untuk mendeskripsikan profesi, aktivitas sehari-hari, dan cita-cita masa depan.
+            </p>
+            <p>Dalam perspektif yang lebih komprehensif, materi Al-A'mal mencakup:</p>
+            <ul>
+                <li><strong>Tujuan:</strong> Membekali siswa dengan kemampuan menyebutkan profesi, mendeskripsikan pekerjaan, dan mengungkapkan aktivitas sehari-hari dalam bahasa Arab.</li>
+                <li><strong>Isi:</strong> Kosakata profesi, tempat kerja, fi'il mudhari', dan ungkapan aktivitas.</li>
+                <li><strong>Strategi:</strong> Penerapan <strong>Fi'il Mudhari'</strong> (kata kerja sekarang/masa depan) yang sangat dominan dalam deskripsi pekerjaan.</li>
+                <li><strong>Etika:</strong> Menanamkan nilai kerja sebagai ibadah (<span class="arabic-text" style="font-size: 1.1rem;">الْعَمَلُ عِبَادَةٌ</span>) dan etos kerja Islam.</li>
+            </ul>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>B. Kosakata Profesi Penting (الْمُفْرَدَاتُ)</h3>
+            <p>Berikut adalah kosakata profesi dasar yang wajib dikuasai oleh siswa:</p>
+            
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">👨‍⚕️ Profesi di Bidang Kesehatan & Pendidikan:</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">طَبِيْبٌ / طَبِيْبَةٌ</span> (thabiibun / thabiibatun) = Dokter</li>
+                    <li><span class="arabic-text">مُمَرِّضٌ / مُمَرِّضَةٌ</span> (mumarridhun / mumarridhatun) = Perawat</li>
+                    <li><span class="arabic-text">صَيْدَلِيٌّ / صَيْدَلِيَّةٌ</span> (shaidaliyyun / shaidaliyyatun) = Apoteker</li>
+                    <li><span class="arabic-text">مُعَلِّمٌ / مُعَلِّمَةٌ</span> (mu'allimun / mu'allimatun) = Guru</li>
+                    <li><span class="arabic-text">أُسْتَاذٌ / أُسْتَاذَةٌ</span> (ustaadzun / ustaadzatun) = Ustadz/Dosen</li>
+                </ul>
+            </div>
+
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">👨‍💼 Profesi di Bidang Jasa & Bisnis:</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">مُهَنْدِسٌ / مُهَنْدِسَةٌ</span> (muhandisun / muhandisatun) = Insinyur</li>
+                    <li><span class="arabic-text">مُحَامٍ / مُحَامِيَةٌ</span> (muhaamin / muhaamiyatun) = Pengacara</li>
+                    <li><span class="arabic-text">تَاجِرٌ / تَاجِرَةٌ</span> (taajirun / taajiratun) = Pedagang</li>
+                    <li><span class="arabic-text">مُوظَّفٌ / مُوظَّفَةٌ</span> (muwazhzhafun / muwazhzhafatun) = Pegawai</li>
+                    <li><span class="arabic-text">طَيَّارٌ</span> (thayyaarun) = Pilot</li>
+                </ul>
+            </div>
+
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">👨‍🌾 Profesi Tradisional & Lainnya:</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">فَلَّاحٌ</span> (fallaahun) = Petani</li>
+                    <li><span class="arabic-text">صَيَّادٌ</span> (shayyaadun) = Nelayan</li>
+                    <li><span class="arabic-text">خَبَّازٌ</span> (khabbaazun) = Tukang Roti</li>
+                    <li><span class="arabic-text">حَدَّادٌ</span> (haddaadun) = Pandai Besi</li>
+                    <li><span class="arabic-text">نَجَّارٌ</span> (najjaarun) = Tukang Kayu</li>
+                    <li><span class="arabic-text">خَيَّاطٌ</span> (khayyaathun) = Penjahit</li>
+                    <li><span class="arabic-text">سَائِقٌ</span> (saa'iqun) = Sopir</li>
+                    <li><span class="arabic-text">شُرْطِيٌّ</span> (shurthiyyun) = Polisi</li>
+                    <li><span class="arabic-text">جُنْدِيٌّ</span> (jundiyyun) = Tentara</li>
+                    <li><span class="arabic-text">طَبَّاخٌ</span> (thabbaakhun) = Koki/Juru Masak</li>
+                </ul>
+            </div>
+
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">🏢 Tempat Kerja (أَمَاكِنُ الْعَمَلِ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">الْمُسْتَشْفَى</span> = Rumah Sakit</li>
+                    <li><span class="arabic-text">الْمَدْرَسَةُ</span> = Sekolah</li>
+                    <li><span class="arabic-text">الْجَامِعَةُ</span> = Universitas</li>
+                    <li><span class="arabic-text">الْمَكْتَبُ</span> = Kantor</li>
+                    <li><span class="arabic-text">السُّوْقُ</span> = Pasar</li>
+                    <li><span class="arabic-text">الْمَطْعَمُ</span> = Restoran</li>
+                    <li><span class="arabic-text">الْمَصْنَعُ</span> = Pabrik</li>
+                    <li><span class="arabic-text">الْحَقْلُ</span> = Sawah/Ladang</li>
+                    <li><span class="arabic-text">الْبَحْرُ</span> = Laut</li>
+                    <li><span class="arabic-text">الْمَطَارُ</span> = Bandara</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>C. Fi'il Mudhari' (الْفِعْلُ الْمُضَارِعُ) untuk Aktivitas</h3>
+            <p>
+                Dalam bahasa Arab, untuk mendeskripsikan pekerjaan dan aktivitas sehari-hari, kita menggunakan <strong>Fi'il Mudhari'</strong> (kata kerja yang menunjukkan waktu sekarang atau masa depan). Fi'il mudhari' berubah sesuai dengan dhamir (kata ganti).
+            </p>
+            
+            <div class="verb-card">
+                <h5>📌 Contoh Perubahan Fi'il Mudhari' dari Kata Kerja "يَعْمَلُ" (Bekerja):</h5>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Dhamir (Kata Ganti)</th>
+                            <th>Fi'il Mudhari'</th>
+                            <th>Arti</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="arabic-text">أَنَا</span> (Saya)</td>
+                            <td><span class="arabic-text">أَعْمَلُ</span></td>
+                            <td>Saya bekerja</td>
+                        </tr>
+                        <tr>
+                            <td><span class="arabic-text">أَنْتَ</span> (Kamu lk)</td>
+                            <td><span class="arabic-text">تَعْمَلُ</span></td>
+                            <td>Kamu bekerja</td>
+                        </tr>
+                        <tr>
+                            <td><span class="arabic-text">أَنْتِ</span> (Kamu pr)</td>
+                            <td><span class="arabic-text">تَعْمَلِيْنَ</span></td>
+                            <td>Kamu (pr) bekerja</td>
+                        </tr>
+                        <tr>
+                            <td><span class="arabic-text">هُوَ</span> (Dia lk)</td>
+                            <td><span class="arabic-text">يَعْمَلُ</span></td>
+                            <td>Dia (lk) bekerja</td>
+                        </tr>
+                        <tr>
+                            <td><span class="arabic-text">هِيَ</span> (Dia pr)</td>
+                            <td><span class="arabic-text">تَعْمَلُ</span></td>
+                            <td>Dia (pr) bekerja</td>
+                        </tr>
+                        <tr>
+                            <td><span class="arabic-text">نَحْنُ</span> (Kami)</td>
+                            <td><span class="arabic-text">نَعْمَلُ</span></td>
+                            <td>Kami bekerja</td>
+                        </tr>
+                        <tr>
+                            <td><span class="arabic-text">هُمْ</span> (Mereka lk)</td>
+                            <td><span class="arabic-text">يَعْمَلُوْنَ</span></td>
+                            <td>Mereka (lk) bekerja</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>Kata Kerja Aktivitas Sehari-hari (أَفْعَالُ النَّشَاطِ الْيَوْمِيَّةِ):</h4>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Mudhari' (Sekarang)</th>
+                        <th>Madhi (Lampau)</th>
+                        <th>Arti</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="arabic-text">يَدْرُسُ</span></td>
+                        <td><span class="arabic-text">دَرَسَ</span></td>
+                        <td>Belajar</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">يُعلِّمُ</span></td>
+                        <td><span class="arabic-text">عَلَّمَ</span></td>
+                        <td>Mengajar</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">يَكْتُبُ</span></td>
+                        <td><span class="arabic-text">كَتَبَ</span></td>
+                        <td>Menulis</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">يَقْرَأُ</span></td>
+                        <td><span class="arabic-text">قَرَأَ</span></td>
+                        <td>Membaca</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">يَزْرَعُ</span></td>
+                        <td><span class="arabic-text">زَرَعَ</span></td>
+                        <td>Menanam</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">يَطْبُخُ</span></td>
+                        <td><span class="arabic-text">طَبَخَ</span></td>
+                        <td>Memasak</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">يَقُوْدُ</span></td>
+                        <td><span class="arabic-text">قَادَ</span></td>
+                        <td>Mengemudi</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">يُسَاعِدُ</span></td>
+                        <td><span class="arabic-text">سَاعَدَ</span></td>
+                        <td>Membantu</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>D. Struktur Kalimat Deskripsi Pekerjaan (التَّرَاكِيْبُ)</h3>
+            <p>Berikut adalah pola kalimat yang sering digunakan untuk mendeskripsikan pekerjaan:</p>
+            
+            <h4>Pola 1: Mubtada' + Khabar (Profesi)</h4>
+            <div class="vocab-box">
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">أَبِيْ طَبِيْبٌ فِي الْمُسْتَشْفَى</span><br><em>(Ayahku seorang dokter di rumah sakit)</em></li>
+                    <li><span class="arabic-text">أُمِّيْ مُعَلِّمَةٌ فِي الْمَدْرَسَةِ</span><br><em>(Ibuku seorang guru di sekolah)</em></li>
+                    <li><span class="arabic-text">عَمِّيْ فَلاَّحٌ فِي الْحَقْلِ</span><br><em>(Pamanku dari ayah seorang petani di sawah)</em></li>
+                </ul>
+            </div>
+
+            <h4>Pola 2: Fa'il + Fi'il Mudhari' + Maf'ul Bih/Zharaf</h4>
+            <div class="vocab-box">
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">يَدْرُسُ الطُّلَّابُ فِي الْفَصْلِ</span><br><em>(Para siswa belajar di kelas)</em></li>
+                    <li><span class="arabic-text">يَزْرَعُ الْفَلَّاحُ الْأَرْضَ</span><br><em>(Petani menanam tanah/lahan)</em></li>
+                    <li><span class="arabic-text">تُعلِّمُ الْمُعَلِّمَةُ الدَّرْسَ</span><br><em>(Guru (pr) mengajar pelajaran)</em></li>
+                </ul>
+            </div>
+
+            <h4>Pola 3: Ungkapan Cita-cita (أُمْنِيَةٌ)</h4>
+            <div class="vocab-box">
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">أُرِيْدُ أَنْ أَكُوْنَ طَبِيْبًا</span><br><em>(Saya ingin menjadi dokter)</em></li>
+                    <li><span class="arabic-text">أَتَمَنَّى أَنْ أُصْبِحَ مُهَنْدِسًا</span><br><em>(Saya bercita-cita menjadi insinyur)</em></li>
+                    <li><span class="arabic-text">حِلْمِيْ أَنْ أَكُوْنَ مُعَلِّمًا</span><br><em>(Impianku adalah menjadi guru)</em></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>E. Contoh Dialog Tentang Pekerjaan (الْحِوَارُ)</h3>
+            <div class="vocab-box">
+                <h4 style="margin-top: 0; color: var(--primary);">Dialog antara Ahmad dan Ali tentang profesi orang tua:</h4>
+                <div class="arabic-text">
+                    أَحْمَدُ: مَاذَا يَعْمَلُ أَبُوكَ يَا عَلِيّ؟<br>
+                    عَلِيٌّ: أَبِيْ طَبِيْبٌ فِي الْمُسْتَشْفَى الْعَامِّ<br>
+                    أَحْمَدُ: وَهَلْ يَعْمَلُ فِي الصَّبَاحِ أَم فِي الْمَسَاءِ؟<br>
+                    عَلِيٌّ: يَعْمَلُ فِي الصَّبَاحِ، وَيَرْجِعُ إِلَى الْبَيْتِ فِي الْمَسَاءِ<br>
+                    أَحْمَدُ: وَمَاذَا تَعْمَلُ أُمُّكَ؟<br>
+                    عَلِيٌّ: أُمِّيْ مُعَلِّمَةٌ فِي الْمَدْرَسَةِ الِابْتِدَائِيَّةِ<br>
+                    أَحْمَدُ: وَمَا هِيَ أُمْنِيَّتُكَ فِي الْمُسْتَقْبَلِ؟<br>
+                    عَلِيٌّ: أُرِيْدُ أَنْ أَكُوْنَ مُهَنْدِسًا إِنْ شَاءَ اللهُ<br>
+                    أَحْمَدُ: وَأَنَا أُرِيْدُ أَنْ أَكُوْنَ طَيَّارًا، لِنَخْدِمَ الْوَطَنَ<br>
+                    عَلِيٌّ: بِالتَّوْفِيْقِ يَا صَدِيْقِيْ
+                </div>
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed #ccc; color: #555; font-style: italic;">
+                    <strong>Terjemahan:</strong><br>
+                    Ahmad: Apa pekerjaan ayahmu wahai Ali?<br>
+                    Ali: Ayahku seorang dokter di rumah sakit umum<br>
+                    Ahmad: Apakah ia bekerja di pagi hari atau di sore hari?<br>
+                    Ali: Ia bekerja di pagi hari, dan pulang ke rumah di sore hari<br>
+                    Ahmad: Dan apa pekerjaan ibumu?<br>
+                    Ali: Ibuku seorang guru di sekolah dasar<br>
+                    Ahmad: Dan apa cita-citamu di masa depan?<br>
+                    Ali: Saya ingin menjadi insinyur, insya Allah<br>
+                    Ahmad: Dan saya ingin menjadi pilot, untuk melayani bangsa<br>
+                    Ali: Semoga sukses wahai temanku
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>F. Analisis Perbandingan Bahasa</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Bahasa Indonesia</th>
+                        <th>Bahasa Arab</th>
+                        <th>Catatan Penting</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bentuk Kata Kerja</td>
+                        <td>Tidak berubah (saya belajar, dia belajar)</td>
+                        <td>Berubah sesuai dhamir (أَدْرُسُ، يَدْرُسُ)</td>
+                        <td>Fi'il mudhari' sangat fleksibel</td>
+                    </tr>
+                    <tr>
+                        <td>Penyebutan Profesi</td>
+                        <td>"Dokter" (netral)</td>
+                        <td>طَبِيْبٌ (lk) / طَبِيْبَةٌ (pr)</td>
+                        <td>Arab membedakan gender profesi</td>
+                    </tr>
+                    <tr>
+                        <td>Kata "Ingin"</td>
+                        <td>"Saya ingin menjadi..."</td>
+                        <td>أُرِيْدُ أَنْ أَكُوْنَ...</td>
+                        <td>Menggunakan أَنْ + manshub</td>
+                    </tr>
+                    <tr>
+                        <td>Tempat Kerja</td>
+                        <td>"di kantor", "di sekolah"</td>
+                        <td>فِي الْمَكْتَبِ، فِي الْمَدْرَسَةِ</td>
+                        <td>Menggunakan فِيْ + majrur</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>G. Studi Kasus: Cita-cita Siswa MTs Diniyah Limo Jurai</h3>
+            <div class="case-study">
+                <h4>Situasi Nyata</h4>
+                <p>
+                    Dalam tugas Bahasa Arab, siswa kelas 7 MTs Swasta Diniyah Limo Jurai diminta untuk menceritakan profesi orang tua mereka dan cita-cita mereka sendiri di masa depan. Fatimah ingin menceritakan bahwa ayahnya adalah petani dan ia bercita-cita menjadi dokter.
+                </p>
+                <h4>Tantangan yang Dihadapi:</h4>
+                <ul>
+                    <li>Fatimah bingung menggunakan fi'il mudhari' untuk mendeskripsikan aktivitas ayahnya.</li>
+                    <li>Ia ingin menyebutkan bahwa ayahnya "menanam padi di sawah" dengan kalimat yang benar.</li>
+                    <li>Perlu menyebutkan cita-citanya dengan struktur <span class="arabic-text" style="font-size: 1.2rem;">أُرِيْدُ أَنْ أَكُوْنَ...</span>.</li>
+                </ul>
+                <h4>Solusi dan Langkah Strategis:</h4>
+                <ol>
+                    <li><strong>Deskripsi Profesi Ayah:</strong> 
+                        <span class="arabic-text" style="font-size: 1.2rem; display: block; margin: 10px 0;">أَبِيْ فَلاَّحٌ، يَزْرَعُ الْأَرُزَّ فِي الْحَقْلِ</span>
+                        (Ayahku seorang petani, ia menanam padi di sawah).
+                    </li>
+                    <li><strong>Menyatakan Cita-cita:</strong>
+                        <span class="arabic-text" style="font-size: 1.2rem; display: block; margin: 10px 0;">أُرِيْدُ أَنْ أَكُوْنَ طَبِيْبَةً لِأُسَاعِدَ الْمَرْضَى</span>
+                        (Saya ingin menjadi dokter untuk membantu orang sakit).
+                    </li>
+                    <li><strong>Menanamkan Nilai Islam:</strong> Mengaitkan dengan hadis <span class="arabic-text" style="font-size: 1.1rem;">مَا أَكَلَ أَحَدٌ طَعَامًا قَطُّ خَيْرًا مِنْ أَنْ يَأْكُلَ مِنْ عَمَلِ يَدِهِ</span> (Tidak ada seorangpun makan makanan yang lebih baik dari hasil kerja tangannya sendiri - HR. Bukhari).</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>H. Poin Penting untuk Ujian</h3>
+            <div class="exam-points">
+                <h4>📌 Hafalkan dan Pahami Hal-Hal Berikut:</h4>
+                <ul>
+                    <li>Hafalkan 15+ kosakata profesi berharakat beserta bentuk mudzakkar dan muannats-nya.</li>
+                    <li>Hafalkan 10 tempat kerja berharakat beserta artinya.</li>
+                    <li>Pahami perubahan <strong>Fi'il Mudhari'</strong> sesuai dengan dhamir (kata ganti).</li>
+                    <li>Pahami perbedaan antara <strong>Fi'il Madhi</strong> (lampau) dan <strong>Fi'il Mudhari'</strong> (sekarang).</li>
+                    <li>Kuasai ungkapan cita-cita: <span class="arabic-text" style="font-size: 1.1rem;">أُرِيْدُ أَنْ أَكُوْنَ...</span> dan <span class="arabic-text" style="font-size: 1.1rem;">أَتَمَنَّى أَنْ أُصْبِحَ...</span>.</li>
+                    <li>Hafalkan dialog tentang profesi minimal 8 kalimat berharakat.</li>
+                    <li>Mampu mendeskripsikan pekerjaan orang tua dan cita-cita sendiri dengan kalimat yang benar secara gramatikal.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>I. Relevansi untuk Pendidikan Islam</h3>
+            <p>
+                Dalam konteks Pendidikan Agama Islam, pekerjaan memiliki kedudukan yang sangat mulia:
+            </p>
+            <ul>
+                <li><strong>Kerja sebagai Ibadah:</strong> Rasulullah SAW bersabda, <span class="arabic-text" style="font-size: 1.2rem;">الْعَمَلُ عِبَادَةٌ</span> (Bekerja adalah ibadah). Setiap pekerjaan yang halal dan diniatkan karena Allah bernilai ibadah.</li>
+                <li><strong>Makan dari Hasil Kerja Sendiri:</strong> Rasulullah SAW bersabda, <span class="arabic-text" style="font-size: 1.2rem;">مَا أَكَلَ أَحَدٌ طَعَامًا قَطُّ خَيْرًا مِنْ أَنْ يَأْكُلَ مِنْ عَمَلِ يَدِهِ</span> (Tidak ada makanan yang lebih baik dari hasil kerja tangannya sendiri - HR. Bukhari).</li>
+                <li><strong>Profesi Nabi dan Rasul:</strong> Nabi Daud AS sebagai pandai besi, Nabi Muhammad SAW sebagai pedagang dan penggembala, Nabi Zakariya AS sebagai tukang kayu. Semua menjadi teladan bahwa pekerjaan apapun mulia jika dilakukan dengan ikhlas.</li>
+                <li><strong>Amanah dalam Pekerjaan:</strong> Setiap pekerjaan adalah amanah yang akan dimintai pertanggungjawaban. Rasulullah SAW bersabda, <span class="arabic-text" style="font-size: 1.2rem;">كُلُّكُمْ رَاعٍ وَكُلُّكُمْ مَسْؤُوْلٌ عَنْ رَعِيَّتِهِ</span> (Setiap kalian adalah pemimpin dan akan dimintai pertanggungjawaban - HR. Bukhari Muslim).</li>
+                <li><strong>Larangan Menganggur:</strong> Islam menganjurkan umatnya untuk produktif dan tidak bermalas-malasan. Rasulullah SAW berlindung dari sifat malas (<span class="arabic-text" style="font-size: 1.2rem;">الْكَسَلُ</span>).</li>
+                <li><strong>Niat dalam Bekerja:</strong> Pekerjaan yang baik harus disertai niat yang benar - untuk mencari ridha Allah, menafkahi keluarga, dan memberi manfaat bagi masyarakat.</li>
+            </ul>
+        </section>
+
+        <div class="action-buttons" style="margin: 40px 0;">
+            <a href="index.html" class="btn btn-outline">🏠 Kembali ke Beranda</a>
+            <a href="uji-formatif-14.html" class="btn btn-primary">✍️ Uji Formatif Pertemuan 14</a>
+            <a href="15.html" class="btn btn-outline">Pertemuan Selanjutnya →</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>كِتَابُ اللُّغَةِ الْعَرَبِيَّةِ</h3>
+                    <p style="color: #ccc; line-height: 1.8;">
+                        Buku daras untuk siswa MTs. Menguasai bahasa Arab dengan metode modern, interaktif, dan berlandaskan nilai-nilai keislaman.
+                    </p>
+                </div>
+                <div>
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="index.html#pertemuan">Daftar Pertemuan</a></li>
+                        <li><a href="index.html#penulis">Tentang Penulis</a></li>
+                        <li><a href="uji-formatif-14.html">Uji Formatif</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontak Penulis</h4>
+                    <ul>
+                        <li>👤 Fauzi Ilmi Al-Khairi, S.H.</li>
+                        <li>🏫 MTs Swasta Diniyah Limo Jurai Sungai Pua</li>
+                        <li>✉️ <a href="mailto:fauziilmialkhairi@gmail.com">fauziilmialkhairi@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Fauzi Ilmi Al-Khairi, S.H. Hak cipta dilindungi undang-undang.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">Dikembangkan untuk kebutuhan pembelajaran Bahasa Arab di MTs Swasta Diniyah Limo Jurai Sungai Pua.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

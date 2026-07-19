@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 9 - Al-Alwan (الأَلْوَانُ) | Bahasa Arab Kelas 7</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3c72;
+            --secondary: #2a5298;
+            --accent: #FFD700;
+            --text-dark: #333;
+            --text-light: #f8f9fa;
+            --bg-light: #ffffff;
+            --bg-section: #f8f9fa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .arabic-text {
+            font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade New', serif;
+            direction: rtl;
+            text-align: right;
+            line-height: 2.4;
+            font-size: 1.4rem;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        .top-nav {
+            background: var(--primary);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .top-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 20px; }
+
+        .chapter-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chapter-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,215,0,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .chapter-header h1 {
+            font-family: 'Amiri', serif;
+            font-size: 1.2rem;
+            color: var(--accent);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .chapter-header h2 {
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .chapter-header .arabic-title {
+            font-size: 3rem;
+            color: var(--accent);
+            margin: 15px 0;
+            font-family: 'Traditional Arabic', 'Amiri', serif;
+        }
+
+        .chapter-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary { background: var(--accent); color: var(--primary); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,215,0,0.3); }
+        .btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+        .btn-outline:hover { background: var(--accent); color: var(--primary); }
+
+        .content-section {
+            background: var(--bg-light);
+            padding: 50px 0;
+            margin: 30px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .content-section h3 {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+        }
+
+        .content-section h4 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin: 25px 0 15px;
+        }
+
+        .content-section p { margin-bottom: 15px; text-align: justify; }
+        .content-section ul, .content-section ol { margin: 15px 0 15px 30px; }
+        .content-section li { margin-bottom: 10px; }
+
+        .vocab-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+            border-right: 5px solid var(--accent);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+
+        .vocab-box .arabic-text {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table thead {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .comparison-table th {
+            padding: 18px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table td {
+            padding: 15px 18px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: right;
+        }
+
+        .comparison-table tbody tr:hover { background: #f8f9fa; }
+        .comparison-table tbody tr:nth-child(even) { background: #fafafa; }
+
+        .case-study {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f0 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid var(--secondary);
+        }
+
+        .case-study h4 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .case-study h4::before { content: '📚'; }
+
+        .exam-points {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+            border-left: 5px solid #e74c3c;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+
+        .exam-points h4 { color: #c0392b; margin-bottom: 15px; }
+
+        .video-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .video-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 35px;
+            background: rgba(255,215,0,0.9);
+            color: #1e3c72;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            font-family: 'Amiri', serif;
+            margin: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .video-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .video-button svg { width: 28px; height: 28px; }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f1f3d 100%);
+            color: white;
+            padding: 50px 0 30px;
+            margin-top: 50px;
+        }
+
+        footer h3 {
+            font-family: 'Amiri', serif;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        footer .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer h4 { color: var(--accent); margin-bottom: 15px; font-size: 1.2rem; }
+        footer ul { list-style: none; }
+        footer ul li { margin-bottom: 10px; }
+        footer a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: var(--accent); }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .chapter-header h2 { font-size: 1.8rem; }
+            .chapter-header .arabic-title { font-size: 2.2rem; }
+            .nav-links { width: 100%; justify-content: center; }
+            .comparison-table { font-size: 0.9rem; }
+            .comparison-table th, .comparison-table td { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="container">
+            <a href="index.html" style="font-family: 'Amiri', serif; font-size: 1.2rem; color: #FFD700;">
+                📖 Bahasa Arab Kelas 7
+            </a>
+            <div class="nav-links">
+                <a href="index.html">🏠 Beranda</a>
+                <a href="index.html#pertemuan">📑 Daftar Pertemuan</a>
+                <a href="index.html#penulis">✍️ Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="chapter-header">
+        <div class="container">
+            <h1>PERTEMUAN 9</h1>
+            <h2>Menguasai Kosakata Warna-warna</h2>
+            <div class="arabic-title">الأَلْوَانُ</div>
+            <p>Konsep dasar warna dalam bahasa Arab, aturan Na'at-Man'ut (Sifat-Maushuf), deskripsi objek berdasarkan warna, dan integrasi nilai keislaman tentang keindahan ciptaan Allah.</p>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-outline">🏠 Beranda</a>
+                <a href="uji-formatif-9.html" class="btn btn-primary">📝 Uji Formatif Pertemuan 9</a>
+                <a href="10.html" class="btn btn-outline">Pertemuan Selanjutnya →</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="content-section" style="padding: 40px; margin-top: -30px; position: relative; z-index: 10;">
+            <h3>A. Pengertian dan Hakikat Al-Alwan (الأَلْوَانُ)</h3>
+            <p>
+                Al-Alwan secara etimologis adalah bentuk jamak dari kata <span class="arabic-text" style="font-size: 1.2rem; display: inline;">لَوْنٌ</span> yang berarti "warna" atau "corak". Dalam pembelajaran bahasa Arab, penguasaan kosakata warna sangat fundamental karena warna merupakan salah satu sifat (Na'at) yang paling sering digunakan untuk mendeskripsikan benda (Man'ut) di sekitar kita.
+            </p>
+            <p>Dalam perspektif yang lebih komprehensif, materi Al-Alwan mencakup:</p>
+            <ul>
+                <li><strong>Tujuan:</strong> Membekali siswa dengan kemampuan mendeskripsikan objek secara visual menggunakan bahasa Arab yang tepat.</li>
+                <li><strong>Isi:</strong> Kosakata warna dasar, aturan kesesuaian Na'at (Sifat) dan Man'ut (Maushuf).</li>
+                <li><strong>Strategi:</strong> Penggunaan struktur <em>Jumlah Ismiyah</em> dengan penekanan pada kesesuaian gender (mudzakkar/muannats), jumlah (mufrad/mutsanna/jamak), dan kepastian (ma'rifat/nakirah).</li>
+                <li><strong>Etika:</strong> Mensyukuri keberagaman warna sebagai tanda kebesaran Allah SWT.</li>
+            </ul>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>B. Kosakata Warna Penting (الْمُفْرَدَاتُ)</h3>
+            <p>Berikut adalah kosakata warna dasar yang wajib dikuasai oleh siswa:</p>
+            
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">🎨 Warna-Warna Dasar (الأَلْوَانُ الْأَسَاسِيَّةُ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">أَحْمَرُ / حَمْرَاءُ</span> (ahmaru / hamra'u) = Merah</li>
+                    <li><span class="arabic-text">أَزْرَقُ / زَرْقَاءُ</span> (azraqu / zarqa'u) = Biru</li>
+                    <li><span class="arabic-text">أَخْضَرُ / خَضْرَاءُ</span> (akhdlaru / khadhra'u) = Hijau</li>
+                    <li><span class="arabic-text">أَصْفَرُ / صَفْرَاءُ</span> (ashfaru / shafra'u) = Kuning</li>
+                    <li><span class="arabic-text">أَبْيَضُ / بَيْضَاءُ</span> (abyadlu / baydla'u) = Putih</li>
+                    <li><span class="arabic-text">أَسْوَدُ / سَوْدَاءُ</span> (aswadu / sawda'u) = Hitam</li>
+                    <li><span class="arabic-text">بُنِّيٌّ / بُنِّيَّةٌ</span> (buniyyun / buniyyatun) = Cokelat</li>
+                    <li><span class="arabic-text">رَمَادِيٌّ / رَمَادِيَّةٌ</span> (ramaadiyyun / ramaadiyyatun) = Abu-abu</li>
+                    <li><span class="arabic-text">وَرْدِيٌّ / وَرْدِيَّةٌ</span> (wardiyyun / wardiyyatun) = Merah muda (Pink)</li>
+                    <li><span class="arabic-text">بُرْتُقَالِيٌّ / بُرْتُقَالِيَّةٌ</span> (burtuqaaliyyun / burtuqaaliyyatun) = Oranye</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>C. Struktur Na'at dan Man'ut (النَّعْتُ وَالْمَنْعُوْتُ)</h3>
+            <p>
+                Dalam bahasa Arab, warna berfungsi sebagai <strong>Na'at</strong> (Sifat) yang menjelaskan <strong>Man'ut</strong> (Maushuf / Benda yang disifati). Agar kalimat benar secara gramatikal, Na'at harus mengikuti Man'ut dalam <strong>4 hal</strong>:
+            </p>
+            <ol>
+                <li><strong>Jenis (Gender):</strong> Jika Man'ut mudzakkar, Na'at harus mudzakkar. Jika Man'ut muannats, Na'at harus muannats (biasanya ditambah ta' marbuthah ة).</li>
+                <li><strong>Bilangan (Number):</strong> Jika Man'ut mufrad (tunggal), Na'at harus mufrad. Jika jamak, Na'at harus jamak.</li>
+                <li><strong>Kasus (I'rab):</strong> Jika Man'ut marfu' (berharakat dhammah), Na'at harus marfu'. Jika manshub atau majrur, Na'at mengikutinya.</li>
+                <li><strong>Kejelasan (Definiteness):</strong> Jika Man'ut ma'rifat (ada Alif-Lam ال), Na'at harus ma'rifat. Jika nakirah (tanwin), Na'at harus nakirah.</li>
+            </ol>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Man'ut (Benda)</th>
+                        <th>Na'at (Warna)</th>
+                        <th>Arti</th>
+                        <th>Analisis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="arabic-text">قَلَمٌ</span> (Pena)</td>
+                        <td><span class="arabic-text">أَحْمَرُ</span></td>
+                        <td>Pena merah</td>
+                        <td>Mudzakkar, Mufrad, Nakirah</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">سَيَّارَةٌ</span> (Mobil)</td>
+                        <td><span class="arabic-text">حَمْرَاءُ</span></td>
+                        <td>Mobil merah</td>
+                        <td>Muannats, Mufrad, Nakirah</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">الْكِتَابُ</span> (Buku itu)</td>
+                        <td><span class="arabic-text">الأَزْرَقُ</span></td>
+                        <td>Buku yang biru itu</td>
+                        <td>Mudzakkar, Mufrad, Ma'rifat</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">الأَزْهَارُ</span> (Bunga-bunga itu)</td>
+                        <td><span class="arabic-text">الصَّفْرَاءُ</span></td>
+                        <td>Bunga-bunga yang kuning itu</td>
+                        <td>Jamak Muannats, Ma'rifat</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>D. Contoh Dialog Mendeskripsikan Warna (الْحِوَارُ)</h3>
+            <div class="vocab-box">
+                <h4 style="margin-top: 0; color: var(--primary);">Dialog antara Fatimah dan Aisyah:</h4>
+                <div class="arabic-text">
+                    فَاطِمَةُ: مَا لَوْنُ حَقِيْبَتِكِ يَا عَائِشَةُ؟<br>
+                    عَائِشَةُ: حَقِيْبَتِيْ زَرْقَاءُ، وَهِيَ جَمِيْلَةٌ جِدًّا<br>
+                    فَاطِمَةُ: وَمَا لَوْنُ الدَّفْتَرِ الَّذِيْ فِيْ حَقِيْبَتِكِ؟<br>
+                    عَائِشَةُ: الدَّفْتَرُ أَخْضَرُ، وَفِيْهِ قَلَمٌ أَسْوَدُ<br>
+                    فَاطِمَةُ: هَلْ لَكِ مِمْحَاةٌ؟<br>
+                    عَائِشَةُ: نَعَمْ، لِيْ مِمْحَاةٌ بَيْضَاءُ وَصَغِيْرَةٌ<br>
+                    فَاطِمَةُ: شُكْرًا جَزَاكِ اللهُ خَيْرًا
+                </div>
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed #ccc; color: #555; font-style: italic;">
+                    <strong>Terjemahan:</strong><br>
+                    Fatimah: Apa warna tasmu wahai Aisyah?<br>
+                    Aisyah: Tasku biru, dan ia sangat indah<br>
+                    Fatimah: Dan apa warna buku tulis yang ada di dalam tasmu?<br>
+                    Aisyah: Buku tulis itu hijau, dan di dalamnya ada pena hitam<br>
+                    Fatimah: Apakah kamu punya penghapus?<br>
+                    Aisyah: Ya, aku punya penghapus yang putih dan kecil<br>
+                    Fatimah: Terima kasih, semoga Allah membalasmu dengan kebaikan
+                </div>
+            </div>
+        </section>
+
+        <section class="video-section">
+            <div class="container">
+                <h2 class="section-title" style="color: white; font-family: 'Amiri', serif; font-size: 2.5rem; margin-bottom: 20px;">🎬 Video Pembelajaran</h2>
+                <p style="color: white; margin-bottom: 30px; font-size: 1.2rem;">Tonton video ini untuk memperdalam pelafalan dan pemahaman kosakata warna</p>
+                
+                <!-- GANTI LINK VIDEO DI BAWAH INI -->
+                <a href="https://youtube.com/link-video-alwan" target="_blank" class="video-button">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    تَعَلُّمُ الأَلْوَانِ (Belajar Warna-Warna)
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>E. Analisis Perbandingan Bahasa</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Bahasa Indonesia</th>
+                        <th>Bahasa Arab</th>
+                        <th>Catatan Penting</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Posisi Sifat</td>
+                        <td>Di belakang benda (Buku merah)</td>
+                        <td>Di belakang benda (الْكِتَابُ الأَحْمَرُ)</td>
+                        <td>Sama-sama post-modifier (penerang)</td>
+                    </tr>
+                    <tr>
+                        <td>Kesesuaian Gender</td>
+                        <td>Tidak ada perubahan bentuk</td>
+                        <td>Wajib sesuai (أَحْمَرُ untuk lk, حَمْرَاءُ untuk pr)</td>
+                        <td>Ini adalah perbedaan paling krusial</td>
+                    </tr>
+                    <tr>
+                        <td>Kejelasan (Alif-Lam)</td>
+                        <td>Tidak ada penanda khusus</td>
+                        <td>Jika benda pakai "Al", sifat juga pakai "Al"</td>
+                        <td>الْبَيْتُ الْكَبِيْرُ (Rumah yang besar itu)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>F. Studi Kasus: Mencari Barang yang Hilang</h3>
+            <div class="case-study">
+                <h4>Situasi Nyata</h4>
+                <p>
+                    Ahmad kehilangan tasnya di halaman MTs Diniyah Limo Jurai. Ia pergi ke ruang guru untuk melapor. Ia harus mendeskripsikan tas tersebut secara detail agar guru dapat membantunya mencarikannya.
+                </p>
+                <h4>Tantangan yang Dihadapi:</h4>
+                <ul>
+                    <li>Ahmad harus menyebutkan warna tas, warna buku di dalamnya, dan ciri-ciri lain dengan struktur Na'at-Man'ut yang benar.</li>
+                    <li>Ia sering tertukar antara bentuk mudzakkar (أَحْمَرُ) dan muannats (حَمْرَاءُ).</li>
+                </ul>
+                <h4>Solusi dan Langkah Strategis:</h4>
+                <ol>
+                    <li><strong>Identifikasi Gender Benda:</strong> Tas (حَقِيْبَة) adalah muannats, maka warnanya harus حَمْرَاءُ.</li>
+                    <li><strong>Susun Kalimat Deskriptif:</strong> 
+                        <span class="arabic-text" style="font-size: 1.2rem; display: block; margin: 10px 0;">حَقِيْبَتِيْ كَبِيْرَةٌ وَحَمْرَاءُ، وَفِيْهَا كِتَابٌ أَزْرَقُ وَقَلَمٌ أَسْوَدُ</span>
+                        (Tasku besar dan merah, dan di dalamnya ada buku biru dan pena hitam).
+                    </li>
+                    <li><strong>Latihan Berpasangan:</strong> Berlatih mendeskripsikan benda di sekitar kelas dengan teman sebangku.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>G. Poin Penting untuk Ujian</h3>
+            <div class="exam-points">
+                <h4>📌 Hafalkan dan Pahami Hal-Hal Berikut:</h4>
+                <ul>
+                    <li>Hafalkan 10 kosakata warna dasar beserta bentuk mudzakkar dan muannats-nya.</li>
+                    <li>Pahami 4 aturan kesesuaian Na'at dan Man'ut (Jenis, Bilangan, Kasus, Kejelasan).</li>
+                    <li>Mampu mengubah frasa benda tunggal menjadi frasa benda dengan sifat warna yang tepat.</li>
+                    <li>Bedakan penggunaan warna untuk benda mufrad dan jamak.</li>
+                    <li>Hafalkan dialog deskripsi benda minimal 6-8 kalimat berharakat.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>H. Relevansi untuk Pendidikan Islam</h3>
+            <p>
+                Dalam konteks Pendidikan Agama Islam, keberagaman warna adalah ayat kauniyah (tanda kebesaran Allah):
+            </p>
+            <ul>
+                <li><strong>Tanda Kekuasaan Allah:</strong> QS. Fatir: 27-28 menyebutkan bahwa di antara gunung-gunung ada garis-garis putih, merah, dan hitam yang beragam warnanya. Ini mengajarkan kita untuk mentadabburi ciptaan Allah.</li>
+                <li><strong>Warna dalam Surga:</strong> Al-Qur'an menggambarkan pakaian penghuni surga berwarna hijau (QS. Al-Kahfi: 31, QS. Al-Insan: 21), yang melambangkan ketenangan dan kehidupan abadi.</li>
+                <li><strong>Estetika dalam Islam:</strong> Islam menganjurkan kebersihan dan kerapian, termasuk memakai pakaian yang bersih dan berwarna pantas (terutama putih, sebagaimana anjuran Rasulullah SAW).</li>
+                <li><strong>Syukur atas Keberagaman:</strong> Perbedaan warna kulit dan bahasa adalah sunnatullah untuk saling mengenal (QS. Al-Hujurat: 13), bukan untuk saling membedakan secara diskriminatif.</li>
+            </ul>
+        </section>
+
+        <div class="action-buttons" style="margin: 40px 0;">
+            <a href="index.html" class="btn btn-outline">🏠 Kembali ke Beranda</a>
+            <a href="uji-formatif-9.html" class="btn btn-primary">✍️ Uji Formatif Pertemuan 9</a>
+            <a href="10.html" class="btn btn-outline">Pertemuan Selanjutnya →</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>كِتَابُ اللُّغَةِ الْعَرَبِيَّةِ</h3>
+                    <p style="color: #ccc; line-height: 1.8;">
+                        Buku daras untuk siswa MTs. Menguasai bahasa Arab dengan metode modern, interaktif, dan berlandaskan nilai-nilai keislaman.
+                    </p>
+                </div>
+                <div>
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="index.html#pertemuan">Daftar Pertemuan</a></li>
+                        <li><a href="index.html#penulis">Tentang Penulis</a></li>
+                        <li><a href="uji-formatif-9.html">Uji Formatif</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontak Penulis</h4>
+                    <ul>
+                        <li>👤 Fauzi Ilmi Al-Khairi, S.H.</li>
+                        <li>🏫 MTs Swasta Diniyah Limo Jurai Sungai Pua</li>
+                        <li>✉️ <a href="mailto:fauziilmialkhairi@gmail.com">fauziilmialkhairi@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Fauzi Ilmi Al-Khairi, S.H. Hak cipta dilindungi undang-undang.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">Dikembangkan untuk kebutuhan pembelajaran Bahasa Arab di MTs Swasta Diniyah Limo Jurai Sungai Pua.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

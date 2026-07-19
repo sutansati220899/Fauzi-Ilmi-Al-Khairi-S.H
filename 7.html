@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 7 - Al-Arqaam (الأَرْقَامُ) | Bahasa Arab Kelas 7</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3c72;
+            --secondary: #2a5298;
+            --accent: #FFD700;
+            --text-dark: #333;
+            --text-light: #f8f9fa;
+            --bg-light: #ffffff;
+            --bg-section: #f8f9fa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .arabic-text {
+            font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade New', serif;
+            direction: rtl;
+            text-align: right;
+            line-height: 2.4;
+            font-size: 1.4rem;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        .top-nav {
+            background: var(--primary);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .top-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 20px; }
+
+        .chapter-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chapter-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,215,0,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .chapter-header h1 {
+            font-family: 'Amiri', serif;
+            font-size: 1.2rem;
+            color: var(--accent);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .chapter-header h2 {
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .chapter-header .arabic-title {
+            font-size: 3rem;
+            color: var(--accent);
+            margin: 15px 0;
+            font-family: 'Traditional Arabic', 'Amiri', serif;
+        }
+
+        .chapter-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary { background: var(--accent); color: var(--primary); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,215,0,0.3); }
+        .btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+        .btn-outline:hover { background: var(--accent); color: var(--primary); }
+
+        .content-section {
+            background: var(--bg-light);
+            padding: 50px 0;
+            margin: 30px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .content-section h3 {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+        }
+
+        .content-section h4 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin: 25px 0 15px;
+        }
+
+        .content-section p { margin-bottom: 15px; text-align: justify; }
+        .content-section ul, .content-section ol { margin: 15px 0 15px 30px; }
+        .content-section li { margin-bottom: 10px; }
+
+        .vocab-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+            border-right: 5px solid var(--accent);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+
+        .vocab-box .arabic-text {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table thead {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .comparison-table th {
+            padding: 18px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table td {
+            padding: 15px 18px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: right;
+        }
+
+        .comparison-table tbody tr:hover { background: #f8f9fa; }
+        .comparison-table tbody tr:nth-child(even) { background: #fafafa; }
+
+        .case-study {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f0 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid var(--secondary);
+        }
+
+        .case-study h4 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .case-study h4::before { content: '📚'; }
+
+        .exam-points {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+            border-left: 5px solid #e74c3c;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+
+        .exam-points h4 { color: #c0392b; margin-bottom: 15px; }
+
+        .number-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .number-card {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .number-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255,215,0,0.2);
+        }
+
+        .number-card .arabic-num {
+            font-family: 'Traditional Arabic', 'Amiri', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 700;
+            direction: rtl;
+        }
+
+        .number-card .arabic-word {
+            font-family: 'Traditional Arabic', 'Amiri', serif;
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin: 8px 0;
+            direction: rtl;
+        }
+
+        .number-card .latin {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f1f3d 100%);
+            color: white;
+            padding: 50px 0 30px;
+            margin-top: 50px;
+        }
+
+        footer h3 {
+            font-family: 'Amiri', serif;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        footer .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer h4 { color: var(--accent); margin-bottom: 15px; font-size: 1.2rem; }
+        footer ul { list-style: none; }
+        footer ul li { margin-bottom: 10px; }
+        footer a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: var(--accent); }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .chapter-header h2 { font-size: 1.8rem; }
+            .chapter-header .arabic-title { font-size: 2.2rem; }
+            .nav-links { width: 100%; justify-content: center; }
+            .comparison-table { font-size: 0.9rem; }
+            .comparison-table th, .comparison-table td { padding: 10px; }
+            .number-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="container">
+            <a href="index.html" style="font-family: 'Amiri', serif; font-size: 1.2rem; color: #FFD700;">
+                📖 Bahasa Arab Kelas 7
+            </a>
+            <div class="nav-links">
+                <a href="index.html">🏠 Beranda</a>
+                <a href="index.html#pertemuan">📑 Daftar Pertemuan</a>
+                <a href="index.html#penulis">✍️ Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="chapter-header">
+        <div class="container">
+            <h1>PERTEMUAN 7</h1>
+            <h2>Angka, Bilangan, dan Perhitungan</h2>
+            <div class="arabic-title">الأَرْقَامُ</div>
+            <p>Konsep dasar angka dalam bahasa Arab (الأرقام), angka 1-100 berharakat, aturan angka mudzakkar dan muannats, menyebutkan tanggal, hari, dan operasi matematika sederhana.</p>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-outline">🏠 Beranda</a>
+                <a href="uji-formatif-7.html" class="btn btn-primary">📝 Uji Formatif Pertemuan 7</a>
+                <a href="8.html" class="btn btn-outline">Ujian Tengah Semester →</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="content-section" style="padding: 40px; margin-top: -30px; position: relative; z-index: 10;">
+            <h3>A. Pengertian dan Hakikat Al-Arqaam (الأَرْقَامُ)</h3>
+            <p>
+                Al-Arqaam secara etimologis adalah bentuk jamak dari kata <span class="arabic-text" style="font-size: 1.2rem; display: inline;">رَقْمٌ</span> yang berarti "angka" atau "bilangan". Dalam pembelajaran bahasa Arab, penguasaan angka merupakan fondasi penting untuk berkomunikasi dalam berbagai konteks: menyebutkan usia, harga, nomor telepon, tanggal, dan melakukan perhitungan.
+            </p>
+            <p>Dalam perspektif yang lebih komprehensif, Al-Arqaam mencakup beberapa aspek penting:</p>
+            <ul>
+                <li><strong>Tujuan:</strong> Membekali siswa dengan kemampuan menyebutkan, menulis, dan menghitung angka dalam bahasa Arab.</li>
+                <li><strong>Isi:</strong> Angka 1-10, 11-20, puluhan, ratusan, aturan mudzakkar-muannats, dan operasi matematika.</li>
+                <li><strong>Strategi:</strong> Penggunaan <strong>Isim Ma'dud</strong> (kata yang dihitung) dan <strong>Isim Adad</strong> (kata bilangan) dengan aturan nahwu yang spesifik.</li>
+                <li><strong>Etika:</strong> Menanamkan kejujuran dalam berhitung dan memahami pentingnya ilmu hisab dalam Islam.</li>
+            </ul>
+            
+            <h4>Definisi Al-Arqaam Menurut Para Ahli:</h4>
+            <ul>
+                <li><strong>Kamus Al-Munawwir:</strong> Ar-Raqm adalah angka, bilangan, atau nomor yang digunakan untuk menghitung.</li>
+                <li><strong>Prof. Dr. A. Fuad Effendy:</strong> Al-Arqaam adalah keterampilan berbahasa yang berkaitan dengan kemampuan menyebutkan dan menggunakan bilangan dalam konteks komunikasi sehari-hari.</li>
+            </ul>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>B. Angka 1-10 (الأَرْقَامُ مِنْ وَاحِدٍ إِلَى عَشَرَةٍ)</h3>
+            <p>Berikut adalah angka 1-10 dalam bahasa Arab berharakat lengkap:</p>
+            
+            <div class="number-grid">
+                <div class="number-card">
+                    <div class="arabic-num">١</div>
+                    <div class="arabic-word">وَاحِدٌ</div>
+                    <div class="latin">waahidun = 1</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">٢</div>
+                    <div class="arabic-word">اِثْنَانِ</div>
+                    <div class="latin">itsnaani = 2</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">٣</div>
+                    <div class="arabic-word">ثَلَاثَةٌ</div>
+                    <div class="latin">tsalaatsatun = 3</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">٤</div>
+                    <div class="arabic-word">أَرْبَعَةٌ</div>
+                    <div class="latin">arba'atun = 4</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">٥</div>
+                    <div class="arabic-word">خَمْسَةٌ</div>
+                    <div class="latin">khamsatun = 5</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">٦</div>
+                    <div class="arabic-word">سِتَّةٌ</div>
+                    <div class="latin">sittatun = 6</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">٧</div>
+                    <div class="arabic-word">سَبْعَةٌ</div>
+                    <div class="latin">sab'atun = 7</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">٨</div>
+                    <div class="arabic-word">ثَمَانِيَةٌ</div>
+                    <div class="latin">tsamaaniyatun = 8</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">٩</div>
+                    <div class="arabic-word">تِسْعَةٌ</div>
+                    <div class="latin">tis'atun = 9</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">١٠</div>
+                    <div class="arabic-word">عَشَرَةٌ</div>
+                    <div class="latin">'asyaratun = 10</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>C. Angka 11-20 (الأَرْقَامُ مِنْ أَحَدَ عَشَرَ إِلَى عِشْرِيْنَ)</h3>
+            <p>Angka 11-19 menggunakan pola gabungan dengan kata <span class="arabic-text" style="font-size: 1.2rem;">عَشَرَ</span> (belas):</p>
+            
+            <div class="number-grid">
+                <div class="number-card">
+                    <div class="arabic-num">١١</div>
+                    <div class="arabic-word">أَحَدَ عَشَرَ</div>
+                    <div class="latin">ahada 'asyar = 11</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">١٢</div>
+                    <div class="arabic-word">اِثْنَا عَشَرَ</div>
+                    <div class="latin">itsna 'asyar = 12</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">١٣</div>
+                    <div class="arabic-word">ثَلَاثَةَ عَشَرَ</div>
+                    <div class="latin">tsalaatsata 'asyar = 13</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">١٤</div>
+                    <div class="arabic-word">أَرْبَعَةَ عَشَرَ</div>
+                    <div class="latin">arba'ata 'asyar = 14</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">١٥</div>
+                    <div class="arabic-word">خَمْسَةَ عَشَرَ</div>
+                    <div class="latin">khamsata 'asyar = 15</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">١٦</div>
+                    <div class="arabic-word">سِتَّةَ عَشَرَ</div>
+                    <div class="latin">sittata 'asyar = 16</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">١٧</div>
+                    <div class="arabic-word">سَبْعَةَ عَشَرَ</div>
+                    <div class="latin">sab'ata 'asyar = 17</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">١٨</div>
+                    <div class="arabic-word">ثَمَانِيَةَ عَشَرَ</div>
+                    <div class="latin">tsamaaniyata 'asyar = 18</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">١٩</div>
+                    <div class="arabic-word">تِسْعَةَ عَشَرَ</div>
+                    <div class="latin">tis'ata 'asyar = 19</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">٢٠</div>
+                    <div class="arabic-word">عِشْرُوْنَ</div>
+                    <div class="latin">'isyruuna = 20</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>D. Puluhan 30-100 (العَشَرَاتُ)</h3>
+            <p>Puluhan dalam bahasa Arab memiliki pola yang konsisten:</p>
+            
+            <div class="number-grid">
+                <div class="number-card">
+                    <div class="arabic-num">٣٠</div>
+                    <div class="arabic-word">ثَلَاثُوْنَ</div>
+                    <div class="latin">tsalaatsuuna = 30</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">٤٠</div>
+                    <div class="arabic-word">أَرْبَعُوْنَ</div>
+                    <div class="latin">arba'uuna = 40</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">٥٠</div>
+                    <div class="arabic-word">خَمْسُوْنَ</div>
+                    <div class="latin">khamsuuna = 50</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">٦٠</div>
+                    <div class="arabic-word">سِتُّوْنَ</div>
+                    <div class="latin">sittuuna = 60</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">٧٠</div>
+                    <div class="arabic-word">سَبْعُوْنَ</div>
+                    <div class="latin">sab'uuna = 70</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">٨٠</div>
+                    <div class="arabic-word">ثَمَانُوْنَ</div>
+                    <div class="latin">tsamaanuuna = 80</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">٩٠</div>
+                    <div class="arabic-word">تِسْعُوْنَ</div>
+                    <div class="latin">tis'uuna = 90</div>
+                </div>
+                <div class="number-card">
+                    <div class="arabic-num">١٠٠</div>
+                    <div class="arabic-word">مِائَةٌ</div>
+                    <div class="latin">mi'atun = 100</div>
+                </div>
+            </div>
+
+            <h4>Contoh Angka Gabungan:</h4>
+            <ul>
+                <li><span class="arabic-text">٢٥</span> = <span class="arabic-text">خَمْسَةٌ وَعِشْرُوْنَ</span> (khamsatun wa 'isyruuna)</li>
+                <li><span class="arabic-text">٣٧</span> = <span class="arabic-text">سَبْعَةٌ وَثَلَاثُوْنَ</span> (sab'atun wa tsalaatsuuna)</li>
+                <li><span class="arabic-text">٥٨</span> = <span class="arabic-text">ثَمَانِيَةٌ وَخَمْسُوْنَ</span> (tsamaaniyatun wa khamsuuna)</li>
+                <li><span class="arabic-text">٩٩</span> = <span class="arabic-text">تِسْعَةٌ وَتِسْعُوْنَ</span> (tis'atun wa tis'uuna)</li>
+            </ul>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>E. Aturan Angka Mudzakkar dan Muannats (قَاعِدَةُ المُذَكَّرِ وَالمُؤَنَّثِ)</h3>
+            <p>
+                Dalam bahasa Arab, angka 3-10 memiliki aturan khusus yang disebut <strong>مُخَالَفَةُ الْعَدَدِ لِلْمَعْدُوْدِ</strong> (angka berlawanan gender dengan yang dihitung). Artinya:
+            </p>
+            <ul>
+                <li>Jika <strong>ma'dud (yang dihitung) mudzakkar (laki-laki)</strong> → angkanya <strong>muannats (perempuan)</strong> (berta' marbuthah)</li>
+                <li>Jika <strong>ma'dud muannats (perempuan)</strong> → angkanya <strong>mudzakkar (laki-laki)</strong> (tanpa ta' marbuthah)</li>
+            </ul>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Angka</th>
+                        <th>Mudzakkar (untuk benda lk)</th>
+                        <th>Muannats (untuk benda pr)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>3</td>
+                        <td><span class="arabic-text">ثَلَاثَةُ كُتُبٍ</span> (3 buku)</td>
+                        <td><span class="arabic-text">ثَلَاثُ طَالِبَاتٍ</span> (3 siswi)</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><span class="arabic-text">أَرْبَعَةُ أَقْلَامٍ</span> (4 pena)</td>
+                        <td><span class="arabic-text">أَرْبَعُ دَفَاتِرَ</span> (4 buku tulis)</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><span class="arabic-text">خَمْسَةُ طُلَّابٍ</span> (5 siswa)</td>
+                        <td><span class="arabic-text">خَمْسُ غُرَفٍ</span> (5 kamar)</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><span class="arabic-text">سَبْعَةُ أَيَّامٍ</span> (7 hari)</td>
+                        <td><span class="arabic-text">سَبْعُ سَنَوَاتٍ</span> (7 tahun)</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><span class="arabic-text">عَشَرَةُ تَلَامِيْذَ</span> (10 murid lk)</td>
+                        <td><span class="arabic-text">عَشْرُ فَتَيَاتٍ</span> (10 gadis)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">📌 Aturan Penting Angka dalam Bahasa Arab:</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><strong>Angka 1-2:</strong> Mengikuti ma'dud (bisa sebagai sifat)</li>
+                    <li><strong>Angka 3-10:</strong> Berlawanan gender dengan ma'dud (مُخَالَفَة)</li>
+                    <li><strong>Angka 11-99:</strong> Mengikuti ma'dud (sesuai gender)</li>
+                    <li><strong>Angka 100, 1000:</strong> Mengikuti ma'dud (sesuai gender)</li>
+                    <li><strong>Ma'dud 3-10:</strong> Selalu <strong>jamak majrur</strong> (misalnya: ثَلَاثَةُ كُتُبٍ)</li>
+                    <li><strong>Ma'dud 11-99:</strong> Selalu <strong>mufrod manshub</strong> (misalnya: أَحَدَ عَشَرَ كِتَابًا)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>F. Hari dan Tanggal (الْأَيَّامُ وَالتَّوَارِيْخُ)</h3>
+            <p>Menyebutkan hari dan tanggal dalam bahasa Arab:</p>
+            
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">📅 Nama-Nama Hari (أَيَّامُ الْأُسْبُوْعِ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">يَوْمُ الْأَحَدِ</span> = Hari Minggu</li>
+                    <li><span class="arabic-text">يَوْمُ الِاثْنَيْنِ</span> = Hari Senin</li>
+                    <li><span class="arabic-text">يَوْمُ الثُّلَاثَاءِ</span> = Hari Selasa</li>
+                    <li><span class="arabic-text">يَوْمُ الْأَرْبِعَاءِ</span> = Hari Rabu</li>
+                    <li><span class="arabic-text">يَوْمُ الْخَمِيْسِ</span> = Hari Kamis</li>
+                    <li><span class="arabic-text">يَوْمُ الْجُمُعَةِ</span> = Hari Jumat</li>
+                    <li><span class="arabic-text">يَوْمُ السَّبْتِ</span> = Hari Sabtu</li>
+                </ul>
+            </div>
+
+            <h4>Cara Menyebutkan Tanggal:</h4>
+            <ul>
+                <li><span class="arabic-text">اَلْيَوْمُ الأَوَّلُ مِنْ شَهْرِ يَنَايِرْ</span> = Hari pertama bulan Januari</li>
+                <li><span class="arabic-text">اَلْيَوْمُ السَّابِعُ عَشَرَ مِنْ شَهْرِ رَمَضَانَ</span> = Hari ke-17 bulan Ramadhan</li>
+                <li><span class="arabic-text">فِيْ يَوْمِ الِاثْنَيْنِ، تَارِيْخُ خَمْسَةٍ عَشَرَ يُولِيُوْ</span> = Pada hari Senin, tanggal 15 Juli</li>
+            </ul>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>G. Operasi Matematika (الْعَمَلِيَّاتُ الرِّيَاضِيَّةُ)</h3>
+            <p>Empat operasi dasar dalam bahasa Arab:</p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Operasi</th>
+                        <th>Bahasa Arab</th>
+                        <th>Simbol</th>
+                        <th>Contoh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Penjumlahan</td>
+                        <td><span class="arabic-text">جَمْعٌ</span> (jam'un)</td>
+                        <td>+</td>
+                        <td><span class="arabic-text">ثَلَاثَةٌ + رُبْعَةٌ = سَبْعَةٌ</span></td>
+                    </tr>
+                    <tr>
+                        <td>Pengurangan</td>
+                        <td><span class="arabic-text">طَرْحٌ</span> (tharhun)</td>
+                        <td>−</td>
+                        <td><span class="arabic-text">عَشَرَةٌ - ثَلَاثَةٌ = سَبْعَةٌ</span></td>
+                    </tr>
+                    <tr>
+                        <td>Perkalian</td>
+                        <td><span class="arabic-text">ضَرْبٌ</span> (dharbun)</td>
+                        <td>×</td>
+                        <td><span class="arabic-text">ثَلَاثَةٌ × رُبْعَةٌ = اثْنَا عَشَرَ</span></td>
+                    </tr>
+                    <tr>
+                        <td>Pembagian</td>
+                        <td><span class="arabic-text">قِسْمَةٌ</span> (qismatun)</td>
+                        <td>÷</td>
+                        <td><span class="arabic-text">عَشَرَةٌ ÷ خَمْسَةٌ = اثْنَانِ</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>H. Contoh Dialog Tentang Angka (الْحِوَارُ)</h3>
+            <div class="vocab-box">
+                <h4 style="margin-top: 0; color: var(--primary);">Dialog antara Ahmad dan Ali:</h4>
+                <div class="arabic-text">
+                    أَحْمَدُ: كَمْ عُمْرُكَ يَا عَلِيّ؟<br>
+                    عَلِيٌّ: عُمْرِيْ ثَلَاثَ عَشْرَةَ سَنَةً<br>
+                    أَحْمَدُ: وَكَمْ عَدَدُ إِخْوَتِكَ؟<br>
+                    عَلِيٌّ: لِيْ أَرْبَعَةُ إِخْوَةٍ: اثْنَانِ مِنَ الذُّكُوْرِ وَاثْنَتَانِ مِنَ الْإِنَاثِ<br>
+                    أَحْمَدُ: كَمْ تِلْمِيْذًا فِيْ فَصْلِكُمْ؟<br>
+                    عَلِيٌّ: فِيْ فَصْلِنَا خَمْسَةٌ وَثَلَاثُوْنَ تِلْمِيْذًا<br>
+                    أَحْمَدُ: كَمْ سَاعَةً تَدْرُسُ فِي الْيَوْمِ؟<br>
+                    عَلِيٌّ: أَدْرُسُ سِتَّ سَاعَاتٍ فِي الْيَوْمِ<br>
+                    أَحْمَدُ: كَمْ كِتَابًا فِيْ مَكْتَبَتِكَ؟<br>
+                    عَلِيٌّ: فِيْ مَكْتَبَتِيْ عِشْرُوْنَ كِتَابًا
+                </div>
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed #ccc; color: #555; font-style: italic;">
+                    <strong>Terjemahan:</strong><br>
+                    Ahmad: Berapa usiamu wahai Ali?<br>
+                    Ali: Usiaku 13 tahun<br>
+                    Ahmad: Dan berapa jumlah saudaramu?<br>
+                    Ali: Aku punya 4 saudara: 2 laki-laki dan 2 perempuan<br>
+                    Ahmad: Berapa siswa di kelasmu?<br>
+                    Ali: Di kelasku ada 35 siswa<br>
+                    Ahmad: Berapa jam kamu belajar dalam sehari?<br>
+                    Ali: Aku belajar 6 jam dalam sehari<br>
+                    Ahmad: Berapa buku di perpustakaanmu?<br>
+                    Ali: Di perpustakaanku ada 20 buku
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>I. Analisis Perbandingan Bahasa</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Bahasa Indonesia</th>
+                        <th>Bahasa Arab</th>
+                        <th>Catatan Penting</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kesesuaian Gender</td>
+                        <td>Tidak ada (angka netral)</td>
+                        <td>Angka 3-10 berlawanan gender dengan ma'dud</td>
+                        <td>Aturan مُخَالَفَة khusus dalam bahasa Arab</td>
+                    </tr>
+                    <tr>
+                        <td>Penulisan Angka</td>
+                        <td>1, 2, 3 (angka Arab Barat)</td>
+                        <td>١، ٢، ٣ (angka Arab Timur)</td>
+                        <td>Di Indonesia sering dipakai angka Arab Barat</td>
+                    </tr>
+                    <tr>
+                        <td>Penyebutan Ribuan</td>
+                        <td>"Seribu" = 1000</td>
+                        <td>أَلْفٌ = 1000</td>
+                        <td>Arab memiliki kata khusus untuk setiap tingkatan</td>
+                    </tr>
+                    <tr>
+                        <td>Kata "Belas"</td>
+                        <td>"Sebelas", "Dua belas"</td>
+                        <td>أَحَدَ عَشَرَ، اِثْنَا عَشَرَ</td>
+                        <td>Arab menggunakan kata عَشَرَ yang tetap</td>
+                    </tr>
+                    <tr>
+                        <td>Ma'dud 3-10</td>
+                        <td>"Tiga buku"</td>
+                        <td>ثَلَاثَةُ كُتُبٍ (jamak majrur)</td>
+                        <td>Ma'dud selalu jamak dan majrur</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>J. Studi Kasus: Menghitung di Lingkungan Madrasah</h3>
+            <div class="case-study">
+                <h4>Situasi Nyata</h4>
+                <p>
+                    Fatimah adalah siswa kelas 7 di MTs Swasta Diniyah Limo Jurai. Ia diminta oleh guru Bahasa Arab untuk mendata jumlah siswa, guru, dan ruangan di madrasahnya, lalu melaporkannya dalam bahasa Arab dengan angka berharakat yang benar.
+                </p>
+                <h4>Tantangan yang Dihadapi:</h4>
+                <ul>
+                    <li>Fatimah bingung menggunakan angka untuk benda mudzakkar dan muannats.</li>
+                    <li>Ia kesulitan menyebutkan angka 13-19 dengan benar.</li>
+                    <li>Perlu menghitung operasi matematika sederhana dalam bahasa Arab.</li>
+                </ul>
+                <h4>Solusi dan Langkah Strategis:</h4>
+                <ol>
+                    <li><strong>Membuat Tabel Data:</strong>
+                        <ul>
+                            <li>Jumlah siswa laki-laki: <span class="arabic-text" style="font-size: 1.2rem;">خَمْسَةٌ وَسِتُّوْنَ طَالِبًا</span> (65)</li>
+                            <li>Jumlah siswa perempuan: <span class="arabic-text" style="font-size: 1.2rem;">ثَمَانٌ وَسِتُّوْنَ طَالِبَةً</span> (68)</li>
+                            <li>Jumlah guru: <span class="arabic-text" style="font-size: 1.2rem;">خَمْسَةَ عَشَرَ مُعَلِّمًا</span> (15)</li>
+                            <li>Jumlah kelas: <span class="arabic-text" style="font-size: 1.2rem;">اثْنَا عَشَرَ فَصْلًا</span> (12)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Latihan Harakat:</strong> Berlatih mengucapkan angka dengan harakat yang benar, terutama angka 3-10 yang memiliki ta' marbuthah.</li>
+                    <li><strong>Latihan Operasi:</strong>
+                        <ul>
+                            <li>Total siswa: <span class="arabic-text" style="font-size: 1.2rem;">٦٥ + ٦٨ = ١٣٣</span> = <span class="arabic-text" style="font-size: 1.2rem;">ثَلَاثَةٌ وَثَلَاثُوْنَ + ثَمَانِيَةٌ وَسِتُّوْنَ = ثَلَاثَةٌ وَثَلَاثُوْنَ وَمِائَةٌ</span></li>
+                        </ul>
+                    </li>
+                    <li><strong>Menanamkan Nilai Islam:</strong> Mengaitkan dengan ayat tentang angka dalam Al-Qur'an seperti <span class="arabic-text" style="font-size: 1.2rem;">سَبْعُ سِنِينَ</span> (7 tahun - QS. Yusuf: 47) dan <span class="arabic-text" style="font-size: 1.2rem;">ثَلَاثُمِائَةٍ سِنِينَ</span> (300 tahun - QS. Al-Kahfi: 25).</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>K. Poin Penting untuk Ujian</h3>
+            <div class="exam-points">
+                <h4>📌 Hafalkan dan Pahami Hal-Hal Berikut:</h4>
+                <ul>
+                    <li>Hafalkan angka <strong>1-10</strong> berharakat dengan sempurna.</li>
+                    <li>Hafalkan angka <strong>11-20</strong> beserta polanya (أَحَدَ عَشَرَ، اِثْنَا عَشَرَ، dst).</li>
+                    <li>Hafalkan <strong>puluhan 20-100</strong> ('isyruuna, tsalaatsuuna, dst).</li>
+                    <li>Pahami aturan <strong>مُخَالَفَةُ الْعَدَدِ لِلْمَعْدُوْدِ</strong> (angka 3-10 berlawanan gender dengan ma'dud).</li>
+                    <li>Pahami bahwa ma'dud 3-10 selalu <strong>jamak majrur</strong>.</li>
+                    <li>Pahami bahwa ma'dud 11-99 selalu <strong>mufrod manshub</strong>.</li>
+                    <li>Hafalkan <strong>7 nama hari</strong> dalam bahasa Arab berharakat.</li>
+                    <li>Pahami <strong>4 operasi matematika</strong> (jam', tharh, dharb, qismah).</li>
+                    <li>Mampu menyebutkan usia, jumlah, dan tanggal dalam bahasa Arab.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>L. Relevansi untuk Pendidikan Islam</h3>
+            <p>
+                Dalam konteks Pendidikan Agama Islam, materi Al-Arqaam bukan hanya keterampilan linguistik, tetapi juga memiliki nilai-nilai keislaman yang mendalam:
+            </p>
+            <ul>
+                <li><strong>Angka dalam Al-Qur'an:</strong> Banyak ayat yang menyebutkan angka dengan makna khusus, seperti <span class="arabic-text" style="font-size: 1.2rem;">سَبْعُ سَمَاوَاتٍ</span> (7 langit), <span class="arabic-text" style="font-size: 1.2rem;">تِسْعَةُ آيَاتٍ</span> (9 ayat - QS. Al-Isra: 101), <span class="arabic-text" style="font-size: 1.2rem;">ثَلَاثَةَ عَشَرَ</span> (13 rakaat shalat fardhu dalam sehari).</li>
+                <li><strong>Ilmu Hisab:</strong> Menguasai perhitungan untuk menentukan waktu shalat, arah kiblat, awal Ramadhan, dan pembagian waris (faraidh).</li>
+                <li><strong>Kejujuran dalam Berhitung:</strong> Rasulullah SAW bersabda <span class="arabic-text" style="font-size: 1.2rem;">مَنْ غَشَّنَا فَلَيْسَ مِنَّا</span> (Barangsiapa yang menipu kami, maka ia bukan dari golongan kami).</li>
+                <li><strong>Puasa dan Ramadhan:</strong> Menyebutkan tanggal Hijriyah untuk menentukan awal dan akhir Ramadhan.</li>
+                <li><strong>Zakat dan Sedekah:</strong> Menghitung nishab zakat dengan tepat sesuai ketentuan syariat.</li>
+                <li><strong>Waris (Faraidh):</strong> Menghitung bagian warisan dengan angka-angka tertentu (½, ¼, ⅛, ⅔, ⅓, ⅙).</li>
+            </ul>
+        </section>
+
+        <div class="action-buttons" style="margin: 40px 0;">
+            <a href="index.html" class="btn btn-outline">🏠 Kembali ke Beranda</a>
+            <a href="uji-formatif-7.html" class="btn btn-primary">✍️ Uji Formatif Pertemuan 7</a>
+            <a href="8.html" class="btn btn-outline">Ujian Tengah Semester →</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>كِتَابُ اللُّغَةِ الْعَرَبِيَّةِ</h3>
+                    <p style="color: #ccc; line-height: 1.8;">
+                        Buku daras untuk siswa MTs. Menguasai bahasa Arab dengan metode modern, interaktif, dan berlandaskan nilai-nilai keislaman.
+                    </p>
+                </div>
+                <div>
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="index.html#pertemuan">Daftar Pertemuan</a></li>
+                        <li><a href="index.html#penulis">Tentang Penulis</a></li>
+                        <li><a href="uji-formatif-7.html">Uji Formatif</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontak Penulis</h4>
+                    <ul>
+                        <li>👤 Fauzi Ilmi Al-Khairi, S.H.</li>
+                        <li>🏫 MTs Swasta Diniyah Limo Jurai Sungai Pua</li>
+                        <li>✉️ <a href="mailto:fauziilmialkhairi@gmail.com">fauziilmialkhairi@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Fauzi Ilmi Al-Khairi, S.H. Hak cipta dilindungi undang-undang.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">Dikembangkan untuk kebutuhan pembelajaran Bahasa Arab di MTs Swasta Diniyah Limo Jurai Sungai Pua.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

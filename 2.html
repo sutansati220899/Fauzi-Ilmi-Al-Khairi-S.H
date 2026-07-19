@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 2 - Al-Unwan (العُنْوَانُ) | Bahasa Arab Kelas 7</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3c72;
+            --secondary: #2a5298;
+            --accent: #FFD700;
+            --text-dark: #333;
+            --text-light: #f8f9fa;
+            --bg-light: #ffffff;
+            --bg-section: #f8f9fa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .arabic-text {
+            font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade New', serif;
+            direction: rtl;
+            text-align: right;
+            line-height: 2.4;
+            font-size: 1.4rem;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* Top Navigation */
+        .top-nav {
+            background: var(--primary);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .top-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 20px; }
+
+        /* Header Section */
+        .chapter-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chapter-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,215,0,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .chapter-header h1 {
+            font-family: 'Amiri', serif;
+            font-size: 1.2rem;
+            color: var(--accent);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .chapter-header h2 {
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .chapter-header .arabic-title {
+            font-size: 3rem;
+            color: var(--accent);
+            margin: 15px 0;
+            font-family: 'Traditional Arabic', 'Amiri', serif;
+        }
+
+        .chapter-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary { background: var(--accent); color: var(--primary); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,215,0,0.3); }
+        .btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+        .btn-outline:hover { background: var(--accent); color: var(--primary); }
+
+        /* Content Sections */
+        .content-section {
+            background: var(--bg-light);
+            padding: 50px 0;
+            margin: 30px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .content-section h3 {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+        }
+
+        .content-section h4 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin: 25px 0 15px;
+        }
+
+        .content-section p { margin-bottom: 15px; text-align: justify; }
+        .content-section ul, .content-section ol { margin: 15px 0 15px 30px; }
+        .content-section li { margin-bottom: 10px; }
+
+        /* Vocabulary Box */
+        .vocab-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+            border-right: 5px solid var(--accent);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+
+        .vocab-box .arabic-text {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+
+        /* Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table thead {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .comparison-table th {
+            padding: 18px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table td {
+            padding: 15px 18px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: right;
+        }
+
+        .comparison-table tbody tr:hover { background: #f8f9fa; }
+        .comparison-table tbody tr:nth-child(even) { background: #fafafa; }
+
+        /* Case Study */
+        .case-study {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f0 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid var(--secondary);
+        }
+
+        .case-study h4 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .case-study h4::before { content: '📚'; }
+
+        /* Exam Points */
+        .exam-points {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+            border-left: 5px solid #e74c3c;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+
+        .exam-points h4 { color: #c0392b; margin-bottom: 15px; }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f1f3d 100%);
+            color: white;
+            padding: 50px 0 30px;
+            margin-top: 50px;
+        }
+
+        footer h3 {
+            font-family: 'Amiri', serif;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        footer .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer h4 { color: var(--accent); margin-bottom: 15px; font-size: 1.2rem; }
+        footer ul { list-style: none; }
+        footer ul li { margin-bottom: 10px; }
+        footer a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: var(--accent); }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .chapter-header h2 { font-size: 1.8rem; }
+            .chapter-header .arabic-title { font-size: 2.2rem; }
+            .nav-links { width: 100%; justify-content: center; }
+            .comparison-table { font-size: 0.9rem; }
+            .comparison-table th, .comparison-table td { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="container">
+            <a href="index.html" style="font-family: 'Amiri', serif; font-size: 1.2rem; color: #FFD700;">
+                📖 Bahasa Arab Kelas 7
+            </a>
+            <div class="nav-links">
+                <a href="index.html">🏠 Beranda</a>
+                <a href="index.html#pertemuan">📑 Daftar Pertemuan</a>
+                <a href="index.html#penulis">✍️ Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Chapter Header -->
+    <header class="chapter-header">
+        <div class="container">
+            <h1>PERTEMUAN 2</h1>
+            <h2>Menyebutkan dan Menanyakan Alamat</h2>
+            <div class="arabic-title">الْعُنْوَانُ</div>
+            <p>Konsep dasar alamat, kosakata lokasi, arah mata angin, preposisi tempat (ظروف المكان), dan cara menyebutkan alamat lengkap dalam bahasa Arab sesuai adab Islami.</p>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-outline">🏠 Beranda</a>
+                <a href="uji-formatif-2.html" class="btn btn-primary">📝 Uji Formatif Pertemuan 2</a>
+                <a href="3.html" class="btn btn-outline">Pertemuan Selanjutnya →</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Section A -->
+        <section class="content-section" style="padding: 40px; margin-top: -30px; position: relative; z-index: 10;">
+            <h3>A. Pengertian dan Hakikat Al-Unwan (الْعُنْوَانُ)</h3>
+            <p>
+                Al-Unwan secara etimologis berasal dari kata <span class="arabic-text" style="font-size: 1.2rem; display: inline;">عَلَامَة</span> (tanda/penanda), yang dalam konteks komunikasi berarti petunjuk atau informasi yang menunjukkan lokasi suatu tempat. Dalam pembelajaran bahasa Arab, Al-Unwan merupakan materi fundamental yang berfungsi untuk membekali siswa dengan kemampuan berkomunikasi tentang lokasi, tempat tinggal, dan arah.
+            </p>
+            <p>Dalam perspektif yang lebih komprehensif, Al-Unwan mencakup beberapa aspek penting:</p>
+            <ul>
+                <li><strong>Tujuan:</strong> Memudahkan seseorang dalam menyebutkan, menanyakan, dan memberi petunjuk arah suatu tempat.</li>
+                <li><strong>Isi:</strong> Kosakata lokasi, preposisi tempat (ظروف المكان), arah mata angin, dan struktur kalimat deskriptif.</li>
+                <li><strong>Strategi:</strong> Penggunaan kalimat nominal (Jumlah Ismiyah) dan kalimat verbal (Jumlah Fi'liyah) secara tepat.</li>
+                <li><strong>Etika:</strong> Menanamkan adab memberi petunjuk dengan jujur, sopan, dan membantu sesama.</li>
+            </ul>
+            
+            <h4>Definisi Al-Unwan Menurut Para Ahli:</h4>
+            <ul>
+                <li><strong>Kamus Al-Munawwir:</strong> Al-Unwan adalah alamat, judul, atau tanda yang menunjukkan identitas suatu tempat.</li>
+                <li><strong>Prof. Dr. A. Fuad Effendy:</strong> Al-Unwan adalah keterampilan berbicara (maharah kalam) yang berkaitan dengan kemampuan mendeskripsikan lokasi dan memberi petunjuk arah.</li>
+            </ul>
+        </section>
+
+        <!-- Section B -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>B. Kosakata Penting (الْمُفْرَدَاتُ)</h3>
+            <p>Berikut adalah kosakata dasar yang wajib dikuasai oleh siswa untuk menyebutkan alamat:</p>
+            
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">📍 Kosakata Lokasi:</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">عُنْوَانٌ</span> ('unwaanun) = Alamat</li>
+                    <li><span class="arabic-text">شَارِعٌ</span> (syaaari'un) = Jalan</li>
+                    <li><span class="arabic-text">قَرْيَةٌ</span> (qaryatun) = Desa / Kampung</li>
+                    <li><span class="arabic-text">مَدِيْنَةٌ</span> (madiinatun) = Kota</li>
+                    <li><span class="arabic-text">مُحَافَظَةٌ</span> (muhaafazhatun) = Provinsi</li>
+                    <li><span class="arabic-text">مُدِيْرِيَّةٌ</span> (mudiiriyyatun) = Kecamatan</li>
+                    <li><span class="arabic-text">مُقَاطَعَةٌ</span> (muqaatha'un) = Kabupaten</li>
+                    <li><span class="arabic-text">رَقْمٌ</span> (raqmun) = Nomor</li>
+                    <li><span class="arabic-text">بَيْتٌ</span> (baitun) = Rumah</li>
+                    <li><span class="arabic-text">مَسْجِدٌ</span> (masjidun) = Masjid</li>
+                </ul>
+            </div>
+
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">🧭 Arah Mata Angin (جِهَاتُ الْبُوصَلَةِ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">شَمَالٌ</span> (syamaalun) = Utara</li>
+                    <li><span class="arabic-text">جَنُوْبٌ</span> (januubun) = Selatan</li>
+                    <li><span class="arabic-text">شَرْقٌ</span> (syarqun) = Timur</li>
+                    <li><span class="arabic-text">غَرْبٌ</span> (gharbun) = Barat</li>
+                    <li><span class="arabic-text">يَمِيْنٌ</span> (yamiinun) = Kanan</li>
+                    <li><span class="arabic-text">يَسَارٌ</span> (yasaarun) = Kiri</li>
+                    <li><span class="arabic-text">أَمَامَ</span> (amaama) = Depan</li>
+                    <li><span class="arabic-text">خَلْفَ</span> (khalfa) = Belakang</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section C -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>C. Preposisi Tempat (ظُرُوفُ الْمَكَانِ)</h3>
+            <p>
+                Dalam bahasa Arab, preposisi tempat (ظروف المكان) berfungsi untuk menunjukkan posisi atau hubungan antara satu benda dengan benda lainnya. Berikut adalah daftar preposisi tempat yang sering digunakan:
+            </p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Preposisi</th>
+                        <th>Arti</th>
+                        <th>Contoh Penggunaan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="arabic-text">فِيْ</span></td>
+                        <td>Di / Dalam</td>
+                        <td><span class="arabic-text">أَسْكُنُ فِيْ لِيْمُوْ</span> (Saya tinggal di Limo)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">عَلَى</span></td>
+                        <td>Di atas / Pada</td>
+                        <td><span class="arabic-text">الْبَيْتُ عَلَى الْيَمِيْنِ</span> (Rumah di sebelah kanan)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">تَحْتَ</span></td>
+                        <td>Di bawah</td>
+                        <td><span class="arabic-text">الْكُرْسِيُّ تَحْتَ الْمَكْتَبِ</span> (Kursi di bawah meja)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">أَمَامَ</span></td>
+                        <td>Di depan</td>
+                        <td><span class="arabic-text">الْمَسْجِدُ أَمَامَ الْمَدْرَسَةِ</span> (Masjid di depan sekolah)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">خَلْفَ</span></td>
+                        <td>Di belakang</td>
+                        <td><span class="arabic-text">الْحَدِيْقَةُ خَلْفَ الْبَيْتِ</span> (Kebun di belakang rumah)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">بِجَانِبِ</span></td>
+                        <td>Di sebelah</td>
+                        <td><span class="arabic-text">الْمَكْتَبَةُ بِجَانِبِ الْمَسْجِدِ</span> (Perpustakaan di sebelah masjid)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">بَيْنَ</span></td>
+                        <td>Di antara</td>
+                        <td><span class="arabic-text">الْمَدْرَسَةُ بَيْنَ الْمَسْجِدِ وَالْبَيْتِ</span> (Sekolah di antara masjid dan rumah)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">حَوْلَ</span></td>
+                        <td>Di sekitar</td>
+                        <td><span class="arabic-text">الْأَشْجَارُ حَوْلَ الْبَيْتِ</span> (Pohon-pohon di sekitar rumah)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section D -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>D. Contoh Dialog Menanyakan Alamat (الْحِوَارُ)</h3>
+            <div class="vocab-box">
+                <h4 style="margin-top: 0; color: var(--primary);">Dialog antara Ahmad dan Pak Guru:</h4>
+                <div class="arabic-text">
+                    أَحْمَدُ: السَّلَامُ عَلَيْكُمْ يَا أُسْتَاذُ<br>
+                    الْمُعَلِّمُ: وَعَلَيْكُمُ السَّلَامُ يَا أَحْمَدُ<br>
+                    أَحْمَدُ: أَيْنَ تَسْكُنُ يَا أُسْتَاذُ؟<br>
+                    الْمُعَلِّمُ: أَسْكُنُ فِيْ قَرْيَةِ لِيْمُوْ جُوْرَايْ<br>
+                    أَحْمَدُ: هَلْ بَيْتُكَ قَرِيْبٌ مِنَ الْمَدْرَسَةِ؟<br>
+                    الْمُعَلِّمُ: نَعَمْ، بَيْتِيْ أَمَامَ الْمَسْجِدِ، وَخَلْفَ السُّوْقِ<br>
+                    أَحْمَدُ: مَا عُنْوَانُكَ بِالضَّبْطِ؟<br>
+                    الْمُعَلِّمُ: عُنْوَانِيْ: شَارِعُ الْوَحْدَةِ رَقْمُ ١٥، قَرْيَةُ لِيْمُوْ جُوْرَايْ، مُدِيْرِيَّةُ سُنْغَايْ بُوعَا، مُقَاطَعَةُ أَجَمْ
+                </div>
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed #ccc; color: #555; font-style: italic;">
+                    <strong>Terjemahan:</strong><br>
+                    Ahmad: Assalamu'alaikum wahai Ustadz<br>
+                    Guru: Wa'alaikumussalam wahai Ahmad<br>
+                    Ahmad: Di mana Anda tinggal wahai Ustadz?<br>
+                    Guru: Saya tinggal di Desa Limo Jurai<br>
+                    Ahmad: Apakah rumah Anda dekat dari sekolah?<br>
+                    Guru: Ya, rumah saya di depan masjid, dan di belakang pasar<br>
+                    Ahmad: Apa alamat Anda sebenarnya?<br>
+                    Guru: Alamat saya: Jalan Persatuan Nomor 15, Desa Limo Jurai, Kecamatan Sungai Pua, Kabupaten Agam
+                </div>
+            </div>
+        </section>
+
+        <!-- Section E -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>E. Analisis Perbandingan Bahasa</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Bahasa Indonesia</th>
+                        <th>Bahasa Arab</th>
+                        <th>Catatan Penting</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Urutan Penyebutan Alamat</td>
+                        <td>Spesifik → Umum (No, Jalan, Desa, Kota)</td>
+                        <td>Spesifik → Umum (رقم، شارع، قرية، مدينة)</td>
+                        <td>Keduanya sama: dari yang khusus ke yang umum</td>
+                    </tr>
+                    <tr>
+                        <td>Preposisi "Di"</td>
+                        <td>Satu kata: "di"</td>
+                        <td>Banyak: في، على، أمام، خلف، بجانب</td>
+                        <td>Arab lebih spesifik sesuai konteks posisi</td>
+                    </tr>
+                    <tr>
+                        <td>Arah Mata Angin</td>
+                        <td>Utara, Selatan, Timur, Barat</td>
+                        <td>شمال، جنوب، شرق، غرب</td>
+                        <td>Arab menggunakan kata benda, bukan kata sifat</td>
+                    </tr>
+                    <tr>
+                        <td>Kata Tanya Lokasi</td>
+                        <td>Di mana?</td>
+                        <td>أَيْنَ؟ / أَيْنَ تَسْكُنُ؟</td>
+                        <td>أَيْنَ selalu di awal kalimat tanya</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section F -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>F. Studi Kasus: Menanyakan Alamat di Lingkungan Madrasah</h3>
+            <div class="case-study">
+                <h4>Situasi Nyata</h4>
+                <p>
+                    Fatimah adalah siswa pindahan baru di MTs Swasta Diniyah Limo Jurai. Pada hari pertama, ia ingin mengunjungi rumah temannya, Aisyah, untuk belajar bersama. Namun, ia tidak tahu alamat rumah Aisyah.
+                </p>
+                <h4>Tantangan yang Dihadapi:</h4>
+                <ul>
+                    <li>Fatimah belum hafal kosakata alamat dalam bahasa Arab.</li>
+                    <li>Ia bingung menggunakan preposisi tempat (أمام، خلف، بجانب) dengan tepat.</li>
+                    <li>Perlu menanyakan alamat dengan sopan sesuai adab Islam.</li>
+                </ul>
+                <h4>Solusi dan Langkah Strategis:</h4>
+                <ol>
+                    <li><strong>Mengawali dengan Salam:</strong> Mengucapkan salam sebelum bertanya (<span class="arabic-text">السَّلَامُ عَلَيْكُمْ</span>).</li>
+                    <li><strong>Menggunakan Kata Tanya yang Tepat:</strong> 
+                        <ul>
+                            <li><span class="arabic-text">أَيْنَ تَسْكُنِيْنَ؟</span> (Di mana kamu tinggal? - untuk perempuan)</li>
+                            <li><span class="arabic-text">مَا عُنْوَانُ بَيْتِكِ؟</span> (Apa alamat rumahmu?)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mencatat dengan Teliti:</strong> Menulis alamat secara berurutan dari yang spesifik ke umum.</li>
+                    <li><strong>Mengucapkan Terima Kasih:</strong> <span class="arabic-text">جَزَاكِ اللهُ خَيْرًا</span> (Semoga Allah membalasmu dengan kebaikan).</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Section G -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>G. Poin Penting untuk Ujian</h3>
+            <div class="exam-points">
+                <h4>📌 Hafalkan dan Pahami Hal-Hal Berikut:</h4>
+                <ul>
+                    <li>Pahami perbedaan antara <strong>ظروف المكان</strong> (preposisi tempat) yang satu sama lain memiliki makna spesifik.</li>
+                    <li>Kuasai 10 kosakata inti Al-Unwan beserta harakat dan artinya.</li>
+                    <li>Hafalkan 8 arah mata angin dan posisi relatif (kanan, kiri, depan, belakang).</li>
+                    <li>Pahami penggunaan kata tanya: <span class="arabic-text" style="font-size: 1.2rem;">أَيْنَ</span> (di mana), <span class="arabic-text" style="font-size: 1.2rem;">هَلْ</span> (apakah).</li>
+                    <li>Bedakan antara <span class="arabic-text" style="font-size: 1.2rem;">أَيْنَ تَسْكُنُ؟</span> (kamu laki-laki) dan <span class="arabic-text" style="font-size: 1.2rem;">أَيْنَ تَسْكُنِيْنَ؟</span> (kamu perempuan).</li>
+                    <li>Mampu menyebutkan alamat lengkap dengan urutan yang benar (nomor → jalan → desa → kecamatan → kabupaten).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section H -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>H. Relevansi untuk Pendidikan Islam</h3>
+            <p>
+                Dalam konteks Pendidikan Agama Islam, materi Al-Unwan bukan hanya keterampilan linguistik, tetapi juga memiliki nilai-nilai keislaman yang mendalam:
+            </p>
+            <ul>
+                <li><strong>Integrasi Adab:</strong> Menanamkan adab bertanya dengan sopan, mengawali dengan salam, dan mengucapkan terima kasih (<span class="arabic-text" style="font-size: 1.2rem;">مَنْ لَا يَشْكُرِ النَّاسَ لَا يَشْكُرِ اللهَ</span>).</li>
+                <li><strong>Nilai Tolong-Menolong:</strong> Memberi petunjuk arah kepada orang yang tersesat adalah bentuk sedekah dan amal saleh.</li>
+                <li><strong>Kejujuran:</strong> Rasulullah SAW mengajarkan untuk memberi informasi dengan jujur dan tidak menyesatkan (<span class="arabic-text" style="font-size: 1.2rem;">عَلَيْكُمْ بِالصِّدْقِ</span>).</li>
+                <li><strong>Silaturahmi:</strong> Kemampuan menyebutkan alamat memfasilitasi kunjungan dan silaturahmi antar sesama Muslim.</li>
+            </ul>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="action-buttons" style="margin: 40px 0;">
+            <a href="index.html" class="btn btn-outline">🏠 Kembali ke Beranda</a>
+            <a href="uji-formatif-2.html" class="btn btn-primary">✍️ Uji Formatif Pertemuan 2</a>
+            <a href="3.html" class="btn btn-outline">Pertemuan Selanjutnya →</a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>كِتَابُ اللُّغَةِ الْعَرَبِيَّةِ</h3>
+                    <p style="color: #ccc; line-height: 1.8;">
+                        Buku daras untuk siswa MTs. Menguasai bahasa Arab dengan metode modern, interaktif, dan berlandaskan nilai-nilai keislaman.
+                    </p>
+                </div>
+                <div>
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="index.html#pertemuan">Daftar Pertemuan</a></li>
+                        <li><a href="index.html#penulis">Tentang Penulis</a></li>
+                        <li><a href="uji-formatif-2.html">Uji Formatif</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontak Penulis</h4>
+                    <ul>
+                        <li>👤 Fauzi Ilmi Al-Khairi, S.H.</li>
+                        <li>🏫 MTs Swasta Diniyah Limo Jurai Sungai Pua</li>
+                        <li>✉️ <a href="mailto:fauziilmialkhairi@gmail.com">fauziilmialkhairi@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Fauzi Ilmi Al-Khairi, S.H. Hak cipta dilindungi undang-undang.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">Dikembangkan untuk kebutuhan pembelajaran Bahasa Arab di MTs Swasta Diniyah Limo Jurai Sungai Pua.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

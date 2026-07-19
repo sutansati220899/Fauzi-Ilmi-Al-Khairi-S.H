@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 6 - Al-Fashl (الْفَصْلُ) | Bahasa Arab Kelas 7</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3c72;
+            --secondary: #2a5298;
+            --accent: #FFD700;
+            --text-dark: #333;
+            --text-light: #f8f9fa;
+            --bg-light: #ffffff;
+            --bg-section: #f8f9fa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .arabic-text {
+            font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade New', serif;
+            direction: rtl;
+            text-align: right;
+            line-height: 2.4;
+            font-size: 1.4rem;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* Top Navigation */
+        .top-nav {
+            background: var(--primary);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .top-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 20px; }
+
+        /* Header Section */
+        .chapter-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chapter-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,215,0,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .chapter-header h1 {
+            font-family: 'Amiri', serif;
+            font-size: 1.2rem;
+            color: var(--accent);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .chapter-header h2 {
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .chapter-header .arabic-title {
+            font-size: 3rem;
+            color: var(--accent);
+            margin: 15px 0;
+            font-family: 'Traditional Arabic', 'Amiri', serif;
+        }
+
+        .chapter-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary { background: var(--accent); color: var(--primary); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,215,0,0.3); }
+        .btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+        .btn-outline:hover { background: var(--accent); color: var(--primary); }
+
+        /* Content Sections */
+        .content-section {
+            background: var(--bg-light);
+            padding: 50px 0;
+            margin: 30px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .content-section h3 {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+        }
+
+        .content-section h4 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin: 25px 0 15px;
+        }
+
+        .content-section p { margin-bottom: 15px; text-align: justify; }
+        .content-section ul, .content-section ol { margin: 15px 0 15px 30px; }
+        .content-section li { margin-bottom: 10px; }
+
+        /* Vocabulary Box */
+        .vocab-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+            border-right: 5px solid var(--accent);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+
+        .vocab-box .arabic-text {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+
+        /* Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table thead {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .comparison-table th {
+            padding: 18px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table td {
+            padding: 15px 18px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: right;
+        }
+
+        .comparison-table tbody tr:hover { background: #f8f9fa; }
+        .comparison-table tbody tr:nth-child(even) { background: #fafafa; }
+
+        /* Case Study */
+        .case-study {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f0 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid var(--secondary);
+        }
+
+        .case-study h4 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .case-study h4::before { content: '📚'; }
+
+        /* Exam Points */
+        .exam-points {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+            border-left: 5px solid #e74c3c;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+
+        .exam-points h4 { color: #c0392b; margin-bottom: 15px; }
+
+        /* Rules Box */
+        .rules-box {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e0e8ff 100%);
+            border-right: 5px solid var(--secondary);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+
+        .rules-box h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f1f3d 100%);
+            color: white;
+            padding: 50px 0 30px;
+            margin-top: 50px;
+        }
+
+        footer h3 {
+            font-family: 'Amiri', serif;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        footer .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer h4 { color: var(--accent); margin-bottom: 15px; font-size: 1.2rem; }
+        footer ul { list-style: none; }
+        footer ul li { margin-bottom: 10px; }
+        footer a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: var(--accent); }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .chapter-header h2 { font-size: 1.8rem; }
+            .chapter-header .arabic-title { font-size: 2.2rem; }
+            .nav-links { width: 100%; justify-content: center; }
+            .comparison-table { font-size: 0.9rem; }
+            .comparison-table th, .comparison-table td { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="container">
+            <a href="index.html" style="font-family: 'Amiri', serif; font-size: 1.2rem; color: #FFD700;">
+                📖 Bahasa Arab Kelas 7
+            </a>
+            <div class="nav-links">
+                <a href="index.html">🏠 Beranda</a>
+                <a href="index.html#pertemuan">📑 Daftar Pertemuan</a>
+                <a href="index.html#penulis">✍️ Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Chapter Header -->
+    <header class="chapter-header">
+        <div class="container">
+            <h1>PERTEMUAN 6</h1>
+            <h2>Ruang Kelas dan Interaksi Belajar</h2>
+            <div class="arabic-title">الْفَصْلُ</div>
+            <p>Konsep dasar ruang kelas (الفصل الدراسي), kosakata benda-benda di kelas, kata kerja aktivitas siswa, peraturan kelas, dan dialog interaksi guru-siswa berharakat.</p>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-outline">🏠 Beranda</a>
+                <a href="uji-formatif-6.html" class="btn btn-primary">📝 Uji Formatif Pertemuan 6</a>
+                <a href="7.html" class="btn btn-outline">Pertemuan Selanjutnya →</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Section A -->
+        <section class="content-section" style="padding: 40px; margin-top: -30px; position: relative; z-index: 10;">
+            <h3>A. Pengertian dan Hakikat Al-Fashl (الْفَصْلُ)</h3>
+            <p>
+                Al-Fashl secara etimologis berasal dari kata <span class="arabic-text" style="font-size: 1.2rem; display: inline;">فَصَلَ - يَفْصِلُ</span> yang berarti "memisahkan" atau "membagi". Dalam konteks pendidikan, <span class="arabic-text" style="font-size: 1.3rem; display: inline;">الْفَصْلُ الدِّرَاسِيُّ</span> bermakna ruang atau tempat yang disiapkan untuk menyelenggarakan proses pembelajaran, di mana guru dan siswa berinteraksi dalam suasana yang kondusif.
+            </p>
+            <p>Dalam perspektif yang lebih komprehensif, Al-Fashl mencakup beberapa aspek penting:</p>
+            <ul>
+                <li><strong>Tujuan:</strong> Menciptakan lingkungan belajar yang nyaman, tertib, dan kondusif untuk menuntut ilmu.</li>
+                <li><strong>Isi:</strong> Kosakata benda-benda di kelas, kata kerja aktivitas siswa, dan ungkapan interaksi.</li>
+                <li><strong>Strategi:</strong> Penggunaan kalimat verbal (Jumlah Fi'liyah) dan nominal (Jumlah Ismiyah) untuk mendeskripsikan aktivitas di kelas.</li>
+                <li><strong>Etika:</strong> Menanamkan adab di dalam kelas seperti menghormati guru, mendengarkan penjelasan, dan menjaga kebersihan.</li>
+            </ul>
+            
+            <h4>Definisi Al-Fashl Menurut Para Ahli:</h4>
+            <ul>
+                <li><strong>Kamus Al-Munawwir:</strong> Al-Fashl adalah kelas, ruang belajar, atau bagian/segmen dalam pendidikan.</li>
+                <li><strong>Prof. Dr. A. Fuad Effendy:</strong> Al-Fashl adalah keterampilan berbicara (maharah kalam) yang berkaitan dengan kemampuan mendeskripsikan ruang kelas dan berinteraksi di dalamnya.</li>
+            </ul>
+        </section>
+
+        <!-- Section B -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>B. Kosakata Penting (الْمُفْرَدَاتُ)</h3>
+            <p>Berikut adalah kosakata dasar yang wajib dikuasai oleh siswa untuk membicarakan ruang kelas:</p>
+            
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">🏫 Benda-Benda di Kelas (أَدَوَاتُ الْفَصْلِ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">الْفَصْلُ</span> (al-fashlu) = Kelas / Ruang kelas</li>
+                    <li><span class="arabic-text">السَّبُّوْرَةُ</span> (as-sabbuuratu) = Papan tulis</li>
+                    <li><span class="arabic-text">الطَّبْشُوْرَةُ</span> (ath-thabsyuuratu) = Kapur tulis</li>
+                    <li><span class="arabic-text">الْمِمْحَاةُ</span> (al-mimhaatu) = Penghapus</li>
+                    <li><span class="arabic-text">الْمِكْرُوْفُوْنُ</span> (al-miikruufuunu) = Pengeras suara</li>
+                    <li><span class="arabic-text">الْمِرْوَحَةُ</span> (al-mirwaha) = Kipas angin</li>
+                    <li><span class="arabic-text">الْمِصْبَاحُ</span> (al-mishbaahu) = Lampu</li>
+                    <li><span class="arabic-text">السَّاعَةُ</span> (as-saa'atu) = Jam (dinding)</li>
+                    <li><span class="arabic-text">الْخَرِيْطَةُ</span> (al-khariithatu) = Peta</li>
+                    <li><span class="arabic-text">الْبَابُ</span> (al-baabu) = Pintu</li>
+                    <li><span class="arabic-text">النَّافِذَةُ</span> (an-naafidzatu) = Jendela</li>
+                    <li><span class="arabic-text">الْجِدَارُ</span> (al-jidaaru) = Dinding</li>
+                    <li><span class="arabic-text">الْأَرْضِيَّةُ</span> (al-ardhiyyatu) = Lantai</li>
+                </ul>
+            </div>
+
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">✏️ Alat Tulis Siswa (أَدَوَاتُ الطَّالِبِ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">الْقَلَمُ</span> (al-qalamu) = Pensil / Pena</li>
+                    <li><span class="arabic-text">الْكِتَابُ</span> (al-kitaabu) = Buku</li>
+                    <li><span class="arabic-text">الدَّفْتَرُ</span> (ad-daftaru) = Buku tulis</li>
+                    <li><span class="arabic-text">الْحَقِيْبَةُ</span> (al-haqiibatu) = Tas</li>
+                    <li><span class="arabic-text">الْمِسْطَرَةُ</span> (al-mistharatu) = Penggaris</li>
+                    <li><span class="arabic-text">الْمِقَصُّ</span> (al-miqashshu) = Gunting</li>
+                    <li><span class="arabic-text">الْمَكْتَبُ</span> (al-maktabu) = Meja</li>
+                    <li><span class="arabic-text">الْكُرْسِيُّ</span> (al-kursiyyu) = Kursi</li>
+                </ul>
+            </div>
+
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">🏃 Kata Kerja Aktivitas Siswa (أَفْعَالُ الطُّلَّابِ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">يَدْخُلُ</span> (yadkhulu) = Masuk</li>
+                    <li><span class="arabic-text">يَخْرُجُ</span> (yakhruju) = Keluar</li>
+                    <li><span class="arabic-text">يَقِفُ</span> (yaqifu) = Berdiri</li>
+                    <li><span class="arabic-text">يَجْلِسُ</span> (yajlisu) = Duduk</li>
+                    <li><span class="arabic-text">يَرْفَعُ يَدَهُ</span> (yarfa'u yadahu) = Mengangkat tangan</li>
+                    <li><span class="arabic-text">يَسْأَلُ</span> (yas'alu) = Bertanya</li>
+                    <li><span class="arabic-text">يُجِيْبُ</span> (yujiibu) = Menjawab</li>
+                    <li><span class="arabic-text">يَسْتَمِعُ</span> (yastami'u) = Mendengarkan</li>
+                    <li><span class="arabic-text">يَكْتُبُ</span> (yaktubu) = Menulis</li>
+                    <li><span class="arabic-text">يَقْرَأُ</span> (yaqra'u) = Membaca</li>
+                    <li><span class="arabic-text">يَفْتَحُ</span> (yaftahu) = Membuka</li>
+                    <li><span class="arabic-text">يُغْلِقُ</span> (yughliqu) = Menutup</li>
+                    <li><span class="arabic-text">يَمْسَحُ</span> (yamsahu) = Menghapus</li>
+                    <li><span class="arabic-text">يُنْصِتُ</span> (yunshitu) = Menyimak / Diam mendengarkan</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section C -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>C. Peraturan Kelas (قَوَاعِدُ الْفَصْلِ)</h3>
+            <p>
+                Dalam setiap kelas, terdapat peraturan yang harus dipatuhi oleh siswa untuk menciptakan suasana belajar yang kondusif. Berikut adalah beberapa peraturan kelas dalam bahasa Arab:
+            </p>
+            
+            <div class="rules-box">
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">يَجِبُ الِاحْتِرَامُ لِلْمُعَلِّمِ</span> = Harus menghormati guru</li>
+                    <li><span class="arabic-text">يَجِبُ الْإِنْصَاتُ عِنْدَ الشَّرْحِ</span> = Harus menyimak saat penjelasan</li>
+                    <li><span class="arabic-text">يَجِبُ الْحُضُوْرُ فِي الْوَقْتِ</span> = Harus hadir tepat waktu</li>
+                    <li><span class="arabic-text">يَجِبُ النَّظَافَةُ</span> = Harus menjaga kebersihan</li>
+                    <li><span class="arabic-text">يَجِبُ الْهُدُوْءُ فِي الْفَصْلِ</span> = Harus tenang di kelas</li>
+                    <li><span class="arabic-text">مَمْنُوْعُ الْكَلَامِ بِدُوْنَ إِذْنٍ</span> = Dilarang berbicara tanpa izin</li>
+                    <li><span class="arabic-text">مَمْنُوْعُ الْأَكْلِ فِي الْفَصْلِ</span> = Dilarang makan di kelas</li>
+                    <li><span class="arabic-text">مَمْنُوْعُ اسْتِعْمَالِ الْهَاتِفِ</span> = Dilarang menggunakan HP</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section D -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>D. Struktur Kalimat tentang Kelas (التَّرَاكِيْبُ)</h3>
+            <p>
+                Dalam bahasa Arab, untuk mendeskripsikan aktivitas di kelas digunakan struktur <strong>Jumlah Fi'liyah</strong> (kalimat verbal) karena fokusnya pada tindakan/aktivitas.
+            </p>
+            
+            <h4>Pola Dasar:</h4>
+            <ol>
+                <li>
+                    <strong>Fi'il + Fa'il + Maf'ul Bih</strong><br>
+                    <span class="arabic-text" style="color: var(--secondary);">مِثَالٌ: يَقْرَأُ الطَّالِبُ الْكِتَابَ</span><br>
+                    <em>(Contoh: Siswa membaca buku)</em>
+                </li>
+                <li>
+                    <strong>Fi'il + Fa'il + Zharaf</strong><br>
+                    <span class="arabic-text" style="color: var(--secondary);">مِثَالٌ: يَجْلِسُ التَّلَامِيْذُ عَلَى الْكَرَاسِيِّ</span><br>
+                    <em>(Contoh: Para siswa duduk di atas kursi-kursi)</em>
+                </li>
+                <li>
+                    <strong>Amr (Kalimat Perintah)</strong><br>
+                    <span class="arabic-text" style="color: var(--secondary);">مِثَالٌ: اِفْتَحْ كِتَابَكَ / اِسْتَمِعْ يَا طَالِبُ</span><br>
+                    <em>(Contoh: Bukalah bukumu / Dengarkanlah wahai siswa)</em>
+                </li>
+            </ol>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Contoh Kalimat</th>
+                        <th>Arti</th>
+                        <th>Struktur</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="arabic-text">يَقِفُ التِّلْمِيْذُ</span></td>
+                        <td>Siswa berdiri</td>
+                        <td>Fi'il + Fa'il</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">يَمْسَحُ الْمُعَلِّمُ السَّبُّوْرَةَ</span></td>
+                        <td>Guru menghapus papan tulis</td>
+                        <td>Fi'il + Fa'il + Maf'ul</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">يَفْتَحُ الطُّلَّابُ الْكُتُبَ</span></td>
+                        <td>Para siswa membuka buku-buku</td>
+                        <td>Fi'il + Fa'il Jamak + Maf'ul</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">اُجْلُسْ مِنْ فَضْلِكَ</span></td>
+                        <td>Duduklah silakan</td>
+                        <td>Fi'il Amr</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section E -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>E. Contoh Dialog Interaksi di Kelas (الْحِوَارُ)</h3>
+            <div class="vocab-box">
+                <h4 style="margin-top: 0; color: var(--primary);">Dialog antara Guru (Ustadz) dan Siswa di Kelas:</h4>
+                <div class="arabic-text">
+                    الْمُعَلِّمُ: السَّلَامُ عَلَيْكُمْ يَا طَلَبَتِي<br>
+                    التَّلَامِيْذُ: وَعَلَيْكُمُ السَّلَامُ يَا أُسْتَاذُ<br>
+                    الْمُعَلِّمُ: اِجْلِسُوْا مِنْ فَضْلِكُمْ<br>
+                    الْمُعَلِّمُ: اِفْتَحُوْا كُتُبَكُمْ عَلَى الصَّفْحَةِ الرَّابِعَةِ عَشْرَةَ<br>
+                    التِّلْمِيْذُ: يَا أُسْتَاذُ، هَلْ يُمْكِنُ أَنْ أَسْأَلَ سُؤَالًا؟<br>
+                    الْمُعَلِّمُ: نَعَمْ، تَفَضَّلْ يَا أَحْمَدُ<br>
+                    التِّلْمِيْذُ: مَا مَعْنَى كَلِمَةِ "يَقْرَأُ"؟<br>
+                    الْمُعَلِّمُ: "يَقْرَأُ" تَعْنِي "مembaca" بِاللُّغَةِ الْإِنْدُوْنِيْسِيَّةِ<br>
+                    الْمُعَلِّمُ: هَلْ فَهِمْتُمْ يَا طَلَبَتِي؟<br>
+                    التَّلَامِيْذُ: نَعَمْ يَا أُسْتَاذُ، فَهِمْنَا<br>
+                    الْمُعَلِّمُ: اُكْتُبُوْا التَّمْرِيْنَ فِي الدَّفْتَرِ<br>
+                    التَّلَامِيْذُ: سَمِعْنَا وَأَطَعْنَا يَا أُسْتَاذُ
+                </div>
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed #ccc; color: #555; font-style: italic;">
+                    <strong>Terjemahan:</strong><br>
+                    Guru: Assalamu'alaikum wahai murid-muridku<br>
+                    Para siswa: Wa'alaikumussalam wahai Ustadz<br>
+                    Guru: Silakan duduk<br>
+                    Guru: Bukalah buku kalian pada halaman ke-14<br>
+                    Siswa: Wahai Ustadz, bolehkah saya bertanya?<br>
+                    Guru: Ya, silakan wahai Ahmad<br>
+                    Siswa: Apa arti kata "yaqra'u"?<br>
+                    Guru: "Yaqra'u" artinya "membaca" dalam bahasa Indonesia<br>
+                    Guru: Apakah kalian sudah paham wahai murid-muridku?<br>
+                    Para siswa: Ya wahai Ustadz, kami sudah paham<br>
+                    Guru: Tulislah latihan di buku tulis<br>
+                    Para siswa: Kami dengar dan kami taat wahai Ustadz
+                </div>
+            </div>
+        </section>
+
+        <!-- Section F -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>F. Analisis Perbandingan Bahasa</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Bahasa Indonesia</th>
+                        <th>Bahasa Arab</th>
+                        <th>Catatan Penting</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kata "Kelas"</td>
+                        <td>Satu kata: "kelas"</td>
+                        <td>فَصْلٌ (ruang) / صَفٌّ (tingkatan)</td>
+                        <td>Arab membedakan ruang fisik dan tingkatan</td>
+                    </tr>
+                    <tr>
+                        <td>Kata "Guru"</td>
+                        <td>Satu kata: "guru"</td>
+                        <td>مُعَلِّمٌ / أُسْتَاذٌ / مُرَبِّي</td>
+                        <td>Arab memiliki sinonim dengan nuansa berbeda</td>
+                    </tr>
+                    <tr>
+                        <td>Kata "Siswa"</td>
+                        <td>Satu kata: "siswa"</td>
+                        <td>طَالِبٌ / تِلْمِيْذٌ</td>
+                        <td>طَالِب = penuntut ilmu, تِلْمِيْذٌ = murid</td>
+                    </tr>
+                    <tr>
+                        <td>Kalimat Perintah</td>
+                        <td>"Duduklah", "Bukalah"</td>
+                        <td>اِجْلِسْ / اِفْتَحْ (fi'il amr)</td>
+                        <td>Arab menggunakan fi'il amr untuk perintah</td>
+                    </tr>
+                    <tr>
+                        <td>Kesopanan</td>
+                        <td>"Silakan", "Tolong"</td>
+                        <td>مِنْ فَضْلِكَ / تَفَضَّلْ</td>
+                        <td>Arab memiliki ungkapan kesopanan khusus</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section G -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>G. Studi Kasus: Interaksi di Kelas MTs Diniyah Limo Jurai</h3>
+            <div class="case-study">
+                <h4>Situasi Nyata</h4>
+                <p>
+                    Ahmad adalah siswa kelas 7A di MTs Swasta Diniyah Limo Jurai. Pada pelajaran Bahasa Arab, ia harus berinteraksi dengan guru dan teman-temannya menggunakan bahasa Arab. Ia ingin memahami ungkapan-ungkapan yang digunakan saat membuka pelajaran, bertanya, dan menjawab.
+                </p>
+                <h4>Tantangan yang Dihadapi:</h4>
+                <ul>
+                    <li>Ahmad bingung membedakan <span class="arabic-text" style="font-size: 1.2rem;">يَسْأَلُ</span> (bertanya) dan <span class="arabic-text" style="font-size: 1.2rem;">يُجِيْبُ</span> (menjawab).</li>
+                    <li>Ia kesulitan menggunakan fi'il amr (kata kerja perintah) saat diminta oleh guru.</li>
+                    <li>Perlu memahami ungkapan sopan seperti <span class="arabic-text" style="font-size: 1.2rem;">مِنْ فَضْلِكَ</span> dan <span class="arabic-text" style="font-size: 1.2rem;">تَفَضَّلْ</span>.</li>
+                </ul>
+                <h4>Solusi dan Langkah Strategis:</h4>
+                <ol>
+                    <li><strong>Menghafal Kosakata:</strong> Membuat daftar kata kerja aktivitas di kelas dengan gambar.</li>
+                    <li><strong>Latihan Fi'il Amr:</strong> Berlatih mengubah fi'il mudhari' menjadi fi'il amr:
+                        <ul>
+                            <li><span class="arabic-text" style="font-size: 1.2rem;">تَفْتَحُ → اِفْتَحْ</span> (kamu membuka → bukalah)</li>
+                            <li><span class="arabic-text" style="font-size: 1.2rem;">تَجْلِسُ → اِجْلِسْ</span> (kamu duduk → duduklah)</li>
+                            <li><span class="arabic-text" style="font-size: 1.2rem;">تَسْمَعُ → اِسْمَعْ</span> (kamu mendengar → dengarkanlah)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Praktik Langsung:</strong> Menggunakan ungkapan Arab saat berinteraksi di kelas setiap hari.</li>
+                    <li><strong>Menanamkan Nilai Islam:</strong> Mengaitkan dengan adab menuntut ilmu (<span class="arabic-text" style="font-size: 1.2rem;">أَدَبُ طَلَبِ الْعِلْمِ</span>) dan menghormati guru.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Section H -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>H. Poin Penting untuk Ujian</h3>
+            <div class="exam-points">
+                <h4>📌 Hafalkan dan Pahami Hal-Hal Berikut:</h4>
+                <ul>
+                    <li>Pahami perbedaan antara <strong>الْفَصْلُ</strong> (ruang kelas) dan <strong>الصَّفُّ</strong> (tingkatan kelas).</li>
+                    <li>Kuasai 25+ kosakata inti Al-Fashl (benda, alat tulis, kata kerja) beserta harakat dan artinya.</li>
+                    <li>Pahami perbedaan antara <strong>يَسْأَلُ</strong> (bertanya) dan <strong>يُجِيْبُ</strong> (menjawab).</li>
+                    <li>Pahami perbedaan antara <strong>يَفْتَحُ</strong> (membuka) dan <strong>يُغْلِقُ</strong> (menutup).</li>
+                    <li>Hafalkan dialog interaksi di kelas minimal 10 kalimat berharakat.</li>
+                    <li>Pahami penggunaan <strong>Fi'il Amr</strong> (kata kerja perintah) seperti <span class="arabic-text" style="font-size: 1.2rem;">اِفْتَحْ، اِجْلِسْ، اِسْمَعْ</span>.</li>
+                    <li>Pahami ungkapan kesopanan: <span class="arabic-text" style="font-size: 1.2rem;">مِنْ فَضْلِكَ</span>, <span class="arabic-text" style="font-size: 1.2rem;">تَفَضَّلْ</span>, <span class="arabic-text" style="font-size: 1.2rem;">لَوْ سَمَحْتَ</span>.</li>
+                    <li>Mampu mendeskripsikan aktivitas di kelas dengan kalimat verbal berharakat.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section I -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>I. Relevansi untuk Pendidikan Islam</h3>
+            <p>
+                Dalam konteks Pendidikan Agama Islam, materi Al-Fashl bukan hanya keterampilan linguistik, tetapi juga memiliki nilai-nilai keislaman yang mendalam:
+            </p>
+            <ul>
+                <li><strong>Adab Menuntut Ilmu:</strong> Menanamkan adab terhadap guru (<span class="arabic-text" style="font-size: 1.2rem;">أَدَبُ الطَّالِبِ مَعَ مُعَلِّمِهِ</span>) seperti berdiri saat guru masuk dan mendengarkan dengan penuh perhatian.</li>
+                <li><strong>Kebersihan Kelas:</strong> Menjaga kebersihan kelas sebagai bagian dari iman (<span class="arabic-text" style="font-size: 1.2rem;">النَّظَافَةُ مِنَ الْإِيْمَانِ</span>).</li>
+                <li><strong>Ketertiban dan Disiplin:</strong> Menanamkan nilai disiplin waktu dan ketertiban sebagai cerminan akhlak Muslim.</li>
+                <li><strong>Ukhuwah Islamiyah:</strong> Mempererat persaudaraan antar sesama siswa di dalam kelas.</li>
+                <li><strong>Doa Sebelum Belajar:</strong> Mengamalkan doa <span class="arabic-text" style="font-size: 1.2rem;">رَبِّ زِدْنِيْ عِلْمًا وَارْزُقْنِيْ فَهْمًا</span> sebelum memulai pelajaran.</li>
+                <li><strong>Menghormati Teman:</strong> Tidak mengejek atau mengganggu teman saat belajar (<span class="arabic-text" style="font-size: 1.2rem;">لَا يَسْخَرْ قَوْمٌ مِنْ قَوْمٍ</span> - QS. Al-Hujurat: 11).</li>
+            </ul>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="action-buttons" style="margin: 40px 0;">
+            <a href="index.html" class="btn btn-outline">🏠 Kembali ke Beranda</a>
+            <a href="uji-formatif-6.html" class="btn btn-primary">✍️ Uji Formatif Pertemuan 6</a>
+            <a href="7.html" class="btn btn-outline">Pertemuan Selanjutnya →</a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>كِتَابُ اللُّغَةِ الْعَرَبِيَّةِ</h3>
+                    <p style="color: #ccc; line-height: 1.8;">
+                        Buku daras untuk siswa MTs. Menguasai bahasa Arab dengan metode modern, interaktif, dan berlandaskan nilai-nilai keislaman.
+                    </p>
+                </div>
+                <div>
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="index.html#pertemuan">Daftar Pertemuan</a></li>
+                        <li><a href="index.html#penulis">Tentang Penulis</a></li>
+                        <li><a href="uji-formatif-6.html">Uji Formatif</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontak Penulis</h4>
+                    <ul>
+                        <li>👤 Fauzi Ilmi Al-Khairi, S.H.</li>
+                        <li>🏫 MTs Swasta Diniyah Limo Jurai Sungai Pua</li>
+                        <li>✉️ <a href="mailto:fauziilmialkhairi@gmail.com">fauziilmialkhairi@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Fauzi Ilmi Al-Khairi, S.H. Hak cipta dilindungi undang-undang.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">Dikembangkan untuk kebutuhan pembelajaran Bahasa Arab di MTs Swasta Diniyah Limo Jurai Sungai Pua.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

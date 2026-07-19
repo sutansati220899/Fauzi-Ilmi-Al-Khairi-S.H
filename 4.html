@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 4 - Al-Bait (الْبَيْتُ) | Bahasa Arab Kelas 7</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3c72;
+            --secondary: #2a5298;
+            --accent: #FFD700;
+            --text-dark: #333;
+            --text-light: #f8f9fa;
+            --bg-light: #ffffff;
+            --bg-section: #f8f9fa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .arabic-text {
+            font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade New', serif;
+            direction: rtl;
+            text-align: right;
+            line-height: 2.4;
+            font-size: 1.4rem;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* Top Navigation */
+        .top-nav {
+            background: var(--primary);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .top-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 20px; }
+
+        /* Header Section */
+        .chapter-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chapter-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,215,0,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .chapter-header h1 {
+            font-family: 'Amiri', serif;
+            font-size: 1.2rem;
+            color: var(--accent);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .chapter-header h2 {
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .chapter-header .arabic-title {
+            font-size: 3rem;
+            color: var(--accent);
+            margin: 15px 0;
+            font-family: 'Traditional Arabic', 'Amiri', serif;
+        }
+
+        .chapter-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary { background: var(--accent); color: var(--primary); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,215,0,0.3); }
+        .btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+        .btn-outline:hover { background: var(--accent); color: var(--primary); }
+
+        /* Content Sections */
+        .content-section {
+            background: var(--bg-light);
+            padding: 50px 0;
+            margin: 30px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .content-section h3 {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+        }
+
+        .content-section h4 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin: 25px 0 15px;
+        }
+
+        .content-section p { margin-bottom: 15px; text-align: justify; }
+        .content-section ul, .content-section ol { margin: 15px 0 15px 30px; }
+        .content-section li { margin-bottom: 10px; }
+
+        /* Vocabulary Box */
+        .vocab-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+            border-right: 5px solid var(--accent);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+
+        .vocab-box .arabic-text {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+
+        /* Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table thead {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .comparison-table th {
+            padding: 18px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table td {
+            padding: 15px 18px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: right;
+        }
+
+        .comparison-table tbody tr:hover { background: #f8f9fa; }
+        .comparison-table tbody tr:nth-child(even) { background: #fafafa; }
+
+        /* Case Study */
+        .case-study {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f0 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid var(--secondary);
+        }
+
+        .case-study h4 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .case-study h4::before { content: '📚'; }
+
+        /* Exam Points */
+        .exam-points {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+            border-left: 5px solid #e74c3c;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+
+        .exam-points h4 { color: #c0392b; margin-bottom: 15px; }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f1f3d 100%);
+            color: white;
+            padding: 50px 0 30px;
+            margin-top: 50px;
+        }
+
+        footer h3 {
+            font-family: 'Amiri', serif;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        footer .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer h4 { color: var(--accent); margin-bottom: 15px; font-size: 1.2rem; }
+        footer ul { list-style: none; }
+        footer ul li { margin-bottom: 10px; }
+        footer a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: var(--accent); }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .chapter-header h2 { font-size: 1.8rem; }
+            .chapter-header .arabic-title { font-size: 2.2rem; }
+            .nav-links { width: 100%; justify-content: center; }
+            .comparison-table { font-size: 0.9rem; }
+            .comparison-table th, .comparison-table td { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="container">
+            <a href="index.html" style="font-family: 'Amiri', serif; font-size: 1.2rem; color: #FFD700;">
+                📖 Bahasa Arab Kelas 7
+            </a>
+            <div class="nav-links">
+                <a href="index.html">🏠 Beranda</a>
+                <a href="index.html#pertemuan">📑 Daftar Pertemuan</a>
+                <a href="index.html#penulis">✍️ Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Chapter Header -->
+    <header class="chapter-header">
+        <div class="container">
+            <h1>PERTEMUAN 4</h1>
+            <h2>Rumah dan Perabotnya</h2>
+            <div class="arabic-title">الْبَيْتُ</div>
+            <p>Konsep dasar rumah dalam Islam (baiti jannati), kosakata ruangan dan perabot, kata sifat deskriptif, cara mendeskripsikan rumah, dan dialog keluarga Muslim berharakat.</p>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-outline">🏠 Beranda</a>
+                <a href="uji-formatif-4.html" class="btn btn-primary">📝 Uji Formatif Pertemuan 4</a>
+                <a href="5.html" class="btn btn-outline">Pertemuan Selanjutnya →</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Section A -->
+        <section class="content-section" style="padding: 40px; margin-top: -30px; position: relative; z-index: 10;">
+            <h3>A. Pengertian dan Hakikat Al-Bait (الْبَيْتُ)</h3>
+            <p>
+                Al-Bait secara etimologis berasal dari kata <span class="arabic-text" style="font-size: 1.2rem; display: inline;">بَاتَ</span> yang berarti "menginap" atau "tinggal di suatu tempat". Dalam konteks kehidupan sosial, Al-Bait bermakna bangunan atau tempat tinggal yang menjadi wadah kehidupan keluarga. Dalam Islam, rumah memiliki kedudukan yang sangat mulia sebagaimana sabda Rasulullah SAW: <span class="arabic-text" style="font-size: 1.3rem; display: inline;">بَيْتِيْ جَنَّتِيْ</span> (Rumahku adalah surgaku).
+            </p>
+            <p>Dalam perspektif yang lebih komprehensif, Al-Bait mencakup beberapa aspek penting:</p>
+            <ul>
+                <li><strong>Tujuan:</strong> Membentuk lingkungan keluarga yang sakinah, mawaddah, warahmah sebagai tempat tumbuh kembang generasi saleh.</li>
+                <li><strong>Isi:</strong> Kosakata ruangan, perabot rumah tangga, dan kata sifat deskriptif.</li>
+                <li><strong>Strategi:</strong> Penggunaan kalimat nominal (Jumlah Ismiyah) dengan mubtada' dan khabar berupa shifat atau ظرف مكان.</li>
+                <li><strong>Etika:</strong> Menanamkan adab memasuki rumah (mengucapkan salam), menjaga kebersihan, dan menghormati anggota keluarga.</li>
+            </ul>
+            
+            <h4>Definisi Al-Bait Menurut Para Ahli:</h4>
+            <ul>
+                <li><strong>Kamus Al-Munawwir:</strong> Al-Bait adalah rumah, tempat tinggal, atau keluarga yang menempatinya.</li>
+                <li><strong>Prof. Dr. A. Fuad Effendy:</strong> Al-Bait adalah keterampilan berbicara (maharah kalam) yang berkaitan dengan kemampuan mendeskripsikan rumah, ruangan, dan perabotnya.</li>
+            </ul>
+        </section>
+
+        <!-- Section B -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>B. Kosakata Penting (الْمُفْرَدَاتُ)</h3>
+            <p>Berikut adalah kosakata dasar yang wajib dikuasai oleh siswa untuk mendeskripsikan rumah:</p>
+            
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">🏠 Ruangan dalam Rumah (غُرَفُ الْبَيْتِ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">الْبَيْتُ</span> (al-baitu) = Rumah</li>
+                    <li><span class="arabic-text">الصَّالَةُ</span> (ash-shaalatu) = Ruang tamu</li>
+                    <li><span class="arabic-text">غُرْفَةُ الْجُلُوْسِ</span> (ghurfatu al-juluusi) = Ruang keluarga</li>
+                    <li><span class="arabic-text">غُرْفَةُ النَّوْمِ</span> (ghurfatu an-naumi) = Kamar tidur</li>
+                    <li><span class="arabic-text">غُرْفَةُ الطَّعَامِ</span> (ghurfatu ath-tha'aami) = Ruang makan</li>
+                    <li><span class="arabic-text">الْمَطْبَخُ</span> (al-mathbakh) = Dapur</li>
+                    <li><span class="arabic-text">الْحَمَّامُ</span> (al-hammaam) = Kamar mandi</li>
+                    <li><span class="arabic-text">الْحَدِيْقَةُ</span> (al-hadiiqah) = Kebun / Taman</li>
+                    <li><span class="arabic-text">الشُّرْفَةُ</span> (asy-syurfah) = Balkon</li>
+                    <li><span class="arabic-text">السَّقْفُ</span> (as-saqfu) = Atap / Langit-langit</li>
+                    <li><span class="arabic-text">الْجِدَارُ</span> (al-jidaar) = Dinding</li>
+                    <li><span class="arabic-text">الْأَرْضِيَّةُ</span> (al-ardhiyyah) = Lantai</li>
+                </ul>
+            </div>
+
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">🪑 Perabot Rumah Tangga (أَثَاثُ الْبَيْتِ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">الْكُرْسِيُّ</span> (al-kursiyyu) = Kursi</li>
+                    <li><span class="arabic-text">الْمَكْتَبُ</span> (al-maktabu) = Meja</li>
+                    <li><span class="arabic-text">السَّرِيْرُ</span> (as-sariiru) = Tempat tidur</li>
+                    <li><span class="arabic-text">الْخِزَانَةُ</span> (al-khizaanah) = Lemari</li>
+                    <li><span class="arabic-text">الْمِرْآةُ</span> (al-mir-aah) = Cermin</li>
+                    <li><span class="arabic-text">الْمِصْبَاحُ</span> (al-mishbaah) = Lampu</li>
+                    <li><span class="arabic-text">الثَّلَّاجَةُ</span> (ats-tsallaajah) = Kulkas / Lemari pendingin</li>
+                    <li><span class="arabic-text">الْمِوْقِدُ</span> (al-miiqid) = Kompor</li>
+                    <li><span class="arabic-text">الْأَرِيْكَةُ</span> (al-ariikah) = Sofa</li>
+                    <li><span class="arabic-text">السَّجَّادَةُ</span> (as-sajjaadah) = Karpet</li>
+                    <li><span class="arabic-text">الرَّفُّ</span> (ar-raf) = Rak</li>
+                    <li><span class="arabic-text">الْبَابُ</span> (al-baab) = Pintu</li>
+                    <li><span class="arabic-text">النَّافِذَةُ</span> (an-naafidzah) = Jendela</li>
+                </ul>
+            </div>
+
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">🎨 Kata Sifat Deskriptif (الصِّفَاتُ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">كَبِيْرٌ / كَبِيْرَةٌ</span> = Besar</li>
+                    <li><span class="arabic-text">صَغِيْرٌ / صَغِيْرَةٌ</span> = Kecil</li>
+                    <li><span class="arabic-text">جَمِيْلٌ / جَمِيْلَةٌ</span> = Indah</li>
+                    <li><span class="arabic-text">نَظِيْفٌ / نَظِيْفَةٌ</span> = Bersih</li>
+                    <li><span class="arabic-text">وَسِيْعٌ / وَسِيْعَةٌ</span> = Luas</li>
+                    <li><span class="arabic-text">ضَيِّقٌ / ضَيِّقَةٌ</span> = Sempit</li>
+                    <li><span class="arabic-text">جَدِيْدٌ / جَدِيْدَةٌ</span> = Baru</li>
+                    <li><span class="arabic-text">قَدِيْمٌ / قَدِيْمَةٌ</span> = Lama / Tua</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section C -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>C. Struktur Kalimat Deskriptif (التَّرَاكِيْبُ)</h3>
+            <p>
+                Dalam bahasa Arab, untuk mendeskripsikan rumah digunakan struktur <strong>Jumlah Ismiyah</strong> yang terdiri dari mubtada' (subjek) dan khabar (predikat). Khabar dapat berupa kata sifat (shifat) atau keterangan tempat (zharaf makan).
+            </p>
+            
+            <h4>Pola Dasar:</h4>
+            <ol>
+                <li>
+                    <strong>Mubtada' + Shifat (Kata Sifat)</strong><br>
+                    <span class="arabic-text" style="color: var(--secondary);">مِثَالٌ: الْبَيْتُ كَبِيْرٌ</span><br>
+                    <em>(Contoh: Rumah itu besar)</em>
+                </li>
+                <li>
+                    <strong>Mubtada' + Zharaf Makan (Keterangan Tempat)</strong><br>
+                    <span class="arabic-text" style="color: var(--secondary);">مِثَالٌ: الْمِطْبَخُ فِيْ أَسْفَلِ الْبَيْتِ</span><br>
+                    <em>(Contoh: Dapur ada di bawah rumah)</em>
+                </li>
+                <li>
+                    <strong>فِيْ + Isim (Menyatakan keberadaan)</strong><br>
+                    <span class="arabic-text" style="color: var(--secondary);">مِثَالٌ: فِيْ الْبَيْتِ ثَلَاثُ غُرَفٍ</span><br>
+                    <em>(Contoh: Di dalam rumah ada tiga kamar)</em>
+                </li>
+            </ol>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Contoh Kalimat</th>
+                        <th>Arti</th>
+                        <th>Struktur</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="arabic-text">بَيْتِيْ كَبِيْرٌ وَجَمِيْلٌ</span></td>
+                        <td>Rumahku besar dan indah</td>
+                        <td>Mubtada' + 2 Shifat</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">غُرْفَةُ النَّوْمِ صَغِيْرَةٌ</span></td>
+                        <td>Kamar tidur itu kecil</td>
+                        <td>Mubtada' + Shifat (muannats)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">الْمِصْبَاحُ فَوْقَ الْمَكْتَبِ</span></td>
+                        <td>Lampu ada di atas meja</td>
+                        <td>Mubtada' + Zharaf</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">فِيْ الْحَدِيْقَةِ أَزْهَارٌ جَمِيْلَةٌ</span></td>
+                        <td>Di taman ada bunga-bunga yang indah</td>
+                        <td>Fi'liyah dengan ظرف</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section D -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>D. Contoh Dialog Mendeskripsikan Rumah (الْحِوَارُ)</h3>
+            <div class="vocab-box">
+                <h4 style="margin-top: 0; color: var(--primary);">Dialog antara Ahmad dan Ali:</h4>
+                <div class="arabic-text">
+                    أَحْمَدُ: السَّلَامُ عَلَيْكُمْ يَا عَلِيّ، هَلْ يُمْكِنُ أَنْ تَصِفَ لِيْ بَيْتَكَ؟<br>
+                    عَلِيٌّ: وَعَلَيْكُمُ السَّلَامُ، نَعَمْ بِطَبْعٍ<br>
+                    أَحْمَدُ: كَيْفَ بَيْتُكَ؟ هَلْ هُوَ كَبِيْرٌ؟<br>
+                    عَلِيٌّ: بَيْتِيْ مُتَوَسِّطُ الْحَجْمِ، فِيْهِ طَبَقَتَانِ<br>
+                    أَحْمَدُ: مَاذَا فِيْ الطَّبَقَةِ الْأَرْضِيَّةِ؟<br>
+                    عَلِيٌّ: فِيْهَا الصَّالَةُ وَالْمَطْبَخُ وَغُرْفَةُ الْجُلُوْسِ وَحَمَّامٌ<br>
+                    أَحْمَدُ: وَكَمْ غُرْفَةَ نَوْمٍ فِيْ الطَّبَقَةِ الْعُلْيَا؟<br>
+                    عَلِيٌّ: فِيْهَا ثَلَاثُ غُرَفٍ: غُرْفَةُ وَالِدِيْ، وَغُرْفَةُ وَالِدَتِيْ، وَغُرْفَتِيْ<br>
+                    أَحْمَدُ: هَلْ عِنْدَكَ حَدِيْقَةٌ؟<br>
+                    عَلِيٌّ: نَعَمْ، أَمَامَ الْبَيْتِ حَدِيْقَةٌ صَغِيْرَةٌ فِيْهَا أَزْهَارٌ جَمِيْلَةٌ
+                </div>
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed #ccc; color: #555; font-style: italic;">
+                    <strong>Terjemahan:</strong><br>
+                    Ahmad: Assalamu'alaikum wahai Ali, bisakah kamu mendeskripsikan rumahmu kepadaku?<br>
+                    Ali: Wa'alaikumussalam, ya tentu saja<br>
+                    Ahmad: Bagaimana rumahmu? Apakah besar?<br>
+                    Ali: Rumahku berukuran sedang, ada dua lantai<br>
+                    Ahmad: Apa saja yang ada di lantai dasar?<br>
+                    Ali: Di sana ada ruang tamu, dapur, ruang keluarga, dan kamar mandi<br>
+                    Ahmad: Dan berapa kamar tidur di lantai atas?<br>
+                    Ali: Ada tiga kamar: kamar ayahku, kamar ibuku, dan kamarku<br>
+                    Ahmad: Apakah kamu punya kebun?<br>
+                    Ali: Ya, di depan rumah ada kebun kecil yang ada bunga-bunga indahnya
+                </div>
+            </div>
+        </section>
+
+        <!-- Section E -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>E. Analisis Perbandingan Bahasa</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Bahasa Indonesia</th>
+                        <th>Bahasa Arab</th>
+                        <th>Catatan Penting</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kesesuaian Gender</td>
+                        <td>"Rumah besar" - kata sifat tidak berubah</td>
+                        <td>الْبَيْتُ كَبِيْرٌ (lk) / الدَّارُ كَبِيْرَةٌ (pr)</td>
+                        <td>Kata sifat harus sesuai gender isim yang disifati</td>
+                    </tr>
+                    <tr>
+                        <td>Posisi Kata Sifat</td>
+                        <td>Setelah kata benda (rumah besar)</td>
+                        <td>Setelah isim (الْبَيْتُ كَبِيْرٌ)</td>
+                        <td>Sama-sama di belakang, tapi Arab berharakat</td>
+                    </tr>
+                    <tr>
+                        <td>Kata "Ada"</td>
+                        <td>Menggunakan "ada"</td>
+                        <td>فِيْ + isim atau ada fi'il "يُوْجَدُ"</td>
+                        <td>Arab menggunakan ظرف atau fi'il</td>
+                    </tr>
+                    <tr>
+                        <td>Bilangan + Isim</td>
+                        <td>Tiga kamar (bilangan di depan)</td>
+                        <td>ثَلَاثُ غُرَفٍ (bilangan + isim jamak majrur)</td>
+                        <td>Aturan angka 3-10: ma'dud jamak majrur</td>
+                    </tr>
+                    <tr>
+                        <td>Kata "Rumah"</td>
+                        <td>Satu kata: "rumah"</td>
+                        <td>الْبَيْتُ (tempat tinggal) / الدَّارُ (rumah/bangunan)</td>
+                        <td>Arab memiliki beberapa sinonim dengan nuansa berbeda</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section F -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>F. Studi Kasus: Mendeskripsikan Rumah di Lingkungan Madrasah</h3>
+            <div class="case-study">
+                <h4>Situasi Nyata</h4>
+                <p>
+                    Fatimah adalah siswa kelas 7 di MTs Swasta Diniyah Limo Jurai. Pada tugas Bahasa Arab, ia diminta mendeskripsikan rumahnya di depan kelas minimal 10 kalimat dengan menggunakan kosakata ruangan, perabot, dan kata sifat berharakat yang benar.
+                </p>
+                <h4>Tantangan yang Dihadapi:</h4>
+                <ul>
+                    <li>Fatimah bingung membedakan kata sifat mudzakkar (كَبِيْرٌ) dan muannats (كَبِيْرَةٌ).</li>
+                    <li>Ia kesulitan menyusun kalimat "di dalam rumah ada..." dengan struktur <span class="arabic-text" style="font-size: 1.2rem;">فِيْ الْبَيْتِ...</span>.</li>
+                    <li>Perlu menyebutkan perabot dengan urutan yang sistematis (dari ruang tamu ke kamar tidur).</li>
+                </ul>
+                <h4>Solusi dan Langkah Strategis:</h4>
+                <ol>
+                    <li><strong>Membuat Peta Pikiran:</strong> Mengelompokkan kosakata menjadi 3 kategori: ruangan, perabot, dan kata sifat.</li>
+                    <li><strong>Latihan Harakat:</strong> Berlatih mengucapkan kata sifat dengan harakat yang benar, terutama ta' marbuthah (ة) untuk muannats.</li>
+                    <li><strong>Menyusun Naskah Terstruktur:</strong>
+                        <ul>
+                            <li>Pembukaan: <span class="arabic-text" style="font-size: 1.2rem;">بَيْتِيْ كَبِيْرٌ وَجَمِيْلٌ</span></li>
+                            <li>Isi: menyebutkan ruangan satu per satu beserta perabotnya</li>
+                            <li>Penutup: <span class="arabic-text" style="font-size: 1.2rem;">أُحِبُّ بَيْتِيْ كَثِيْرًا</span> (Aku sangat mencintai rumahku)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Menanamkan Nilai Islam:</strong> Mengaitkan dengan konsep <span class="arabic-text" style="font-size: 1.2rem;">بَيْتِيْ جَنَّتِيْ</span> (Rumahku Surgaku) dan adab memasuki rumah.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Section G -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>G. Poin Penting untuk Ujian</h3>
+            <div class="exam-points">
+                <h4>📌 Hafalkan dan Pahami Hal-Hal Berikut:</h4>
+                <ul>
+                    <li>Pahami perbedaan antara <strong>الْبَيْتُ</strong> (rumah sebagai tempat tinggal) dan <strong>الدَّارُ</strong> (rumah sebagai bangunan).</li>
+                    <li>Kuasai 20+ kosakata inti Al-Bait (ruangan + perabot + kata sifat) beserta harakat dan artinya.</li>
+                    <li>Pahami aturan <strong>kesesuaian gender</strong> antara isim dan shifat (مُذَكَّر dengan مُذَكَّر, مُؤَنَّث dengan مُؤَنَّث).</li>
+                    <li>Hafalkan dialog mendeskripsikan rumah minimal 8-10 kalimat berharakat.</li>
+                    <li>Pahami penggunaan kata tanya: <span class="arabic-text" style="font-size: 1.2rem;">كَيْفَ</span> (bagaimana), <span class="arabic-text" style="font-size: 1.2rem;">كَمْ</span> (berapa), <span class="arabic-text" style="font-size: 1.2rem;">أَيْنَ</span> (di mana).</li>
+                    <li>Bedakan antara <span class="arabic-text" style="font-size: 1.2rem;">الْمَطْبَخُ</span> (dapur) dan <span class="arabic-text" style="font-size: 1.2rem;">الْحَمَّامُ</span> (kamar mandi).</li>
+                    <li>Mampu mendeskripsikan rumah sendiri dengan struktur kalimat yang benar.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section H -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>H. Relevansi untuk Pendidikan Islam</h3>
+            <p>
+                Dalam konteks Pendidikan Agama Islam, materi Al-Bait bukan hanya keterampilan linguistik, tetapi juga memiliki nilai-nilai keislaman yang mendalam:
+            </p>
+            <ul>
+                <li><strong>Baiti Jannati:</strong> Menanamkan konsep <span class="arabic-text" style="font-size: 1.2rem;">بَيْتِيْ جَنَّتِيْ</span> (Rumahku Surgaku) sebagai tempat ketenangan dan ibadah.</li>
+                <li><strong>Adab Memasuki Rumah:</strong> Mengucapkan salam sebelum masuk (<span class="arabic-text" style="font-size: 1.2rem;">السَّلَامُ عَلَيْكُمْ</span>) sesuai QS. An-Nur: 27.</li>
+                <li><strong>Kebersihan:</strong> Menjaga kebersihan rumah adalah bagian dari iman (<span class="arabic-text" style="font-size: 1.2rem;">الطَّهُوْرُ شَطْرُ الْإِيْمَانِ</span>).</li>
+                <li><strong>Sakinah Mawaddah Warahmah:</strong> Rumah sebagai tempat membangun keluarga ideal sesuai QS. Ar-Rum: 21.</li>
+                <li><strong>Menghormati Tamu:</strong> Menanamkan adab memuliakan tamu sebagai bagian dari iman (<span class="arabic-text" style="font-size: 1.2rem;">مَنْ كَانَ يُؤْمِنُ بِاللهِ وَالْيَوْمِ الْآخِرِ فَلْيُكْرِمْ ضَيْفَهُ</span>).</li>
+                <li><strong>Doa Masuk dan Keluar Rumah:</strong> Menghafalkan doa masuk rumah (<span class="arabic-text" style="font-size: 1.2rem;">اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ الْمَوْلِجِ وَخَيْرَ الْمَخْرَجِ</span>).</li>
+            </ul>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="action-buttons" style="margin: 40px 0;">
+            <a href="index.html" class="btn btn-outline">🏠 Kembali ke Beranda</a>
+            <a href="uji-formatif-4.html" class="btn btn-primary">✍️ Uji Formatif Pertemuan 4</a>
+            <a href="5.html" class="btn btn-outline">Pertemuan Selanjutnya →</a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>كِتَابُ اللُّغَةِ الْعَرَبِيَّةِ</h3>
+                    <p style="color: #ccc; line-height: 1.8;">
+                        Buku daras untuk siswa MTs. Menguasai bahasa Arab dengan metode modern, interaktif, dan berlandaskan nilai-nilai keislaman.
+                    </p>
+                </div>
+                <div>
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="index.html#pertemuan">Daftar Pertemuan</a></li>
+                        <li><a href="index.html#penulis">Tentang Penulis</a></li>
+                        <li><a href="uji-formatif-4.html">Uji Formatif</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontak Penulis</h4>
+                    <ul>
+                        <li>👤 Fauzi Ilmi Al-Khairi, S.H.</li>
+                        <li>🏫 MTs Swasta Diniyah Limo Jurai Sungai Pua</li>
+                        <li>✉️ <a href="mailto:fauziilmialkhairi@gmail.com">fauziilmialkhairi@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Fauzi Ilmi Al-Khairi, S.H. Hak cipta dilindungi undang-undang.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">Dikembangkan untuk kebutuhan pembelajaran Bahasa Arab di MTs Swasta Diniyah Limo Jurai Sungai Pua.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

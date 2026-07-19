@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=" width=1000">
+    <title>Pertemuan 3 - Al-Usrah (الْأُسْرَةُ) | Bahasa Arab Kelas 7</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3c72;
+            --secondary: #2a5298;
+            --accent: #FFD700;
+            --text-dark: #333;
+            --text-light: #f8f9fa;
+            --bg-light: #ffffff;
+            --bg-section: #f8f9fa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .arabic-text {
+            font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade New', serif;
+            direction: rtl;
+            text-align: right;
+            line-height: 2.4;
+            font-size: 1.4rem;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* Top Navigation */
+        .top-nav {
+            background: var(--primary);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .top-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 20px; }
+
+        /* Header Section */
+        .chapter-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chapter-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,215,0,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .chapter-header h1 {
+            font-family: 'Amiri', serif;
+            font-size: 1.2rem;
+            color: var(--accent);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .chapter-header h2 {
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .chapter-header .arabic-title {
+            font-size: 3rem;
+            color: var(--accent);
+            margin: 15px 0;
+            font-family: 'Traditional Arabic', 'Amiri', serif;
+        }
+
+        .chapter-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary { background: var(--accent); color: var(--primary); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,215,0,0.3); }
+        .btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+        .btn-outline:hover { background: var(--accent); color: var(--primary); }
+
+        /* Content Sections */
+        .content-section {
+            background: var(--bg-light);
+            padding: 50px 0;
+            margin: 30px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .content-section h3 {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+        }
+
+        .content-section h4 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin: 25px 0 15px;
+        }
+
+        .content-section p { margin-bottom: 15px; text-align: justify; }
+        .content-section ul, .content-section ol { margin: 15px 0 15px 30px; }
+        .content-section li { margin-bottom: 10px; }
+
+        /* Vocabulary Box */
+        .vocab-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+            border-right: 5px solid var(--accent);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+
+        .vocab-box .arabic-text {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+
+        /* Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table thead {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .comparison-table th {
+            padding: 18px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table td {
+            padding: 15px 18px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: right;
+        }
+
+        .comparison-table tbody tr:hover { background: #f8f9fa; }
+        .comparison-table tbody tr:nth-child(even) { background: #fafafa; }
+
+        /* Case Study */
+        .case-study {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f0 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid var(--secondary);
+        }
+
+        .case-study h4 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .case-study h4::before { content: '📚'; }
+
+        /* Exam Points */
+        .exam-points {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+            border-left: 5px solid #e74c3c;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+
+        .exam-points h4 { color: #c0392b; margin-bottom: 15px; }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f1f3d 100%);
+            color: white;
+            padding: 50px 0 30px;
+            margin-top: 50px;
+        }
+
+        footer h3 {
+            font-family: 'Amiri', serif;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        footer .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer h4 { color: var(--accent); margin-bottom: 15px; font-size: 1.2rem; }
+        footer ul { list-style: none; }
+        footer ul li { margin-bottom: 10px; }
+        footer a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: var(--accent); }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .chapter-header h2 { font-size: 1.8rem; }
+            .chapter-header .arabic-title { font-size: 2.2rem; }
+            .nav-links { width: 100%; justify-content: center; }
+            .comparison-table { font-size: 0.9rem; }
+            .comparison-table th, .comparison-table td { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="container">
+            <a href="index.html" style="font-family: 'Amiri', serif; font-size: 1.2rem; color: #FFD700;">
+                📖 Bahasa Arab Kelas 7
+            </a>
+            <div class="nav-links">
+                <a href="index.html">🏠 Beranda</a>
+                <a href="index.html#pertemuan">📑 Daftar Pertemuan</a>
+                <a href="index.html#penulis">✍️ Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Chapter Header -->
+    <header class="chapter-header">
+        <div class="container">
+            <h1>PERTEMUAN 3</h1>
+            <h2>Anggota Keluarga dan Silsilah</h2>
+            <div class="arabic-title">الْأُسْرَةُ</div>
+            <p>Konsep dasar keluarga dalam Islam, kosakata anggota keluarga inti dan extended, idhofah (kepemilikan), silsilah keluarga (شجرة العائلة), dan dialog keluarga Muslim berharakat.</p>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-outline">🏠 Beranda</a>
+                <a href="uji-formatif-3.html" class="btn btn-primary">📝 Uji Formatif Pertemuan 3</a>
+                <a href="4.html" class="btn btn-outline">Pertemuan Selanjutnya →</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Section A -->
+        <section class="content-section" style="padding: 40px; margin-top: -30px; position: relative; z-index: 10;">
+            <h3>A. Pengertian dan Hakikat Al-Usrah (الْأُسْرَةُ)</h3>
+            <p>
+                Al-Usrah secara etimologis berasal dari kata <span class="arabic-text" style="font-size: 1.2rem; display: inline;">أَسَرَ</span> yang berarti "mengikat" atau "menggabungkan". Dalam konteks sosial, Al-Usrah bermakna sekelompok orang yang terikat oleh hubungan darah, pernikahan, atau adopsi yang membentuk unit terkecil dalam masyarakat. Dalam Islam, keluarga memiliki kedudukan yang sangat mulia sebagai fondasi pembentukan generasi saleh.
+            </p>
+            <p>Dalam perspektif yang lebih komprehensif, Al-Usrah mencakup beberapa aspek penting:</p>
+            <ul>
+                <li><strong>Tujuan:</strong> Membentuk keluarga sakinah, mawaddah, warahmah sesuai tuntunan Islam.</li>
+                <li><strong>Isi:</strong> Kosakata anggota keluarga, struktur idhofah (kepemilikan), dan silsilah keluarga.</li>
+                <li><strong>Strategi:</strong> Penggunaan kalimat nominal (Jumlah Ismiyah) dengan mudhaf dan mudhaf ilaih.</li>
+                <li><strong>Etika:</strong> Menanamkan nilai birrul walidain (berbakti kepada orang tua) dan silaturahmi.</li>
+            </ul>
+            
+            <h4>Definisi Al-Usrah Menurut Para Ahli:</h4>
+            <ul>
+                <li><strong>Kamus Al-Munawwir:</strong> Al-Usrah adalah keluarga, kaum, atau sanak famili yang terikat hubungan kekerabatan.</li>
+                <li><strong>Prof. Dr. A. Fuad Effendy:</strong> Al-Usrah adalah keterampilan berbicara (maharah kalam) yang berkaitan dengan kemampuan mendeskripsikan anggota keluarga dan silsilah.</li>
+            </ul>
+        </section>
+
+        <!-- Section B -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>B. Kosakata Penting (الْمُفْرَدَاتُ)</h3>
+            <p>Berikut adalah kosakata dasar yang wajib dikuasai oleh siswa untuk membicarakan keluarga:</p>
+            
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">👨‍👩‍👧‍👦 Anggota Keluarga Inti:</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">الْأُسْرَةُ</span> (al-usratu) = Keluarga</li>
+                    <li><span class="arabic-text">الْأَبُ</span> (al-abu) = Ayah</li>
+                    <li><span class="arabic-text">الْأُمُّ</span> (al-ummu) = Ibu</li>
+                    <li><span class="arabic-text">الْأَخُ</span> (al-akhu) = Saudara laki-laki</li>
+                    <li><span class="arabic-text">الْأُخْتُ</span> (al-ukhtu) = Saudara perempuan</li>
+                    <li><span class="arabic-text">الِابْنُ</span> (al-ibnu) = Anak laki-laki</li>
+                    <li><span class="arabic-text">الِابْنَةُ</span> (al-ibnatu) = Anak perempuan</li>
+                    <li><span class="arabic-text">الزَّوْجُ</span> (az-zauju) = Suami</li>
+                    <li><span class="arabic-text">الزَّوْجَةُ</span> (az-zaujatu) = Istri</li>
+                    <li><span class="arabic-text">الْوَالِدُ</span> (al-waalidu) = Ayah (formal)</li>
+                    <li><span class="arabic-text">الْوَالِدَةُ</span> (al-waalidatu) = Ibu (formal)</li>
+                </ul>
+            </div>
+
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">👴👵 Kakek, Nenek, dan Kerabat:</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">الْجَدُّ</span> (al-jaddu) = Kakek</li>
+                    <li><span class="arabic-text">الْجَدَّةُ</span> (al-jaddatu) = Nenek</li>
+                    <li><span class="arabic-text">الْعَمُّ</span> (al-'ammu) = Paman (dari ayah)</li>
+                    <li><span class="arabic-text">الْعَمَّةُ</span> (al-'ammatu) = Bibi (dari ayah)</li>
+                    <li><span class="arabic-text">الْخَالُ</span> (al-khaalu) = Paman (dari ibu)</li>
+                    <li><span class="arabic-text">الْخَالَةُ</span> (al-khaalatu) = Bibi (dari ibu)</li>
+                    <li><span class="arabic-text">ابْنُ الْعَمِّ</span> (ibnul 'ammi) = Sepupu (laki-laki)</li>
+                    <li><span class="arabic-text">بِنْتُ الْعَمِّ</span> (bintul 'ammi) = Sepupu (perempuan)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section C -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>C. Struktur Idhofah (الإِضَافَةُ)</h3>
+            <p>
+                Dalam bahasa Arab, untuk menyatakan kepemilikan atau hubungan antar anggota keluarga, digunakan struktur <strong>Idhofah</strong> (الإِضَافَةُ) yang terdiri dari dua unsur:
+            </p>
+            <ul>
+                <li><strong>Mudhaf (مُضَاف):</strong> Kata yang ditambahkan (misalnya: أَخُ = saudara laki-laki)</li>
+                <li><strong>Mudhaf Ilaih (مُضَافٌ إِلَيْهِ):</strong> Kata yang menjadi tujuan penambahan (misalnya: أَحْمَدَ = Ahmad)</li>
+            </ul>
+            <p>Contoh penggunaan idhofah dalam konteks keluarga:</p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Idhofah</th>
+                        <th>Arti</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="arabic-text">أَبِيْ</span> (abii)</td>
+                        <td>Ayahku</td>
+                        <td>Ayah + kata ganti "ku"</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">أُمِّيْ</span> (ummii)</td>
+                        <td>Ibuku</td>
+                        <td>Ibu + kata ganti "ku"</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">أَخُوكَ</span> (akhuka)</td>
+                        <td>Saudaramu (lk)</td>
+                        <td>Saudara + kata ganti "mu" (laki-laki)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">أُخْتُكِ</span> (ukhtuki)</td>
+                        <td>Saudaramu (pr)</td>
+                        <td>Saudari + kata ganti "mu" (perempuan)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">أَخُوْهُ</span> (akhuhu)</td>
+                        <td>Saudaranya (lk)</td>
+                        <td>Saudara + kata ganti "nya" (laki-laki)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arabic-text">أُسْرَتِيْ</span> (usratii)</td>
+                        <td>Keluargaku</td>
+                        <td>Keluarga + kata ganti "ku"</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section D -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>D. Contoh Dialog Tentang Keluarga (الْحِوَارُ)</h3>
+            <div class="vocab-box">
+                <h4 style="margin-top: 0; color: var(--primary);">Dialog antara Ahmad dan Ali:</h4>
+                <div class="arabic-text">
+                    أَحْمَدُ: السَّلَامُ عَلَيْكُمْ يَا عَلِيّ<br>
+                    عَلِيٌّ: وَعَلَيْكُمُ السَّلَامُ يَا أَحْمَدُ<br>
+                    أَحْمَدُ: كَمْ عَدَدُ أَفْرَادِ أُسْرَتِكَ؟<br>
+                    عَلِيٌّ: أُسْرَتِيْ خَمْسَةُ أَفْرَادٍ: أَبِيْ، أُمِّيْ، أَنَا، وَأُخْتِيْ الصَّغِيْرَةُ<br>
+                    أَحْمَدُ: مَا اسْمُ أَبِيكَ؟<br>
+                    عَلِيٌّ: اسْمُ أَبِيْ مُحَمَّدٌ، وَاسْمُ أُمِّيْ فَاطِمَةُ<br>
+                    أَحْمَدُ: هَلْ لَكَ إِخْوَةٌ؟<br>
+                    عَلِيٌّ: لَا، لَكِنْ لِيْ أُخْتٌ وَاحِدَةٌ اسْمُهَا عَائِشَةُ<br>
+                    أَحْمَدُ: أَيْنَ يَعْمَلُ أَبُوكَ؟<br>
+                    عَلِيٌّ: يَعْمَلُ أَبِيْ مُعَلِّمًا فِي الْمَدْرَسَةِ
+                </div>
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed #ccc; color: #555; font-style: italic;">
+                    <strong>Terjemahan:</strong><br>
+                    Ahmad: Assalamu'alaikum wahai Ali<br>
+                    Ali: Wa'alaikumussalam wahai Ahmad<br>
+                    Ahmad: Berapa jumlah anggota keluargamu?<br>
+                    Ali: Keluargaku lima orang: ayahku, ibuku, saya, dan adik perempuanku<br>
+                    Ahmad: Siapa nama ayahmu?<br>
+                    Ali: Nama ayahku Muhammad, dan nama ibuku Fatimah<br>
+                    Ahmad: Apakah kamu punya saudara?<br>
+                    Ali: Tidak, tapi aku punya satu saudari yang bernama Aisyah<br>
+                    Ahmad: Di mana ayahmu bekerja?<br>
+                    Ali: Ayahku bekerja sebagai guru di sekolah
+                </div>
+            </div>
+        </section>
+
+        <!-- Section E -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>E. Analisis Perbandingan Bahasa</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Bahasa Indonesia</th>
+                        <th>Bahasa Arab</th>
+                        <th>Catatan Penting</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pembedaan Gender</td>
+                        <td>"Saudara" untuk laki-laki dan perempuan</td>
+                        <td>أَخٌ (lk) / أُخْتٌ (pr)</td>
+                        <td>Arab membedakan gender secara ketat</td>
+                    </tr>
+                    <tr>
+                        <td>Paman</td>
+                        <td>Satu kata: "paman"</td>
+                        <td>عَمٌّ (dari ayah) / خَالٌ (dari ibu)</td>
+                        <td>Arab membedakan jalur ayah dan ibu</td>
+                    </tr>
+                    <tr>
+                        <td>Bibi</td>
+                        <td>Satu kata: "bibi"</td>
+                        <td>عَمَّةٌ (dari ayah) / خَالَةٌ (dari ibu)</td>
+                        <td>Arab membedakan jalur ayah dan ibu</td>
+                    </tr>
+                    <tr>
+                        <td>Kata Tanya</td>
+                        <td>Siapa? Berapa?</td>
+                        <td>مَنْ؟ / كَمْ؟</td>
+                        <td>مَنْ untuk orang, كَمْ untuk jumlah</td>
+                    </tr>
+                    <tr>
+                        <td>Kepemilikan</td>
+                        <td>Menggunakan "milik" atau "-ku/-mu"</td>
+                        <td>Idhofah (إِضَافَة) atau kata ganti milik</td>
+                        <td>Idhofah lebih ringkas dan spesifik</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section F -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>F. Studi Kasus: Memperkenalkan Keluarga di Lingkungan Madrasah</h3>
+            <div class="case-study">
+                <h4>Situasi Nyata</h4>
+                <p>
+                    Aisyah adalah siswa baru di MTs Swasta Diniyah Limo Jurai. Pada tugas Bahasa Arab, ia diminta memperkenalkan anggota keluarganya di depan kelas. Ia ingin menyebutkan nama, pekerjaan, dan usia setiap anggota keluarga dengan struktur idhofah yang benar.
+                </p>
+                <h4>Tantangan yang Dihadapi:</h4>
+                <ul>
+                    <li>Aisyah bingung membedakan penggunaan <span class="arabic-text" style="font-size: 1.2rem;">الْعَمُّ</span> dan <span class="arabic-text" style="font-size: 1.2rem;">الْخَالُ</span>.</li>
+                    <li>Ia kesulitan menyusun kalimat idhofah dengan kata ganti kepemilikan.</li>
+                    <li>Perlu menyebutkan silsilah keluarga dengan urutan yang sistematis.</li>
+                </ul>
+                <h4>Solusi dan Langkah Strategis:</h4>
+                <ol>
+                    <li><strong>Menghafal Kosakata:</strong> Membuat kartu kosakata anggota keluarga dengan gambar.</li>
+                    <li><strong>Latihan Idhofah:</strong> Berlatih menyusun kalimat kepemilikan:
+                        <ul>
+                            <li><span class="arabic-text" style="font-size: 1.2rem;">أَبِيْ طَبِيْبٌ</span> (Ayahku seorang dokter)</li>
+                            <li><span class="arabic-text" style="font-size: 1.2rem;">أُمِّيْ مُدَرِّسَةٌ</span> (Ibuku seorang guru)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Membuat Silsilah Keluarga:</strong> Menggambar <span class="arabic-text" style="font-size: 1.2rem;">شَجَرَةُ الْعَائِلَةِ</span> secara visual.</li>
+                    <li><strong>Menanamkan Nilai Islam:</strong> Mengaitkan dengan ayat tentang birrul walidain (<span class="arabic-text" style="font-size: 1.2rem;">وَقَضَى رَبُّكَ أَلَّا تَعْبُدُوا إِلَّا إِيَّاهُ وَبِالْوَالِدَيْنِ إِحْسَانًا</span> - QS. Al-Isra: 23).</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Section G -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>G. Poin Penting untuk Ujian</h3>
+            <div class="exam-points">
+                <h4>📌 Hafalkan dan Pahami Hal-Hal Berikut:</h4>
+                <ul>
+                    <li>Pahami perbedaan antara <strong>الْعَمُّ</strong> (paman dari ayah) dan <strong>الْخَالُ</strong> (paman dari ibu).</li>
+                    <li>Kuasai 15+ kosakata inti Al-Usrah beserta harakat dan artinya.</li>
+                    <li>Pahami struktur <strong>Idhofah</strong> (مُضَاف + مُضَافٌ إِلَيْهِ) dan cara penggunaannya.</li>
+                    <li>Hafalkan dialog perkenalan keluarga minimal 8-10 kalimat.</li>
+                    <li>Pahami penggunaan kata tanya: <span class="arabic-text" style="font-size: 1.2rem;">مَنْ</span> (siapa), <span class="arabic-text" style="font-size: 1.2rem;">كَمْ</span> (berapa), <span class="arabic-text" style="font-size: 1.2rem;">مَا</span> (apa).</li>
+                    <li>Bedakan antara <span class="arabic-text" style="font-size: 1.2rem;">الِابْنُ</span> (anak laki-laki) dan <span class="arabic-text" style="font-size: 1.2rem;">الِابْنَةُ</span> (anak perempuan).</li>
+                    <li>Mampu membuat silsilah keluarga sederhana dalam bahasa Arab.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section H -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>H. Relevansi untuk Pendidikan Islam</h3>
+            <p>
+                Dalam konteks Pendidikan Agama Islam, materi Al-Usrah bukan hanya keterampilan linguistik, tetapi juga memiliki nilai-nilai keislaman yang mendalam:
+            </p>
+            <ul>
+                <li><strong>Birrul Walidain:</strong> Menanamkan adab berbakti kepada orang tua (<span class="arabic-text" style="font-size: 1.2rem;">وَبِالْوَالِدَيْنِ إِحْسَانًا</span>).</li>
+                <li><strong>Silaturahmi:</strong> Mempererat hubungan kekerabatan sebagai bagian dari iman (<span class="arabic-text" style="font-size: 1.2rem;">مَنْ كَانَ يُؤْمِنُ بِاللهِ وَالْيَوْمِ الْآخِرِ فَلْيَصِلْ رَحِمَهُ</span>).</li>
+                <li><strong>Sakinah Mawaddah Warahmah:</strong> Membentuk keluarga ideal sesuai tuntunan Al-Qur'an (QS. Ar-Rum: 21).</li>
+                <li><strong>Tanggung Jawab:</strong> Menanamkan peran dan tanggung jawab setiap anggota keluarga sesuai syariat Islam.</li>
+                <li><strong>Ukhuwah:</strong> Memperkuat persaudaraan dalam keluarga sebagai fondasi ukhuwah Islamiyah yang lebih luas.</li>
+            </ul>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="action-buttons" style="margin: 40px 0;">
+            <a href="index.html" class="btn btn-outline">🏠 Kembali ke Beranda</a>
+            <a href="uji-formatif-3.html" class="btn btn-primary">✍️ Uji Formatif Pertemuan 3</a>
+            <a href="4.html" class="btn btn-outline">Pertemuan Selanjutnya →</a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>كِتَابُ اللُّغَةِ الْعَرَبِيَّةِ</h3>
+                    <p style="color: #ccc; line-height: 1.8;">
+                        Buku daras untuk siswa MTs. Menguasai bahasa Arab dengan metode modern, interaktif, dan berlandaskan nilai-nilai keislaman.
+                    </p>
+                </div>
+                <div>
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="index.html#pertemuan">Daftar Pertemuan</a></li>
+                        <li><a href="index.html#penulis">Tentang Penulis</a></li>
+                        <li><a href="uji-formatif-3.html">Uji Formatif</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontak Penulis</h4>
+                    <ul>
+                        <li>👤 Fauzi Ilmi Al-Khairi, S.H.</li>
+                        <li>🏫 MTs Swasta Diniyah Limo Jurai Sungai Pua</li>
+                        <li>✉️ <a href="mailto:fauziilmialkhairi@gmail.com">fauziilmialkhairi@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Fauzi Ilmi Al-Khairi, S.H. Hak cipta dilindungi undang-undang.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">Dikembangkan untuk kebutuhan pembelajaran Bahasa Arab di MTs Swasta Diniyah Limo Jurai Sungai Pua.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

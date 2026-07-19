@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahasa Arab Kelas 7 Semester 1 - Fauzi Ilmi Al-Khairi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e8ba3 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(30,60,114,0.95) 0%, rgba(42,82,152,0.95) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .book-cover {
+            position: relative;
+            transform: perspective(1000px) rotateY(-15deg);
+            transition: transform 0.5s ease;
+        }
+
+        .book-cover:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .book-cover img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            border: 3px solid #FFD700;
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #FFD700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .author-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .author-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #FFD700;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .author-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h3 {
+            color: #FFD700;
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: #fff;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #1e3c72;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255,215,0,0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255,215,0,0.4);
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: #fff;
+            padding: 80px 0;
+        }
+
+        .content-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #1e3c72;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        /* Pertemuan Grid */
+        .pertemuan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .pertemuan-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #FFD700;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pertemuan-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,215,0,0.05) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .pertemuan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .pertemuan-card:hover::before {
+            opacity: 1;
+        }
+
+        .pertemuan-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #FFD700;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .pertemuan-card h3 {
+            color: #1e3c72;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .pertemuan-card .arabic-title {
+            font-size: 1.8rem;
+            color: #2a5298;
+            margin: 10px 0;
+            font-family: 'Traditional Arabic', 'Arial', sans-serif;
+        }
+
+        .pertemuan-card p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .btn-access {
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #1e3c72;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-access:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255,215,0,0.4);
+        }
+
+        .exam-card {
+            border-left-color: #e74c3c;
+            background: linear-gradient(135deg, #fff 0%, #fff5f5 100%);
+        }
+
+        .exam-card .pertemuan-number {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+
+        /* Video Section */
+        .video-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .video-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 40px;
+            background: rgba(255,215,0,0.9);
+            color: #1e3c72;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .video-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .video-button svg {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Content Detail */
+        .content-detail {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+        }
+
+        .content-detail h2 {
+            color: #1e3c72;
+            font-size: 2rem;
+            margin: 30px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #FFD700;
+        }
+
+        .content-detail h3 {
+            color: #2a5298;
+            font-size: 1.5rem;
+            margin: 25px 0 15px;
+        }
+
+        .content-detail p {
+            text-align: justify;
+            margin-bottom: 15px;
+            line-height: 1.9;
+            color: #444;
+        }
+
+        .content-detail ul, .content-detail ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        .content-detail li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        /* Tables */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table thead {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+
+        .comparison-table th {
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .comparison-table tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        .comparison-table tbody tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        /* Examples Box */
+        .example-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+            border-left: 5px solid #FFD700;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+
+        .example-box h4 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .example-box .arabic {
+            font-size: 1.6rem;
+            color: #2a5298;
+            margin: 10px 0;
+            font-family: 'Traditional Arabic', 'Arial', sans-serif;
+            direction: rtl;
+        }
+
+        .example-box .translation {
+            color: #666;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* Case Study */
+        .case-study {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f0 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid #2a5298;
+        }
+
+        .case-study h4 {
+            color: #1e3c72;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .case-study h4::before {
+            content: '📚';
+        }
+
+        /* References */
+        .references {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .references h3 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .references ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .references li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        .references li::before {
+            content: '📖';
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1e3c72 0%, #0f1f3d 100%);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer .contact-info {
+            margin: 20px 0;
+        }
+
+        footer .contact-info p {
+            margin: 10px 0;
+            color: #FFD700;
+        }
+
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .author-section {
+                justify-content: center;
+            }
+
+            .content-detail {
+                padding: 30px 20px;
+            }
+
+            .pertemuan-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pertemuan-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .pertemuan-card:nth-child(1) { animation-delay: 0.1s; }
+        .pertemuan-card:nth-child(2) { animation-delay: 0.2s; }
+        .pertemuan-card:nth-child(3) { animation-delay: 0.3s; }
+        .pertemuan-card:nth-child(4) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="book-cover">
+                    <!-- GANTI FILE COVER DISINI: cover-buku.png -->
+                    <img src="cover-buku.png" alt="Cover Buku Bahasa Arab Kelas 7">
+                </div>
+                <div class="hero-text">
+                    <h1>Bahasa Arab Kelas 7 Semester 1</h1>
+                    <p class="subtitle">Menguasai Bahasa Arab dengan Metode Modern dan Interaktif</p>
+                    
+                    <div class="author-section">
+                        <div class="author-photo">
+                            <!-- GANTI FILE PHOTO PENULIS DISINI: photo-penulis.jpg -->
+                            <img src="photo-penulis.jpg" alt="Fauzi Ilmi Al-Khairi">
+                        </div>
+                        <div class="author-info">
+                            <h3>Fauzi Ilmi Al-Khairi, S.H.</h3>
+                            <p>MTs Swasta Diniyah Limo Jurai Sungai Pua<br>
+                             fauziilmialkhairi@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <a href="#pertemuan" class="cta-button">Mulai Belajar Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pertemuan Section -->
+    <section id="pertemuan" class="content-section">
+        <div class="container">
+            <h2 class="section-title">Daftar Pertemuan</h2>
+            <div class="pertemuan-grid">
+                
+                <!-- Pertemuan 1 -->
+                <div class="pertemuan-card">
+                    <div class="pertemuan-number">1</div>
+                    <h3>At-Ta'aruf</h3>
+                    <div class="arabic-title">التَّعَارُفُ</div>
+                    <p>Pelajari cara memperkenalkan diri dalam bahasa Arab dengan proper dan sopan. Materi ini mencakup kosakata dasar, struktur kalimat perkenalan, dan dialog interaktif.</p>
+                    <a href="1.html" target="_blank" class="btn-access">Akses Materi →</a>
+                </div>
+
+                <!-- Pertemuan 2 -->
+                <div class="pertemuan-card">
+                    <div class="pertemuan-number">2</div>
+                    <h3>Al-Unwan</h3>
+                    <div class="arabic-title">العُنْوَانُ</div>
+                    <p>Pelajari cara menyebutkan dan menanyakan alamat dengan tepat. Termasuk kosakata terkait lokasi, arah mata angin, dan preposisi tempat.</p>
+                    <a href="2.html" target="_blank" class="btn-access">Akses Materi →</a>
+                </div>
+
+                <!-- Pertemuan 3 -->
+                <div class="pertemuan-card">
+                    <div class="pertemuan-number">3</div>
+                    <h3>Al-Usrah</h3>
+                    <div class="arabic-title">الأُسْرَةُ</div>
+                    <p>Menguasai kosakata tentang keluarga, silsilah, dan hubungan kekerabatan dalam bahasa Arab dengan contoh dialog keluarga Muslim.</p>
+                    <a href="3.html" target="_blank" class="btn-access">Akses Materi →</a>
+                </div>
+
+                <!-- Pertemuan 4 -->
+                <div class="pertemuan-card">
+                    <div class="pertemuan-number">4</div>
+                    <h3>Al-Bait</h3>
+                    <div class="arabic-title">الْبَيْتُ</div>
+                    <p>Pelajari nama-nama ruangan, perabot rumah tangga, dan cara mendeskripsikan rumah dalam bahasa Arab dengan sempurna.</p>
+                    <a href="4.html" target="_blank" class="btn-access">Akses Materi →</a>
+                </div>
+
+                <!-- Pertemuan 5 -->
+                <div class="pertemuan-card">
+                    <div class="pertemuan-number">5</div>
+                    <h3>Al-Madrasah</h3>
+                    <div class="arabic-title">الْمَدْرَسَةُ</div>
+                    <p>Kosakata tentang sekolah, fasilitas pendidikan, mata pelajaran, dan aktivitas belajar mengajar di lingkungan madrasah.</p>
+                    <a href="5.html" target="_blank" class="btn-access">Akses Materi →</a>
+                </div>
+
+                <!-- Pertemuan 6 -->
+                <div class="pertemuan-card">
+                    <div class="pertemuan-number">6</div>
+                    <h3>Al-Fashl</h3>
+                    <div class="arabic-title">الْفَصْلُ</div>
+                    <p>Mempelajari nama-nama benda di kelas, peraturan sekolah, dan cara berinteraksi dengan guru dan teman sekelas.</p>
+                    <a href="6.html" target="_blank" class="btn-access">Akses Materi →</a>
+                </div>
+
+                <!-- Pertemuan 7 -->
+                <div class="pertemuan-card">
+                    <div class="pertemuan-number">7</div>
+                    <h3>Al-Arqaam</h3>
+                    <div class="arabic-title">الأَرْقَامُ</div>
+                    <p>Pelajari angka 1-100 dalam bahasa Arab, cara menghitung, menyebutkan tanggal, dan operasi matematika sederhana.</p>
+                    <a href="7.html" target="_blank" class="btn-access">Akses Materi →</a>
+                </div>
+
+                <!-- Pertemuan 8 - UTS -->
+                <div class="pertemuan-card exam-card">
+                    <div class="pertemuan-number">8</div>
+                    <h3>Ujian Tengah Semester</h3>
+                    <div class="arabic-title">اِخْتِبَارُ مُنْتَصَفِ الْفَصْلِ</div>
+                    <p>Evaluasi komprehensif untuk pertemuan 1-7. Ujian mencakup listening, reading, writing, dan speaking.</p>
+                    <a href="8.html" target="_blank" class="btn-access">Akses Ujian →</a>
+                </div>
+
+                <!-- Pertemuan 9 -->
+                <div class="pertemuan-card">
+                    <div class="pertemuan-number">9</div>
+                    <h3>Al-Alwan</h3>
+                    <div class="arabic-title">الأَلْوَانُ</div>
+                    <p>Menguasai kosakata warna-warna dalam bahasa Arab, cara mendeskripsikan objek berdasarkan warna, dan sifat-sifat benda.</p>
+                    <a href="9.html" target="_blank" class="btn-access">Akses Materi →</a>
+                </div>
+
+                <!-- Pertemuan 10 -->
+                <div class="pertemuan-card">
+                    <div class="pertemuan-number">10</div>
+                    <h3>Al-Hayawanat</h3>
+                    <div class="arabic-title">الْحَيَوَانَاتُ</div>
+                    <p>Pelajari nama-nama hewan dalam bahasa Arab, karakteristik hewan, dan cara membuat kalimat deskriptif tentang hewan.</p>
+                    <a href="10.html" target="_blank" class="btn-access">Akses Materi →</a>
+                </div>
+
+                <!-- Pertemuan 11 -->
+                <div class="pertemuan-card">
+                    <div class="pertemuan-number">11</div>
+                    <h3>An-Nabat</h3>
+                    <div class="arabic-title">النَّبَاتُ</div>
+                    <p>Kosakata tentang tumbuhan, buah-buahan, sayuran, dan cara menyebutkan bagian-bagian tanaman dalam bahasa Arab.</p>
+                    <a href="11.html" target="_blank" class="btn-access">Akses Materi →</a>
+                </div>
+
+                <!-- Pertemuan 12 -->
+                <div class="pertemuan-card">
+                    <div class="pertemuan-number">12</div>
+                    <h3>Al-A'da'</h3>
+                    <div class="arabic-title">الأَعْضَاءُ</div>
+                    <p>Mempelajari nama-nama anggota tubuh, fungsi masing-masing bagian, dan cara mengungkapkan rasa sakit atau keluhan kesehatan.</p>
+                    <a href="12.html" target="_blank" class="btn-access">Akses Materi →</a>
+                </div>
+
+                <!-- Pertemuan 13 -->
+                <div class="pertemuan-card">
+                    <div class="pertemuan-number">13</div>
+                    <h3>Al-Mawaqi'</h3>
+                    <div class="arabic-title">الْمَوَاقِعُ</div>
+                    <p>Kosakata tentang tempat-tempat umum, cara bertanya dan memberi petunjuk arah, serta preposisi tempat yang kompleks.</p>
+                    <a href="13.html" target="_blank" class="btn-access">Akses Materi →</a>
+                </div>
+
+                <!-- Pertemuan 14 -->
+                <div class="pertemuan-card">
+                    <div class="pertemuan-number">14</div>
+                    <h3>Al-A'mal</h3>
+                    <div class="arabic-title">الأَعْمَالُ</div>
+                    <p>Pelajari kosakata tentang pekerjaan, profesi, dan cara mengungkapkan aktivitas sehari-hari dengan fi'il mudhari'.</p>
+                    <a href="14.html" target="_blank" class="btn-access">Akses Materi →</a>
+                </div>
+
+                <!-- Pertemuan 15 -->
+                <div class="pertemuan-card">
+                    <div class="pertemuan-number">15</div>
+                    <h3>Al-Anasyid</h3>
+                    <div class="arabic-title">الأَنَاشِيْدُ</div>
+                    <p>Belajar melalui nasyid dan lagu-lagu Arab untuk meningkatkan hafalan kosakata dan pelafalan (makhraj) yang benar.</p>
+                    <a href="15.html" target="_blank" class="btn-access">Akses Materi →</a>
+                </div>
+
+                <!-- Pertemuan 16 - UAS -->
+                <div class="pertemuan-card exam-card">
+                    <div class="pertemuan-number">16</div>
+                    <h3>Ujian Akhir Semester</h3>
+                    <div class="arabic-title">اِخْتِبَارُ نِهَائِيِّ الْفَصْلِ</div>
+                    <p>Evaluasi akhir untuk seluruh materi semester 1. Ujian komprehensif dengan standar kompetensi yang telah ditetapkan.</p>
+                    <a href="16.html" target="_blank" class="btn-access">Akses Ujian →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Video Pembelajaran</h2>
+            <p style="color: white; margin-bottom: 30px; font-size: 1.1rem;">Akses video pembelajaran untuk setiap topik penting</p>
+            
+            <!-- GANTI LINK VIDEO DI BAWAH INI -->
+            <a href="https://youtube.com/link-video-1" target="_blank" class="video-button">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                Video At-Ta'aruf
+            </a>
+            
+            <a href="https://youtube.com/link-video-2" target="_blank" class="video-button">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                Video Al-Unwan
+            </a>
+            
+            <a href="https://youtube.com/link-video-3" target="_blank" class="video-button">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                Video Al-Usrah
+            </a>
+            
+            <a href="https://youtube.com/link-video-4" target="_blank" class="video-button">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                Video Al-Bait
+            </a>
+        </div>
+    </section>
+
+    <!-- Detail Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Materi Pembelajaran</h2>
+            
+            <div class="content-detail">
+                
+                <h2>Pertemuan 1: At-Ta'aruf (التَّعَارُفُ)</h2>
+                
+                <h3>A. Pendahuluan</h3>
+                <p>
+                    At-Ta'aruf atau perkenalan merupakan materi fundamental dalam pembelajaran bahasa Arab. 
+                    Kemampuan memperkenalkan diri dengan baik adalah kunci untuk membangun komunikasi yang 
+                    efektif dalam bahasa Arab. Materi ini dirancang untuk membekali siswa dengan kosakata, 
+                    struktur kalimat, dan etika perkenalan yang sesuai dengan adab Islam.
+                </p>
+                
+                <h3>B. Kosakata Penting (المُفْرَدَاتُ)</h3>
+                <p>Berikut adalah kosakata dasar yang harus dikuasai:</p>
+                <ul>
+                    <li><strong>اِسْمِيْ</strong> (ismii) = Nama saya</li>
+                    <li><strong>أَنَا</strong> (ana) = Saya</li>
+                    <li><strong>طَالِبٌ</strong> (thalibun) = Siswa (laki-laki)</li>
+                    <li><strong>طَالِبَةٌ</strong> (thalibatun) = Siswi (perempuan)</li>
+                    <li><strong>عُمْرِيْ</strong> ('umrii) = Umur saya</li>
+                    <li><strong>سَنَةٌ</strong> (sanatun) = Tahun</li>
+                    <li><strong>أَسْكُنُ</strong> (askunu) = Saya tinggal</li>
+                    <li><strong>فِيْ</strong> (fii) = Di/Dalam</li>
+                </ul>
+
+                <div class="example-box">
+                    <h4>Contoh Dialog Perkenalan:</h4>
+                    <div class="arabic">
+                        أَحْمَدُ : السَّلاَمُ عَلَيْكُمْ<br>
+                        عَلِيٌّ : وَعَلَيْكُمُ السَّلاَمُ<br>
+                        أَحْمَدُ : مَا اسْمُكَ؟<br>
+                        عَلِيٌّ : اِسْمِيْ عَلِيٌّ، وَمَا اسْمُكَ؟<br>
+                        أَحْمَدُ : اِسْمِيْ أَحْمَدُ<br>
+                        عَلِيٌّ : كَيْفَ حَالُكَ يَا أَحْمَدُ؟<br>
+                        أَحْمَدُ : أَنَا بِخَيْرٍ، شُكْرًا
+                    </div>
+                    <div class="translation">
+                        <strong>Terjemahan:</strong><br>
+                        Ahmad: Assalamu'alaikum<br>
+                        Ali: Wa'alaikumussalam<br>
+                        Ahmad: Siapa namamu?<br>
+                        Ali: Nama saya Ali, dan siapa namamu?<br>
+                        Ahmad: Nama saya Ahmad<br>
+                        Ali: Apa kabarmu wahai Ahmad?<br>
+                        Ahmad: Saya baik, terima kasih
+                    </div>
+                </div>
+
+                <h3>C. Struktur Kalimat (التَّرَاكِيْبُ)</h3>
+                <p>
+                    Dalam bahasa Arab, kalimat perkenalan menggunakan struktur <em>Jumlah Ismiyah</em> 
+                    (kalimat nominal) yang diawali dengan isim (kata benda). Pola dasar yang digunakan adalah:
+                </p>
+                <ol>
+                    <li><strong>Mubtada' + Khabar</strong> (Subjek + Predikat)<br>
+                    Contoh: اِسْمِيْ أَحْمَدُ (Nama saya Ahmad)</li>
+                    <li><strong>Dhamir + Fi'il</strong> (Kata ganti + Kata kerja)<br>
+                    Contoh: أَنَا أَسْكُنُ فِيْ لِيْمُوْ (Saya tinggal di Limo)</li>
+                </ol>
+
+                <h3>D. Analisis Perbandingan Bahasa</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspek</th>
+                            <th>Bahasa Indonesia</th>
+                            <th>Bahasa Arab</th>
+                            <th>Catatan Penting</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Struktur Kalimat</td>
+                            <td>S-P-O (Subjek-Predikat-Objek)</td>
+                            <td>P-S (Predikat-Subjek) atau S-P</td>
+                            <td>Bahasa Arab lebih fleksibel</td>
+                        </tr>
+                        <tr>
+                            <td>Kata Ganti</td>
+                            <td>Saya, Kamu, Dia</td>
+                            <td>أَنَا، أَنْتَ، هُوَ</td>
+                            <td>Arab membedakan gender</td>
+                        </tr>
+                        <tr>
+                            <td>Kata Tanya</td>
+                            <td>Apa, Siapa, Di mana</td>
+                            <td>مَا، مَنْ، أَيْنَ</td>
+                            <td>Diletakkan di awal kalimat</td>
+                        </tr>
+                        <tr>
+                            <td>Sapaan</td>
+                            <td>Halo, Hai</td>
+                            <td>السَّلاَمُ عَلَيْكُمْ</td>
+                            <td>Sunnah Rasulullah SAW</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="case-study">
+                    <h4>Studi Kasus: Perkenalan di Lingkungan Madrasah</h4>
+                    <p>
+                        <strong>Situasi:</strong> Ahmad adalah siswa baru di MTs Diniyah Limo Jurai. 
+                        Pada hari pertama, ia harus memperkenalkan diri di depan kelas yang terdiri dari 
+                        25 siswa baru lainnya.
+                    </p>
+                    <p><strong>Tantangan:</strong></p>
+                    <ul>
+                        <li>Ahmad merasa gugup berbicara di depan umum</li>
+                        <li>Ia belum terbiasa dengan pelafalan bahasa Arab yang benar</li>
+                        <li>Perlu menyebutkan identitas lengkap dengan struktur yang tepat</li>
+                    </ul>
+                    <p><strong>Solusi:</strong></p>
+                    <ol>
+                        <li>Latihan berulang kali di depan cermin</li>
+                        <li>Merekam suara sendiri untuk evaluasi makhraj</li>
+                        <li>Menyiapkan teks perkenalan dengan struktur:<br>
+                        - Salam pembuka<br>
+                        - Nama lengkap<br>
+                        - Asal sekolah<br>
+                        - Hobi/kegemaran<br>
+                        - Harapan belajar</li>
+                    </ol>
+                </div>
+
+                <h3>E. Latihan Soal</h3>
+                <p><strong>1. Terjemahkan ke bahasa Arab:</strong></p>
+                <ul>
+                    <li>Nama saya Fatimah</li>
+                    <li>Saya berumur 13 tahun</li>
+                    <li>Saya tinggal di Sungai Pua</li>
+                </ul>
+
+                <p><strong>2. Buatlah dialog perkenalan antara 2 orang dengan minimal 8 kalimat!</strong></p>
+
+                <h3>F. Referensi Pembelajaran</h3>
+                <div class="references">
+                    <h3>Daftar Pustaka</h3>
+                    <ul>
+                        <li>Al-Ghalayaini, Musthofa. (2020). <em>Jami'ud Durus Al-'Arabiyyah</em>. Beirut: Al-Maktabah Al-'Ashriyyah.</li>
+                        <li>Abdurrahman, Ahmad. (2021). <em>Bahasa Arab untuk MTs Kelas VII</em>. Jakarta: Kementerian Agama RI.</li>
+                        <li>Kholid, A. & Abdullah, M. (2022). <em>Metode Pembelajaran Bahasa Arab Kontemporer</em>. Yogyakarta: Deepublish.</li>
+                        <li>Al-Munawwir, Ahmad Warson. (2019). <em>Kamus Al-Munawwir Arab-Indonesia</em>. Yogyakarta: Pustaka Progressif.</li>
+                        <li>Kurikulum Merdeka. (2022). <em>Capaian Pembelajaran Bahasa Arab Fase D</em>. Jakarta: Kemendikbudristek.</li>
+                        <li>Ibrahim, Syafi'i. (2023). <em>Nahwu Wadhih untuk Pemula</em>. Surabaya: Al-Mawardi Prima.</li>
+                    </ul>
+                </div>
+
+                <h2>Pertemuan 2: Al-Unwan (العُنْوَانُ)</h2>
+                
+                <h3>A. Konsep Dasar</h3>
+                <p>
+                    Al-Unwan (alamat) merupakan materi penting untuk kemampuan berkomunikasi dalam 
+                    kehidupan sehari-hari. Siswa akan belajar cara menyebutkan alamat lengkap, 
+                    menanyakan lokasi, dan memberikan petunjuk arah dalam bahasa Arab.
+                </p>
+
+                <h3>B. Kosakata Inti</h3>
+                <ul>
+                    <li><strong>عُنْوَانٌ</strong> ('unwanun) = Alamat</li>
+                    <li><strong>شَارِعٌ</strong> (syari'un) = Jalan</li>
+                    <li><strong>قَرْيَةٌ</strong> (qaryatun) = Desa/Kampung</li>
+                    <li><strong>مَدِيْنَةٌ</strong> (madiinatun) = Kota</li>
+                    <li><strong>مُحَافَظَةٌ</strong> (muhafazhatun) = Kabupaten/Provinsi</li>
+                    <li><strong>رَقْمٌ</strong> (raqmun) = Nomor</li>
+                    <li><strong>بِجَانِبِ</strong> (bijanbi) = Di sebelah</li>
+                    <li><strong>أَمَامَ</strong> (amama) = Di depan</li>
+                    <li><strong>خَلْفَ</strong> (khalfa) = Di belakang</li>
+                </ul>
+
+                <div class="example-box">
+                    <h4>Contoh Menyebutkan Alamat:</h4>
+                    <div class="arabic">
+                        عُنْوَانِيْ: شَارِعُ الْوَحْدَةِ رَقْمُ ١٥<br>
+                        قَرْيَةُ لِيْمُوْ جُوْرَايْ<br>
+                        مُدِيْرِيَّةُ سُنْقَايْ پُوْا<br>
+                        مُقَاطَعَةُ أَجَمْ
+                    </div>
+                    <div class="translation">
+                        Alamat saya: Jalan Persatuan Nomor 15<br>
+                        Desa Limo Jurai<br>
+                        Kecamatan Sungai Pua<br>
+                        Kabupaten Agam
+                    </div>
+                </div>
+
+                <h3>C. Preposisi Tempat (ظُرُوفُ الْمَكَانِ)</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Bahasa Arab</th>
+                            <th>Arti</th>
+                            <th>Contoh Penggunaan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>فِيْ</td>
+                            <td>Di/Dalam</td>
+                            <td>أَسْكُنُ فِيْ لِيْمُوْ (Saya tinggal di Limo)</td>
+                        </tr>
+                        <tr>
+                            <td>عَلَى</td>
+                            <td>Di atas/Pada</td>
+                            <td>الْبَيْتُ عَلَى الْيَمِيْنِ (Rumah di sebelah kanan)</td>
+                        </tr>
+                        <tr>
+                            <td>تَحْتَ</td>
+                            <td>Di bawah</td>
+                            <td>الْكُرْسِيُّ تَحْتَ الْمَكْتَبِ (Kursi di bawah meja)</td>
+                        </tr>
+                        <tr>
+                            <td>أَمَامَ</td>
+                            <td>Di depan</td>
+                            <td>الْمَسْجِدُ أَمَامَ الْمَدْرَسَةِ (Masjid di depan sekolah)</td>
+                        </tr>
+                        <tr>
+                            <td>خَلْفَ</td>
+                            <td>Di belakang</td>
+                            <td>الْحَدِيْقَةُ خَلْفَ الْبَيْتِ (Kebun di belakang rumah)</td>
+                        </tr>
+                        <tr>
+                            <td>بِجَانِبِ</td>
+                            <td>Di sebelah</td>
+                            <td>الْمَكْتَبَةُ بِجَانِبِ الْمَسْجِدِ (Perpustakaan di sebelah masjid)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Pertemuan 3: Al-Usrah (الأُسْرَةُ)</h2>
+                
+                <h3>A. Pengantar</h3>
+                <p>
+                    Keluarga (Al-Usrah) adalah unit sosial terkecil dalam masyarakat. Menguasai 
+                    kosakata tentang keluarga sangat penting untuk berkomunikasi tentang silsilah, 
+                    hubungan kekerabatan, dan kehidupan domestik.
+                </p>
+
+                <h3>B. Anggota Keluarga Inti</h3>
+                <div class="example-box">
+                    <div class="arabic">
+                        الأَبُ = Ayah<br>
+                        الأُمُّ = Ibu<br>
+                        الأَخُ = Saudara laki-laki<br>
+                        الأُخْتُ = Saudara perempuan<br>
+                        الْجَدُّ = Kakek<br>
+                        الْجَدَّةُ = Nenek
+                    </div>
+                </div>
+
+                <h3>C. Silsilah Keluarga Lengkap</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Bahasa Arab</th>
+                            <th>Arti</th>
+                            <th>Bahasa Arab</th>
+                            <th>Arti</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>الْوَالِدُ</td>
+                            <td>Ayah</td>
+                            <td>الْوَالِدَةُ</td>
+                            <td>Ibu</td>
+                        </tr>
+                        <tr>
+                            <td>الابْنُ</td>
+                            <td>Anak laki-laki</td>
+                            <td>الابْنَةُ</td>
+                            <td>Anak perempuan</td>
+                        </tr>
+                        <tr>
+                            <td>الزَّوْجُ</td>
+                            <td>Suami</td>
+                            <td>الزَّوْجَةُ</td>
+                            <td>Istri</td>
+                        </tr>
+                        <tr>
+                            <td>الْعَمُّ</td>
+                            <td>Paman (dari ayah)</td>
+                            <td>الْخَالُ</td>
+                            <td>Paman (dari ibu)</td>
+                        </tr>
+                        <tr>
+                            <td>الْعَمَّةُ</td>
+                            <td>Bibi (dari ayah)</td>
+                            <td>الْخَالَةُ</td>
+                            <td>Bibi (dari ibu)</td>
+                        </tr>
+                        <tr>
+                            <td>ابْنُ الْعَمِّ</td>
+                            <td>Sepupu (laki-laki)</td>
+                            <td>بِنْتُ الْعَمِّ</td>
+                            <td>Sepupu (perempuan)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Pertemuan 4: Al-Bait (الْبَيْتُ)</h2>
+                
+                <h3>A. Deskripsi</h3>
+                <p>
+                    Materi Al-Bait mengajarkan siswa untuk mengenal nama-nama ruangan, perabot 
+                    rumah tangga, dan cara mendeskripsikan rumah dalam bahasa Arab. Materi ini 
+                    sangat praktis untuk kehidupan sehari-hari.
+                </p>
+
+                <h3>B. Ruangan dalam Rumah</h3>
+                <ul>
+                    <li><strong>غُرْفَةُ الْجُلُوْسِ</strong> = Ruang tamu</li>
+                    <li><strong>غُرْفَةُ النَّوْمِ</strong> = Kamar tidur</li>
+                    <li><strong>الْمَطْبَخُ</strong> = Dapur</li>
+                    <li><strong>الْحَمَّامُ</strong> = Kamar mandi</li>
+                    <li><strong>غُرْفَةُ الطَّعَامِ</strong> = Ruang makan</li>
+                    <li><strong>الْحَدِيْقَةُ</strong> = Kebun/Taman</li>
+                </ul>
+
+                <div class="example-box">
+                    <h4>Contoh Mendeskripsikan Rumah:</h4>
+                    <div class="arabic">
+                        بَيْتِيْ كَبِيْرٌ وَجَمِيْلٌ<br>
+                        فِيْهِ غُرْفَةُ جُلُوْسٍ وَثَلاَثُ غُرَفِ نَوْمٍ<br>
+                        وَمَطْبَخٌ وَحَمَّامَانِ<br>
+                        أَمَامَ الْبَيْتِ حَدِيْقَةٌ صَغِيْرَةٌ
+                    </div>
+                    <div class="translation">
+                        Rumah saya besar dan indah<br>
+                        Di dalamnya ada ruang tamu dan tiga kamar tidur<br>
+                        Dan dapur serta dua kamar mandi<br>
+                        Di depan rumah ada taman kecil
+                    </div>
+                </div>
+
+                <h3>C. Perabot Rumah Tangga</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Arab</th>
+                            <th>Indonesia</th>
+                            <th>Arab</th>
+                            <th>Indonesia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>الْكُرْسِيُّ</td>
+                            <td>Kursi</td>
+                            <td>الْمَكْتَبُ</td>
+                            <td>Meja</td>
+                        </tr>
+                        <tr>
+                            <td>السَّرِيْرُ</td>
+                            <td>Tempat tidur</td>
+                            <td>الْخِزَانَةُ</td>
+                            <td>Lemari</td>
+                        </tr>
+                        <tr>
+                            <td>الْمِرْآةُ</td>
+                            <td>Cermin</td>
+                            <td>الْمِصْبَاحُ</td>
+                            <td>Lampu</td>
+                        </tr>
+                        <tr>
+                            <td>الثَّلاَّجَةُ</td>
+                            <td>Kulkas</td>
+                            <td>الْمِوْقَدُ</td>
+                            <td>Kompor</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3 style="font-family: 'Playfair Display', serif; color: #FFD700; margin-bottom: 20px;">
+                Bahasa Arab Kelas 7 Semester 1
+            </h3>
+            <div class="contact-info">
+                <p><strong>Penulis:</strong> Fauzi Ilmi Al-Khairi, S.H.</p>
+                <p><strong>Sekolah:</strong> MTs Swasta Diniyah Limo Jurai Sungai Pua</p>
+                <p><strong>Email:</strong> <a href="mailto:fauziilmialkhairi@gmail.com">fauziilmialkhairi@gmail.com</a></p>
+            </div>
+            <p style="margin-top: 30px; color: #aaa;">
+                &copy; 2024 - Semua Hak Dilindungi | Buku Pembelajaran Bahasa Arab
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

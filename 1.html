@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 1 - At-Ta'aruf (التَّعَارُفُ) | Bahasa Arab Kelas 7</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3c72;
+            --secondary: #2a5298;
+            --accent: #FFD700;
+            --text-dark: #333;
+            --text-light: #f8f9fa;
+            --bg-light: #ffffff;
+            --bg-section: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .arabic-text {
+            font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade New', serif;
+            direction: rtl;
+            text-align: right;
+            line-height: 2.4;
+            font-size: 1.4rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Navigation */
+        .top-nav {
+            background: var(--primary);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .top-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Header Section */
+        .chapter-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chapter-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,215,0,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .chapter-header h1 {
+            font-family: 'Amiri', serif;
+            font-size: 1.2rem;
+            color: var(--accent);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .chapter-header h2 {
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .chapter-header .arabic-title {
+            font-size: 3rem;
+            color: var(--accent);
+            margin: 15px 0;
+            font-family: 'Traditional Arabic', 'Amiri', serif;
+        }
+
+        .chapter-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255,215,0,0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: var(--bg-light);
+            padding: 50px 0;
+            margin: 30px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .content-section h3 {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+        }
+
+        .content-section h4 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin: 25px 0 15px;
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .content-section ul, .content-section ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        .content-section li {
+            margin-bottom: 10px;
+        }
+
+        /* Vocabulary Box */
+        .vocab-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+            border-right: 5px solid var(--accent);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+
+        .vocab-box .arabic-text {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+
+        /* Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table thead {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .comparison-table th {
+            padding: 18px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table td {
+            padding: 15px 18px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: right;
+        }
+
+        .comparison-table tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        .comparison-table tbody tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        /* Case Study */
+        .case-study {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f0 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid var(--secondary);
+        }
+
+        .case-study h4 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .case-study h4::before {
+            content: '📚';
+        }
+
+        /* Exam Points */
+        .exam-points {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+            border-left: 5px solid #e74c3c;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+
+        .exam-points h4 {
+            color: #c0392b;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f1f3d 100%);
+            color: white;
+            padding: 50px 0 30px;
+            margin-top: 50px;
+        }
+
+        footer h3 {
+            font-family: 'Amiri', serif;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        footer .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer h4 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .chapter-header h2 {
+                font-size: 1.8rem;
+            }
+            .chapter-header .arabic-title {
+                font-size: 2.2rem;
+            }
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+            }
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+            .comparison-table th, .comparison-table td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="container">
+            <a href="index.html" style="font-family: 'Amiri', serif; font-size: 1.2rem; color: #FFD700;">
+                📖 Bahasa Arab Kelas 7
+            </a>
+            <div class="nav-links">
+                <a href="index.html">🏠 Beranda</a>
+                <a href="index.html#pertemuan">📑 Daftar Pertemuan</a>
+                <a href="index.html#penulis">✍️ Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Chapter Header -->
+    <header class="chapter-header">
+        <div class="container">
+            <h1>PERTEMUAN 1</h1>
+            <h2>Hakikat dan Praktik At-Ta'aruf</h2>
+            <div class="arabic-title">التَّعَارُفُ</div>
+            <p>Konsep dasar perkenalan, kosakata, struktur kalimat, dan etika perkenalan dalam bahasa Arab. Memahami esensi komunikasi awal yang sesuai dengan adab Islam di lingkungan madrasah.</p>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-outline">🏠 Beranda</a>
+                <a href="uji-formatif-1.html" class="btn btn-primary">📝 Uji Formatif Pertemuan 1</a>
+                <a href="2.html" class="btn btn-outline">Pertemuan Selanjutnya →</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Section A -->
+        <section class="content-section" style="padding: 40px; margin-top: -30px; position: relative; z-index: 10;">
+            <h3>A. Pengertian dan Hakikat At-Ta'aruf (التَّعَارُفُ)</h3>
+            <p>
+                At-Ta'aruf secara etimologis berasal dari kata <span class="arabic-text" style="font-size: 1.2rem; display: inline;">تَعَارَفَ - يَتَعَارَفُ</span> yang berarti "saling mengenal". Dalam konteks pembelajaran bahasa Arab, At-Ta'aruf merupakan materi fundamental yang berfungsi sebagai kunci pembuka untuk membangun komunikasi yang efektif dan bermakna.
+            </p>
+            <p>Dalam perspektif yang lebih komprehensif, At-Ta'aruf tidak hanya sekadar menghafal kosakata, melainkan sebuah sistem komunikasi yang mencakup:</p>
+            <ul>
+                <li><strong>Tujuan:</strong> Memperkenalkan identitas diri (nama, usia, asal) kepada orang lain.</li>
+                <li><strong>Isi:</strong> Kosakata dasar, kata ganti (dhamir), dan kata tanya (istifham).</li>
+                <li><strong>Strategi:</strong> Penggunaan kalimat nominal (Jumlah Ismiyah) yang tepat.</li>
+                <li><strong>Etika:</strong> Menanamkan adab Islami seperti mengawali dengan salam dan tersenyum.</li>
+            </ul>
+            
+            <h4>Definisi At-Ta'aruf Menurut Para Ahli:</h4>
+            <ul>
+                <li><strong>Kamus Al-Munawwir:</strong> At-Ta'aruf adalah saling mengenal atau memperkenalkan diri.</li>
+                <li><strong>Prof. Dr. A. Fuad Effendy:</strong> At-Ta'aruf adalah keterampilan berbicara (maharah kalam) tingkat dasar yang menjadi fondasi penguasaan bahasa Arab komunikatif.</li>
+            </ul>
+        </section>
+
+        <!-- Section B -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>B. Kosakata Penting (الْمُفْرَدَاتُ)</h3>
+            <p>Berikut adalah kosakata dasar yang wajib dikuasai oleh siswa untuk memulai perkenalan:</p>
+            
+            <div class="vocab-box">
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">اِسْمِيْ</span> (ismii) = Nama saya</li>
+                    <li><span class="arabic-text">أَنَا</span> (ana) = Saya</li>
+                    <li><span class="arabic-text">طَالِبٌ</span> (thalibun) = Siswa (laki-laki)</li>
+                    <li><span class="arabic-text">طَالِبَةٌ</span> (thalibatun) = Siswi (perempuan)</li>
+                    <li><span class="arabic-text">عُمْرِيْ</span> ('umrii) = Umur saya</li>
+                    <li><span class="arabic-text">سَنَةٌ</span> (sanatun) = Tahun</li>
+                    <li><span class="arabic-text">أَسْكُنُ</span> (askunu) = Saya tinggal</li>
+                    <li><span class="arabic-text">فِيْ</span> (fii) = Di / Dalam</li>
+                    <li><span class="arabic-text">كَيْفَ حَالُكَ؟</span> (kaifa haaluka?) = Apa kabarmu? (laki-laki)</li>
+                    <li><span class="arabic-text">بِخَيْرٍ</span> (bikhairin) = Baik</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section C -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>C. Struktur Kalimat (التَّرَاكِيْبُ)</h3>
+            <p>
+                Dalam bahasa Arab, kalimat perkenalan mayoritas menggunakan struktur <strong>Jumlah Ismiyah</strong> (kalimat nominal) yang diawali dengan isim (kata benda). Pola dasar yang digunakan adalah:
+            </p>
+            <ol>
+                <li>
+                    <strong>Mubtada' + Khabar</strong> (Subjek + Predikat)<br>
+                    <span class="arabic-text" style="color: var(--secondary);">مِثَالٌ: اِسْمِيْ أَحْمَدُ</span><br>
+                    <em>(Contoh: Nama saya Ahmad)</em>
+                </li>
+                <li>
+                    <strong>Dhamir + Fi'il</strong> (Kata ganti + Kata kerja)<br>
+                    <span class="arabic-text" style="color: var(--secondary);">مِثَالٌ: أَنَا أَسْكُنُ فِيْ لِيْمُوْ</span><br>
+                    <em>(Contoh: Saya tinggal di Limo)</em>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Section D -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>D. Contoh Dialog Perkenalan (الْحِوَارُ)</h3>
+            <div class="vocab-box">
+                <h4 style="margin-top: 0; color: var(--primary);">Dialog antara Ahmad dan Ali:</h4>
+                <div class="arabic-text">
+                    أَحْمَدُ: السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ<br>
+                    عَلِيٌّ: وَعَلَيْكُمُ السَّلَامُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ<br>
+                    أَحْمَدُ: مَا اسْمُكَ؟<br>
+                    عَلِيٌّ: اِسْمِيْ عَلِيٌّ، وَمَا اسْمُكَ؟<br>
+                    أَحْمَدُ: اِسْمِيْ أَحْمَدُ<br>
+                    عَلِيٌّ: كَيْفَ حَالُكَ يَا أَحْمَدُ؟<br>
+                    أَحْمَدُ: أَنَا بِخَيْرٍ، الْحَمْدُ لِلَّهِ. وَأَنْتَ؟<br>
+                    عَلِيٌّ: أَنَا بِخَيْرٍ أَيْضًا، شُكْرًا.
+                </div>
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed #ccc; color: #555; font-style: italic;">
+                    <strong>Terjemahan:</strong><br>
+                    Ahmad: Assalamu'alaikum warahmatullahi wabarakatuh<br>
+                    Ali: Wa'alaikumussalam warahmatullahi wabarakatuh<br>
+                    Ahmad: Siapa namamu?<br>
+                    Ali: Nama saya Ali, dan siapa namamu?<br>
+                    Ahmad: Nama saya Ahmad<br>
+                    Ali: Apa kabarmu wahai Ahmad?<br>
+                    Ahmad: Saya baik, alhamdulillah. Dan kamu?<br>
+                    Ali: Saya juga baik, terima kasih.
+                </div>
+            </div>
+        </section>
+
+        <!-- Section E -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>E. Analisis Perbandingan Bahasa</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Bahasa Indonesia</th>
+                        <th>Bahasa Arab</th>
+                        <th>Catatan Penting</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Struktur Kalimat</td>
+                        <td>S-P-O (Subjek-Predikat-Objek)</td>
+                        <td>P-S (Predikat-Subjek) atau S-P</td>
+                        <td>Bahasa Arab lebih fleksibel, namun Jumlah Ismiyah mengutamakan Mubtada' di awal.</td>
+                    </tr>
+                    <tr>
+                        <td>Kata Ganti</td>
+                        <td>Saya, Kamu, Dia</td>
+                        <td>أَنَا، أَنْتَ، هُوَ</td>
+                        <td>Bahasa Arab membedakan gender (muzakkar/muannats) secara ketat.</td>
+                    </tr>
+                    <tr>
+                        <td>Kata Tanya</td>
+                        <td>Apa, Siapa, Di mana</td>
+                        <td>مَا، مَنْ، أَيْنَ</td>
+                        <td>Diletakkan di awal kalimat tanya (istifham).</td>
+                    </tr>
+                    <tr>
+                        <td>Sapaan</td>
+                        <td>Halo, Hai, Selamat Pagi</td>
+                        <td>السَّلَامُ عَلَيْكُمْ</td>
+                        <td>Merupakan sunnah Rasulullah SAW dan doa keselamatan.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section F -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>F. Studi Kasus: Perkenalan di Lingkungan Madrasah</h3>
+            <div class="case-study">
+                <h4>Situasi Nyata</h4>
+                <p>
+                    Ahmad adalah siswa baru di MTs Swasta Diniyah Limo Jurai. Pada hari pertama masuk sekolah, ia harus memperkenalkan diri di depan kelas yang terdiri dari 25 siswa baru lainnya.
+                </p>
+                <h4>Tantangan yang Dihadapi:</h4>
+                <ul>
+                    <li>Ahmad merasa gugup dan takut salah pelafalan (makhraj) saat berbicara di depan umum.</li>
+                    <li>Ia belum terbiasa menyusun kalimat bahasa Arab secara spontan.</li>
+                    <li>Perlu menyebutkan identitas lengkap (nama, NIS, asal desa) dengan struktur yang tepat.</li>
+                </ul>
+                <h4>Solusi dan Langkah Strategis:</h4>
+                <ol>
+                    <li><strong>Latihan Berulang:</strong> Berlatih di depan cermin minimal 5 kali sehari sebelum hari H.</li>
+                    <li><strong>Rekam Suara:</strong> Merekam suara sendiri untuk mengevaluasi kebenaran makhraj dan harakat.</li>
+                    <li><strong>Menyiapkan Naskah Terstruktur:</strong>
+                        <ul>
+                            <li>Salam pembuka (السَّلَامُ عَلَيْكُمْ)</li>
+                            <li>Nama lengkap dan NIS (اِسْمِيْ ... وَرَقْمُ قَيْدِيْ ...)</li>
+                            <li>Asal sekolah/desa (أَنَا مِنْ ...)</li>
+                            <li>Hobi/kegemaran (هَوَايَتِيْ ...)</li>
+                            <li>Harapan belajar (أَتَمَنَّى أَنْ أَتَعَلَّمَ اللُّغَةَ الْعَرَبِيَّةَ)</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Section G -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>G. Poin Penting untuk Ujian</h3>
+            <div class="exam-points">
+                <h4>📌 Hafalkan dan Pahami Hal-Hal Berikut:</h4>
+                <ul>
+                    <li>Pahami perbedaan antara <strong>Jumlah Ismiyah</strong> dan <strong>Jumlah Fi'liyah</strong> dalam konteks perkenalan.</li>
+                    <li>Kuasai 10 kosakata inti At-Ta'aruf beserta harakat dan artinya.</li>
+                    <li>Hafalkan dialog perkenalan standar minimal 6-8 kalimat.</li>
+                    <li>Pahami penggunaan kata tanya: <span class="arabic-text" style="font-size: 1.2rem;">مَا</span> (untuk benda), <span class="arabic-text" style="font-size: 1.2rem;">مَنْ</span> (untuk orang), <span class="arabic-text" style="font-size: 1.2rem;">أَيْنَ</span> (untuk tempat).</li>
+                    <li>Bedakan kata ganti <span class="arabic-text" style="font-size: 1.2rem;">أَنْتَ</span> (kamu laki-laki) dan <span class="arabic-text" style="font-size: 1.2rem;">أَنْتِ</span> (kamu perempuan).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section H -->
+        <section class="content-section" style="padding: 40px;">
+            <h3>H. Relevansi untuk Pendidikan Islam</h3>
+            <p>
+                Dalam konteks Pendidikan Agama Islam, At-Ta'aruf bukan hanya keterampilan linguistik, tetapi juga ibadah dan implementasi adab. Beberapa nilai keislaman yang terintegrasi:
+            </p>
+            <ul>
+                <li><strong>Integrasi Adab:</strong> Mengawali dan mengakhiri perkenalan dengan salam, serta tersenyum (<span class="arabic-text" style="font-size: 1.2rem;">التَّبَسُّمُ فِي وَجْهِ أَخِيكَ صَدَقَةٌ</span>).</li>
+                <li><strong>Nilai Keislaman:</strong> Menanamkan rasa ukhuwah Islamiyah (persaudaraan) sejak kalimat pertama diucapkan.</li>
+                <li><strong>Keseimbangan:</strong> Mempersiapkan siswa untuk berkomunikasi tidak hanya di lingkungan sekolah, tetapi juga di masyarakat global dengan tetap memegang identitas keislaman.</li>
+            </ul>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="action-buttons" style="margin: 40px 0;">
+            <a href="index.html" class="btn btn-outline">🏠 Kembali ke Beranda</a>
+            <a href="uji-formatif-1.html" class="btn btn-primary">✍️ Uji Formatif Pertemuan 1</a>
+            <a href="2.html" class="btn btn-outline">Pertemuan Selanjutnya →</a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>كِتَابُ اللُّغَةِ الْعَرَبِيَّةِ</h3>
+                    <p style="color: #ccc; line-height: 1.8;">
+                        Buku daras untuk siswa MTs. Menguasai bahasa Arab dengan metode modern, interaktif, dan berlandaskan nilai-nilai keislaman.
+                    </p>
+                </div>
+                <div>
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="index.html#pertemuan">Daftar Pertemuan</a></li>
+                        <li><a href="index.html#penulis">Tentang Penulis</a></li>
+                        <li><a href="uji-formatif-1.html">Uji Formatif</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontak Penulis</h4>
+                    <ul>
+                        <li>👤 Fauzi Ilmi Al-Khairi, S.H.</li>
+                        <li>🏫 MTs Swasta Diniyah Limo Jurai Sungai Pua</li>
+                        <li>✉️ <a href="mailto:fauziilmialkhairi@gmail.com">fauziilmialkhairi@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Fauzi Ilmi Al-Khairi, S.H. Hak cipta dilindungi undang-undang.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">Dikembangkan untuk kebutuhan pembelajaran Bahasa Arab di MTs Swasta Diniyah Limo Jurai Sungai Pua.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

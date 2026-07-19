@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 11 - An-Nabat (النَّبَاتُ) | Bahasa Arab Kelas 7</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3c72;
+            --secondary: #2a5298;
+            --accent: #FFD700;
+            --text-dark: #333;
+            --text-light: #f8f9fa;
+            --bg-light: #ffffff;
+            --bg-section: #f8f9fa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .arabic-text {
+            font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade New', serif;
+            direction: rtl;
+            text-align: right;
+            line-height: 2.4;
+            font-size: 1.4rem;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        .top-nav {
+            background: var(--primary);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .top-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover { color: var(--accent); }
+
+        .nav-links { display: flex; gap: 20px; }
+
+        .chapter-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chapter-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,215,0,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .chapter-header h1 {
+            font-family: 'Amiri', serif;
+            font-size: 1.2rem;
+            color: var(--accent);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .chapter-header h2 {
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .chapter-header .arabic-title {
+            font-size: 3rem;
+            color: var(--accent);
+            margin: 15px 0;
+            font-family: 'Traditional Arabic', 'Amiri', serif;
+        }
+
+        .chapter-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary { background: var(--accent); color: var(--primary); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,215,0,0.3); }
+        .btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+        .btn-outline:hover { background: var(--accent); color: var(--primary); }
+
+        .content-section {
+            background: var(--bg-light);
+            padding: 50px 0;
+            margin: 30px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .content-section h3 {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+        }
+
+        .content-section h4 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin: 25px 0 15px;
+        }
+
+        .content-section p { margin-bottom: 15px; text-align: justify; }
+        .content-section ul, .content-section ol { margin: 15px 0 15px 30px; }
+        .content-section li { margin-bottom: 10px; }
+
+        .vocab-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+            border-right: 5px solid var(--accent);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+
+        .vocab-box .arabic-text {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table thead {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .comparison-table th {
+            padding: 18px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table td {
+            padding: 15px 18px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: right;
+        }
+
+        .comparison-table tbody tr:hover { background: #f8f9fa; }
+        .comparison-table tbody tr:nth-child(even) { background: #fafafa; }
+
+        .case-study {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f0 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid var(--secondary);
+        }
+
+        .case-study h4 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .case-study h4::before { content: '📚'; }
+
+        .exam-points {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+            border-left: 5px solid #e74c3c;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+
+        .exam-points h4 { color: #c0392b; margin-bottom: 15px; }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f1f3d 100%);
+            color: white;
+            padding: 50px 0 30px;
+            margin-top: 50px;
+        }
+
+        footer h3 {
+            font-family: 'Amiri', serif;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        footer .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer h4 { color: var(--accent); margin-bottom: 15px; font-size: 1.2rem; }
+        footer ul { list-style: none; }
+        footer ul li { margin-bottom: 10px; }
+        footer a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: var(--accent); }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .chapter-header h2 { font-size: 1.8rem; }
+            .chapter-header .arabic-title { font-size: 2.2rem; }
+            .nav-links { width: 100%; justify-content: center; }
+            .comparison-table { font-size: 0.9rem; }
+            .comparison-table th, .comparison-table td { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="container">
+            <a href="index.html" style="font-family: 'Amiri', serif; font-size: 1.2rem; color: #FFD700;">
+                📖 Bahasa Arab Kelas 7
+            </a>
+            <div class="nav-links">
+                <a href="index.html">🏠 Beranda</a>
+                <a href="index.html#pertemuan">📑 Daftar Pertemuan</a>
+                <a href="index.html#penulis">✍️ Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="chapter-header">
+        <div class="container">
+            <h1>PERTEMUAN 11</h1>
+            <h2>Tumbuhan, Buah, dan Sayuran</h2>
+            <div class="arabic-title">النَّبَاتُ</div>
+            <p>Konsep dasar tumbuhan dalam bahasa Arab, kosakata buah-buahan dan sayuran, bagian-bagian tanaman (جُزْءُ النَّبْتَةِ), deskripsi tumbuhan, dan nilai-nilai keislaman tentang tumbuhan sebagai nikmat Allah.</p>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-outline">🏠 Beranda</a>
+                <a href="uji-formatif-11.html" class="btn btn-primary">📝 Uji Formatif Pertemuan 11</a>
+                <a href="12.html" class="btn btn-outline">Pertemuan Selanjutnya →</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="content-section" style="padding: 40px; margin-top: -30px; position: relative; z-index: 10;">
+            <h3>A. Pengertian dan Hakikat An-Nabat (النَّبَاتُ)</h3>
+            <p>
+                An-Nabat secara etimologis berasal dari kata <span class="arabic-text" style="font-size: 1.2rem; display: inline;">نَبَتَ - يَنْبُتُ</span> yang berarti "tumbuh" atau "berkembang". Dalam pembelajaran bahasa Arab, materi An-Nabat sangat penting karena tumbuhan merupakan salah satu nikmat terbesar Allah SWT yang disebutkan berulang kali dalam Al-Qur'an.
+            </p>
+            <p>Dalam perspektif yang lebih komprehensif, materi An-Nabat mencakup:</p>
+            <ul>
+                <li><strong>Tujuan:</strong> Membekali siswa dengan kemampuan menyebutkan, mengklasifikasikan, dan mendeskripsikan tumbuhan dalam bahasa Arab.</li>
+                <li><strong>Isi:</strong> Kosakata buah-buahan, sayuran, tanaman, dan bagian-bagian tanaman.</li>
+                <li><strong>Strategi:</strong> Penerapan aturan <strong>Na'at-Man'ut</strong> untuk mendeskripsikan tumbuhan secara akurat.</li>
+                <li><strong>Etika:</strong> Mensyukuri tumbuhan sebagai nikmat Allah dan menjaga kelestarian alam.</li>
+            </ul>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>B. Kosakata Tumbuhan Penting (الْمُفْرَدَاتُ)</h3>
+            <p>Berikut adalah kosakata tumbuhan dasar yang wajib dikuasai oleh siswa:</p>
+            
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">🍎 Buah-buahan (الْفَوَاكِهُ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">تُفَّاحٌ</span> (tuffaahun) = Apel</li>
+                    <li><span class="arabic-text">مَوْزٌ</span> (mauzun) = Pisang</li>
+                    <li><span class="arabic-text">عِنَبٌ</span> ('inabun) = Anggur</li>
+                    <li><span class="arabic-text">بُرْتُقَالٌ</span> (burtuqaalun) = Jeruk</li>
+                    <li><span class="arabic-text">مَنْجُو</span> (manjuu) = Mangga</li>
+                    <li><span class="arabic-text">بَطِّيخٌ</span> (baththiikhun) = Semangka</li>
+                    <li><span class="arabic-text">فَرَاوِلَةٌ</span> (faraawilatun) = Stroberi</li>
+                    <li><span class="arabic-text">تَمْرٌ</span> (tamrun) = Kurma</li>
+                    <li><span class="arabic-text">جَوْزُ الْهِنْدِ</span> (jauzul hind) = Kelapa</li>
+                    <li><span class="arabic-text">أَنَانَاسٌ</span> (anaanaasun) = Nanas</li>
+                </ul>
+            </div>
+
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">🥕 Sayuran (الْخُضْرَوَاتُ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">طَمَاطِمٌ</span> (thamaathimun) = Tomat</li>
+                    <li><span class="arabic-text">بَطَاطَا</span> (bathaathaa) = Kentang</li>
+                    <li><span class="arabic-text">بَصَلٌ</span> (bashalun) = Bawang</li>
+                    <li><span class="arabic-text">جَزَرٌ</span> (jazarun) = Wortel</li>
+                    <li><span class="arabic-text">خَسٌّ</span> (khassun) = Selada</li>
+                    <li><span class="arabic-text">خِيَارٌ</span> (khiyaarun) = Timun</li>
+                    <li><span class="arabic-text">فُلْفُلٌ</span> (fulfulun) = Cabai / Paprika</li>
+                    <li><span class="arabic-text">بَاقِلَّاءٌ</span> (baaqillaatun) = Kacang</li>
+                </ul>
+            </div>
+
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">🌳 Tanaman & Pohon (النَّبَاتَاتُ وَالْأَشْجَارُ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">شَجَرَةٌ</span> (syajaratun) = Pohon</li>
+                    <li><span class="arabic-text">زَهْرَةٌ</span> (zahratun) = Bunga</li>
+                    <li><span class="arabic-text">عُشْبٌ</span> ('usybun) = Rumput</li>
+                    <li><span class="arabic-text">نَخْلَةٌ</span> (nakhlátun) = Pohon Kurma</li>
+                    <li><span class="arabic-text">وَرَقَةٌ</span> (waraqátun) = Daun</li>
+                    <li><span class="arabic-text">بِذْرَةٌ</span> (bidzrátun) = Biji</li>
+                    <li><span class="arabic-text">سَاقٌ</span> (saaqun) = Batang</li>
+                    <li><span class="arabic-text">جَذْرٌ</span> (jadzrun) = Akar</li>
+                </ul>
+            </div>
+
+            <div class="vocab-box">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">📏 Kata Sifat untuk Tumbuhan (صِفَاتُ النَّبَاتِ):</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><span class="arabic-text">حُلْوٌ / حُلْوَةٌ</span> = Manis</li>
+                    <li><span class="arabic-text">حَامِضٌ / حَامِضَةٌ</span> = Asam</li>
+                    <li><span class="arabic-text">لَذِيذٌ / لَذِيذَةٌ</span> = Lezat</li>
+                    <li><span class="arabic-text">طَوِيْلٌ / طَوِيْلَةٌ</span> = Tinggi / Panjang</li>
+                    <li><span class="arabic-text">صَغِيْرٌ / صَغِيْرَةٌ</span> = Kecil</li>
+                    <li><span class="arabic-text">كَبِيْرٌ / كَبِيْرَةٌ</span> = Besar</li>
+                    <li><span class="arabic-text">نَاضِجٌ / نَاضِجَةٌ</span> = Matang</li>
+                    <li><span class="arabic-text">طَازَجٌ / طَازَجَةٌ</span> = Segar</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>C. Bagian-Bagian Tumbuhan (جُزْءُ النَّبْتَةِ)</h3>
+            <p>
+                Setiap tumbuhan memiliki bagian-bagian yang berbeda dengan fungsi masing-masing. Dalam bahasa Arab, bagian-bagian ini memiliki kosakata khusus:
+            </p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Bagian Tumbuhan</th>
+                        <th>Bahasa Arab</th>
+                        <th>Fungsi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Akar</td>
+                        <td><span class="arabic-text">جَذْرٌ</span> (jadzrun)</td>
+                        <td>Menyerap air dan nutrisi dari tanah</td>
+                    </tr>
+                    <tr>
+                        <td>Batang</td>
+                        <td><span class="arabic-text">سَاقٌ</span> (saaqun)</td>
+                        <td>Menopang tumbuhan dan mengalirkan nutrisi</td>
+                    </tr>
+                    <tr>
+                        <td>Daun</td>
+                        <td><span class="arabic-text">وَرَقَةٌ</span> (waraqátun)</td>
+                        <td>Tempat fotosintesis</td>
+                    </tr>
+                    <tr>
+                        <td>Bunga</td>
+                        <td><span class="arabic-text">زَهْرَةٌ</span> (zahratun)</td>
+                        <td>Alat reproduksi tumbuhan</td>
+                    </tr>
+                    <tr>
+                        <td>Buah</td>
+                        <td><span class="arabic-text">ثَمَرَةٌ</span> (tsamarátun)</td>
+                        <td>Hasil reproduksi tumbuhan</td>
+                    </tr>
+                    <tr>
+                        <td>Biji</td>
+                        <td><span class="arabic-text">بِذْرَةٌ</span> (bidzrátun)</td>
+                        <td>Calon tumbuhan baru</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>D. Contoh Dialog di Pasar Buah (الْحِوَارُ)</h3>
+            <div class="vocab-box">
+                <h4 style="margin-top: 0; color: var(--primary);">Dialog antara Ahmad dan Penjual di السُّوْقِ (Pasar):</h4>
+                <div class="arabic-text">
+                    أَحْمَدُ: السَّلَامُ عَلَيْكُمْ يَا أُسْتَاذُ<br>
+                    الْبَائِعُ: وَعَلَيْكُمُ السَّلَامُ، تَفَضَّلْ يَا بُنَيّ<br>
+                    أَحْمَدُ: أُرِيْدُ أَنْ أَشْتَرِيَ بَعْضَ الْفَوَاكِهِ<br>
+                    الْبَائِعُ: عِنْدَنَا تُفَّاحٌ أَحْمَرُ حُلْوٌ، وَمَوْزٌ نَاضِجٌ لَذِيذٌ<br>
+                    أَحْمَدُ: كَمْ سِعْرُ الْكِيلُوْ مِنَ التُّفَّاحِ؟<br>
+                    الْبَائِعُ: الْكِيلُوْ بِخَمْسَةِ آَلَافِ رُوْبِيَّةٍ<br>
+                    أَحْمَدُ: وَأَيْنَ الْخُضْرَوَاتُ؟<br>
+                    الْبَائِعُ: الْخُضْرَوَاتُ هُنَاكَ، عِنْدَنَا طَمَاطِمٌ طَازَجَةٌ وَجَزَرٌ بُرْتُقَالِيُّ<br>
+                    أَحْمَدُ: شُكْرًا جَزَاكَ اللهُ خَيْرًا، سَآخُذُ كِيْلُوْ تُفَّاحٍ وَكِيلُوْ مَوْزٍ
+                </div>
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed #ccc; color: #555; font-style: italic;">
+                    <strong>Terjemahan:</strong><br>
+                    Ahmad: Assalamu'alaikum wahai Ustadz<br>
+                    Penjual: Wa'alaikumussalam, silakan wahai anakku<br>
+                    Ahmad: Saya ingin membeli beberapa buah-buahan<br>
+                    Penjual: Kami punya apel merah yang manis, dan pisang matang yang lezat<br>
+                    Ahmad: Berapa harga satu kilo apel?<br>
+                    Penjual: Satu kilo lima ribu rupiah<br>
+                    Ahmad: Dan di mana sayurannya?<br>
+                    Penjual: Sayuran ada di sana, kami punya tomat segar dan wortel oranye<br>
+                    Ahmad: Terima kasih, semoga Allah membalasmu dengan kebaikan, saya akan ambil satu kilo apel dan satu kilo pisang
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>E. Analisis Perbandingan Bahasa</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Bahasa Indonesia</th>
+                        <th>Bahasa Arab</th>
+                        <th>Catatan Penting</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Penyebutan Buah</td>
+                        <td>"Apel" (netral)</td>
+                        <td>تُفَّاحٌ (umum) - tanpa pembedaan gender</td>
+                        <td>Beberapa buah dalam Arab tidak memiliki bentuk muannats</td>
+                    </tr>
+                    <tr>
+                        <td>Kata "Buah"</td>
+                        <td>"Buah" untuk semua jenis</td>
+                        <td>فَاكِهَةٌ (buah umum) / ثَمَرَةٌ (buah pohon)</td>
+                        <td>Arab membedakan jenis "buah"</td>
+                    </tr>
+                    <tr>
+                        <td>Kata "Sayur"</td>
+                        <td>"Sayur" (umum)</td>
+                        <td>خُضْرَوَاتٌ (jamak) / خُضَارٌ</td>
+                        <td>Biasanya digunakan dalam bentuk jamak</td>
+                    </tr>
+                    <tr>
+                        <td>Deskripsi Rasa</td>
+                        <td>"Apel manis"</td>
+                        <td>تُفَّاحٌ حُلْوٌ (mudzakkar) / مَوْزَةٌ حُلْوَةٌ (muannats)</td>
+                        <td>Sifat harus sesuai gender benda</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>F. Studi Kasus: Berkebun di MTs Diniyah Limo Jurai</h3>
+            <div class="case-study">
+                <h4>Situasi Nyata</h4>
+                <p>
+                    MTs Swasta Diniyah Limo Jurai memiliki program <strong>"Green School"</strong> di mana siswa diajak menanam sayuran di kebun sekolah. Fatimah dan teman-temannya menanam tomat, cabai, dan selada. Mereka harus mendeskripsikan tanaman mereka dalam bahasa Arab.
+                </p>
+                <h4>Tantangan yang Dihadapi:</h4>
+                <ul>
+                    <li>Fatimah bingung membedakan <span class="arabic-text">طَمَاطِمٌ</span> (tomat) dan <span class="arabic-text">فُلْفُلٌ</span> (cabai).</li>
+                    <li>Ia ingin mendeskripsikan bahwa tomatnya "merah, bulat, dan matang".</li>
+                    <li>Perlu menyebutkan bagian-bagian tanaman dengan istilah Arab yang tepat.</li>
+                </ul>
+                <h4>Solusi dan Langkah Strategis:</h4>
+                <ol>
+                    <li><strong>Membuat Kartu Kosakata:</strong> Setiap tanaman diberi label Arab berharakat.</li>
+                    <li><strong>Latihan Deskripsi:</strong> 
+                        <span class="arabic-text" style="font-size: 1.2rem; display: block; margin: 10px 0;">طَمَاطِمَتِيْ حَمْرَاءُ وَدَائِرِيَّةٌ وَنَاضِجَةٌ</span>
+                        (Tomatku merah, bulat, dan matang).
+                    </li>
+                    <li><strong>Praktik Langsung:</strong> Menyebutkan bagian tanaman saat merawatnya:
+                        <ul>
+                            <li><span class="arabic-text" style="font-size: 1.1rem;">اِسْقِ الْجَذْرَ</span> (Siramilah akarnya)</li>
+                            <li><span class="arabic-text" style="font-size: 1.1rem;">قُطُّفِ الثَّمَرَةَ</span> (Petiklah buahnya)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Menanamkan Nilai Islam:</strong> Mengaitkan dengan QS. 'Abasa: 24-32 tentang tumbuhan sebagai nikmat Allah.
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>G. Poin Penting untuk Ujian</h3>
+            <div class="exam-points">
+                <h4>📌 Hafalkan dan Pahami Hal-Hal Berikut:</h4>
+                <ul>
+                    <li>Hafalkan 10+ nama buah-buahan berharakat beserta artinya.</li>
+                    <li>Hafalkan 8+ nama sayuran berharakat beserta artinya.</li>
+                    <li>Kuasai 6 bagian tumbuhan dalam bahasa Arab (جَذْرٌ، سَاقٌ، وَرَقَةٌ، زَهْرَةٌ، ثَمَرَةٌ، بِذْرَةٌ).</li>
+                    <li>Pahami penerapan aturan <strong>Na'at-Man'ut</strong> untuk deskripsi tumbuhan.</li>
+                    <li>Hafalkan dialog di pasar buah minimal 8 kalimat berharakat.</li>
+                    <li>Pahami kosakata sifat rasa (حُلْوٌ، حَامِضٌ، لَذِيذٌ) dan kondisi (نَاضِجٌ، طَازَجٌ).</li>
+                    <li>Mampu mendeskripsikan tumbuhan dengan kalimat yang benar secara gramatikal.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding: 40px;">
+            <h3>H. Relevansi untuk Pendidikan Islam</h3>
+            <p>
+                Dalam konteks Pendidikan Agama Islam, tumbuhan memiliki kedudukan yang sangat mulia dalam Al-Qur'an dan Hadis:
+            </p>
+            <ul>
+                <li><strong>Nikmat Allah yang Besar:</strong> QS. 'Abasa: 24-32 menyebutkan bahwa Allah menumbuhkan biji, anggur, sayur-sayuran, zaitun, dan kurma sebagai nikmat untuk manusia dan hewan ternak.</li>
+                <li><strong>Tanda Kekuasaan Allah:</strong> QS. Ar-Ra'd: 4 menyebutkan bahwa di bumi ada potongan-potongan tanah yang berdekatan, kebun-kebun anggur, tanaman-tanaman, dan pohon kurma yang bercabang dan tidak bercabang, disirami dengan air yang sama, tetapi Allah melebihkan sebagian atas yang lain dalam hal rasa.</li>
+                <li><strong>Pohon dalam Surga:</strong> Al-Qur'an menggambarkan surga dengan pohon-pohon yang rindang, buah-buahan yang melimpah (QS. Al-Waqi'ah: 28-33).</li>
+                <li><strong>Sedekah Menanam:</strong> Rasulullah SAW bersabda, "Tidaklah seorang Muslim menanam tanaman, melainkan apa yang dimakan dari tanaman itu menjadi sedekah baginya..." (HR. Bukhari).</li>
+                <li><strong>Larangan Merusak Alam:</strong> Islam melarang merusak tanaman dan lingkungan, bahkan saat perang (larangan menebang pohon).</li>
+                <li><strong>Kurma sebagai Makanan Mulia:</strong> Rasulullah SAW menganjurkan memakan kurma, terutama kurma 'Ajwah (HR. Bukhari Muslim).</li>
+            </ul>
+        </section>
+
+        <div class="action-buttons" style="margin: 40px 0;">
+            <a href="index.html" class="btn btn-outline">🏠 Kembali ke Beranda</a>
+            <a href="uji-formatif-11.html" class="btn btn-primary">✍️ Uji Formatif Pertemuan 11</a>
+            <a href="12.html" class="btn btn-outline">Pertemuan Selanjutnya →</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>كِتَابُ اللُّغَةِ الْعَرَبِيَّةِ</h3>
+                    <p style="color: #ccc; line-height: 1.8;">
+                        Buku daras untuk siswa MTs. Menguasai bahasa Arab dengan metode modern, interaktif, dan berlandaskan nilai-nilai keislaman.
+                    </p>
+                </div>
+                <div>
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="index.html#pertemuan">Daftar Pertemuan</a></li>
+                        <li><a href="index.html#penulis">Tentang Penulis</a></li>
+                        <li><a href="uji-formatif-11.html">Uji Formatif</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontak Penulis</h4>
+                    <ul>
+                        <li>👤 Fauzi Ilmi Al-Khairi, S.H.</li>
+                        <li>🏫 MTs Swasta Diniyah Limo Jurai Sungai Pua</li>
+                        <li>✉️ <a href="mailto:fauziilmialkhairi@gmail.com">fauziilmialkhairi@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Fauzi Ilmi Al-Khairi, S.H. Hak cipta dilindungi undang-undang.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">Dikembangkan untuk kebutuhan pembelajaran Bahasa Arab di MTs Swasta Diniyah Limo Jurai Sungai Pua.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
